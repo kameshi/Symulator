@@ -1,0 +1,16 @@
+Gaz
+Benzyna
+Diesel
+Hybryda
+Diesel
+Benzyna
+Gaz
+Gaz
+Gaz
+Hybryda
+Gaz
+gaz
+Gaz
+paliwo
+100
+Gaz
