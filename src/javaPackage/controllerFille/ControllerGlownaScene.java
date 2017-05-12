@@ -8,14 +8,14 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
-public class ControllerprimaryScene {
+public class ControllerGlownaScene {
 
     @FXML
     private BorderPane borderPane;
 
     public void initialize()
     {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/choiceAutoScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/wybierzAutoScene.fxml"));
         Pane pane = null;
         try
         {
@@ -38,10 +38,11 @@ public class ControllerprimaryScene {
         }
         borderPane.setTop(hBox);
         ControllerMenuButtons controllerMenuButtons = loader.getController();
-        controllerMenuButtons.setControllerprimaryScene(this);
+        controllerMenuButtons.setControllerGlownaScene(this);
     }
 
     public void setCenter(Pane pane) {
+        borderPane.setCenter(null);
         borderPane.setCenter(pane);
     }
 }

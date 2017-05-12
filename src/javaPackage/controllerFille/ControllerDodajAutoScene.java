@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Created by Marek on 11.05.2017.
  */
-public class ControllerAddAutoScene{
+public class ControllerDodajAutoScene {
 
     private boolean maloTekstu = false;
 
