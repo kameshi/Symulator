@@ -38,18 +38,15 @@ public class ObslugaKlienta implements Runnable{
 		}
 	}
 	public void run() {
-		String marka , model , iloscKM , Rodzajpaliwa , silnik , sredniSpalanie;
+		String marka , model , iloscKM , Rodzajpaliwa , silnik;
 		try{
 			while( (marka = czytelnik.readLine()) != null){
 				while( (model = czytelnik.readLine()) != null){
 					while( (iloscKM = czytelnik.readLine()) != null){
 						while( (Rodzajpaliwa = czytelnik.readLine()) != null){
 							while( (silnik = czytelnik.readLine()) != null){
-								while( (sredniSpalanie = czytelnik.readLine()) != null){
-									System.out.println("Odebrano: " + marka);
 									Przeliczanie p = new Przeliczanie();
-									rozeslanie( p.dzialanie(marka, model, iloscKM, Rodzajpaliwa, silnik, sredniSpalanie));
-								}
+									rozeslanie( p.dzialanie(marka, model, iloscKM, Rodzajpaliwa, silnik));
 							}
 						}
 					}
