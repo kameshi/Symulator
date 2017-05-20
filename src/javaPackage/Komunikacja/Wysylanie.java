@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.Socket;
 
 public class Wysylanie {
-	private PrintWriter nadawca;
+	private static PrintWriter nadawca;
 	private BufferedReader odbiorca;
 	private Socket gniazdo;
 	  
@@ -39,7 +39,7 @@ public class Wysylanie {
 			return "Pojemnisc powinna by� liczb�";
 		}
 		
-	    wyslij(markaP , modelP , kmP , paliwoP , silnikP);
+	    //wyslij(markaP , modelP , kmP , paliwoP , silnikP);
 	    String wiadomosc = null;
 	    try{
 		    while( (wiadomosc = odbiorca.readLine()) != null ) {
@@ -50,6 +50,7 @@ public class Wysylanie {
 	    }
 		return wiadomosc;   
  	}
+ 	/*
 	public void wyslij(String marka , String model , String km , String paliwo , String silnik){
 		try {
 			nadawca.println(marka); 
@@ -62,6 +63,19 @@ public class Wysylanie {
 			ex.printStackTrace();
 		}  
 	}
+	*/
+	public static void wyslij(String[] dane, int romiar){
+		try {
+			for (int i = 0 ; i < romiar ; i++)
+			{
+				nadawca.println(dane[i]);
+			}
+			nadawca.flush();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+
 	private void konfigurujKomunikacje() {
 	  try {
 		  gniazdo = new Socket(IP , Port);     

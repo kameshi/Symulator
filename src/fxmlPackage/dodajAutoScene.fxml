@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaPackage.controllerFille.ControllerDodajAutoScene">
    <children>
-      <Button layoutX="387.0" layoutY="263.0" mnemonicParsing="false" onAction="#dodajOnA" text="Dodaj" />
       <Label fx:id="markaLabel" layoutX="166.0" layoutY="89.0" text="Marka" />
       <Label fx:id="modelLabel" layoutX="394.0" layoutY="89.0" text="Model" />
       <Label fx:id="mocLabel" layoutX="171.0" layoutY="157.0" text="Moc" />
+      <Label fx:id="pojemnoscLabel" layoutX="382.0" layoutY="157.0" text="Pojemność" />
+      <Label fx:id="rokLabel" layoutX="171.0" layoutY="230.0" text="Rok" />
+      <Label fx:id="rodzajPaliwaLabel" layoutX="382.0" layoutY="230.0" text="Rodzaj Paliwa" />
+
       <TextField fx:id="markaText" layoutX="108.0" layoutY="121.0" />
       <TextField fx:id="modelText" layoutX="337.0" layoutY="121.0" />
       <TextField fx:id="mocText" layoutX="108.0" layoutY="188.0" />
-      <Label fx:id="wyjatekLabel" layoutX="43.0" layoutY="369.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane " visible="false" />
-      <Label layoutX="382.0" layoutY="157.0" text="Pojemność" />
-      <Label layoutX="171.0" layoutY="230.0" text="Rok" />
-      <TextField layoutX="337.0" layoutY="188.0" />
-      <TextField layoutX="108.0" layoutY="263.0" />
+      <TextField fx:id="pojemnoscText" layoutX="337.0" layoutY="188.0" />
+      <TextField fx:id="rokText" layoutX="108.0" layoutY="263.0" />
+      <ComboBox fx:id="rodzajPaliwaComboBox" layoutX="337.0" layoutY="263.0" prefWidth="150.0" />
+
+      <Label fx:id="wyjatekLabel" layoutX="43.0" layoutY="370.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />
+      <Label fx:id="wyjatekDwaLabel" layoutX="43.0" layoutY="390.0" prefHeight="17.0" prefWidth="368.0" text="** Zaznaczone pole nie może być puste wybierz poprawne dane." visible="false" />
+
+      <Button layoutX="275.0" layoutY="330.0" mnemonicParsing="false" onAction="#dodajOnA" text="Dodaj" />
    </children>
 </Pane>

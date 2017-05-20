@@ -88,7 +88,7 @@ public class Pliki {
 	private double konwertuj(String napis){
 		return Double.valueOf(napis);
 	}
-	/*Zosatawiam jakby by³o trzeba testowac
+	/*Zosatawiam jakby byï¿½o trzeba testowac
 	public void wyswietl(){
 		int i = 0;
 		while(i != auta.size()){
