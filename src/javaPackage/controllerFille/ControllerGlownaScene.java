@@ -45,4 +45,9 @@ public class ControllerGlownaScene {
         borderPane.setCenter(null);
         borderPane.setCenter(pane);
     }
+
+    public void wypisz()
+    {
+        System.out.print("dfsf");
+    }
 }

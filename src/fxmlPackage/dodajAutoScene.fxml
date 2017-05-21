@@ -10,16 +10,16 @@
    <children>
       <Label fx:id="markaLabel" layoutX="166.0" layoutY="89.0" text="Marka" />
       <Label fx:id="modelLabel" layoutX="394.0" layoutY="89.0" text="Model" />
-      <Label fx:id="mocLabel" layoutX="171.0" layoutY="157.0" text="Moc" />
-      <Label fx:id="pojemnoscLabel" layoutX="382.0" layoutY="157.0" text="Pojemność" />
-      <Label fx:id="rokLabel" layoutX="171.0" layoutY="230.0" text="Rok" />
+      <Label fx:id="mocLabel" layoutX="171.0" layoutY="157.0" text="Moc(KM)" />
+      <Label fx:id="pojemnoscLabel" layoutX="382.0" layoutY="157.0" text="Pojemność(cm^3)" />
+      <Label fx:id="rokProdukcjiLabel" layoutX="171.0" layoutY="230.0" text="Rok produkcji" />
       <Label fx:id="rodzajPaliwaLabel" layoutX="382.0" layoutY="230.0" text="Rodzaj Paliwa" />
 
       <TextField fx:id="markaText" layoutX="108.0" layoutY="121.0" />
       <TextField fx:id="modelText" layoutX="337.0" layoutY="121.0" />
-      <TextField fx:id="mocText" layoutX="108.0" layoutY="188.0" />
-      <TextField fx:id="pojemnoscText" layoutX="337.0" layoutY="188.0" />
-      <TextField fx:id="rokText" layoutX="108.0" layoutY="263.0" />
+      <TextField fx:id="mocText" layoutX="108.0" layoutY="188.0" onKeyReleased="#mocOnKeyR" />
+      <TextField fx:id="pojemnoscText" layoutX="337.0" layoutY="188.0" onKeyReleased="#pojemnoscOnKeyR" />
+      <TextField fx:id="rokProdukcjiText" layoutX="108.0" layoutY="263.0" />
       <ComboBox fx:id="rodzajPaliwaComboBox" layoutX="337.0" layoutY="263.0" prefWidth="150.0" />
 
       <Label fx:id="wyjatekLabel" layoutX="43.0" layoutY="370.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />

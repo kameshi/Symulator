@@ -13,8 +13,7 @@ public class ControllerSymulacjaScene {
 
     private void initialize()
     {
-        symulacjaLineChar.setLayoutX(3);
-        symulacjaLineChar.setLayoutY(6);
+
     }
 
 }

@@ -64,7 +64,7 @@ public class Wysylanie {
 		}  
 	}
 	*/
-	public static void wyslij(String[] dane, int romiar){
+	public void wyslij(String[] dane, int romiar){
 		try {
 			for (int i = 0 ; i < romiar ; i++)
 			{
@@ -90,7 +90,7 @@ public class Wysylanie {
 	private String dostosuj(String napis){
 		return napis.toLowerCase();
 	}
-	private boolean liczby(String napis){
+	public boolean liczby(String napis){
 		for(int i=0;i<napis.length();++i){
 		        if(napis.charAt(i)<='0'|| napis.charAt(i)>='9'|| napis.charAt(i)>='.'){
 		                return true;
