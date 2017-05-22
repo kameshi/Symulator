@@ -4,19 +4,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.layout.Pane;
-
 import java.io.FileNotFoundException;
-import java.io.IOException;
+
 
 /**
  * Created by Marek on 12.05.2017.
  */
 public class ControllerUsunAutoScene {
+
     private int rozmiar = 6;
+    private String[] daneUsuwania = new String[rozmiar];
 
     @FXML
     private ComboBox markaComboBox;
@@ -30,15 +29,10 @@ public class ControllerUsunAutoScene {
     private ComboBox rokProdukcjiComboBox;
     @FXML
     private ComboBox rodzajPaliwaComboBox;
-
+    @FXML
     private ComboBox[] comboBox = new ComboBox[rozmiar];
-
     @FXML
     private Button usunButton;
-
-    private String[] daneSymulacji = new String[rozmiar];
-
-    private ControllerGlownaScene controllerGlownaScene;
 
     public void initialize() throws FileNotFoundException {
         comboBox[0] = markaComboBox;
@@ -47,7 +41,6 @@ public class ControllerUsunAutoScene {
         comboBox[3] = mocComboBox;
         comboBox[4] = rokProdukcjiComboBox;
         comboBox[5] = rodzajPaliwaComboBox;
-
         ObservableList<String> markaList = FXCollections.observableArrayList();
         String[] wypalnienie = {"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         for (String s: wypalnienie)
@@ -61,7 +54,7 @@ public class ControllerUsunAutoScene {
     {
         for(; i < rozmiar; i++)
         {
-            daneSymulacji[i] = "";
+            daneUsuwania[i] = "";
             comboBox[i].setItems(FXCollections.observableArrayList());
             comboBox[i].setDisable(true);
         }
@@ -72,14 +65,14 @@ public class ControllerUsunAutoScene {
     private void markaOnA() {
         wyczysc(1);
         ObservableList<String> modelList = FXCollections.observableArrayList();
-        daneSymulacji[0] = comboBox[0].getValue().toString();
-        System.out.println(daneSymulacji[0]);
+        daneUsuwania[0] = comboBox[0].getValue().toString();
+        System.out.println(daneUsuwania[0]);
         String[] wypalnienie;
-        if(daneSymulacji[0].equals("Marka"))
+        if(daneUsuwania[0].equals("Marka"))
         {
             wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        else if(daneSymulacji[0].equals("Model"))
+        else if(daneUsuwania[0].equals("Model"))
         {
             wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
@@ -97,14 +90,14 @@ public class ControllerUsunAutoScene {
     private void modelOnA() {
         wyczysc(2);
         ObservableList<String> pojemnoscList = FXCollections.observableArrayList();
-        daneSymulacji[1] = comboBox[1].getValue().toString();
-        System.out.println(daneSymulacji[1]);
+        daneUsuwania[1] = comboBox[1].getValue().toString();
+        System.out.println(daneUsuwania[1]);
         String[] wypalnienie;
-        if(daneSymulacji[1].equals("Marka"))
+        if(daneUsuwania[1].equals("Marka"))
         {
             wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        else if(daneSymulacji[1].equals("Model"))
+        else if(daneUsuwania[1].equals("Model"))
         {
             wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
@@ -122,14 +115,14 @@ public class ControllerUsunAutoScene {
     private void pojemnoscOnA() {
         wyczysc(3);
         ObservableList<String> mocList = FXCollections.observableArrayList();
-        daneSymulacji[2] = comboBox[2].getValue().toString();
-        System.out.println(daneSymulacji[2]);
+        daneUsuwania[2] = comboBox[2].getValue().toString();
+        System.out.println(daneUsuwania[2]);
         String[] wypalnienie;
-        if(daneSymulacji[2].equals("Marka"))
+        if(daneUsuwania[2].equals("Marka"))
         {
             wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        else if(daneSymulacji[2].equals("Model"))
+        else if(daneUsuwania[2].equals("Model"))
         {
             wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
@@ -147,14 +140,14 @@ public class ControllerUsunAutoScene {
     private void mocOnA() {
         wyczysc(4);
         ObservableList<String> rokProdukcjiList = FXCollections.observableArrayList();
-        daneSymulacji[3] = comboBox[3].getValue().toString();
-        System.out.println(daneSymulacji[3]);
+        daneUsuwania[3] = comboBox[3].getValue().toString();
+        System.out.println(daneUsuwania[3]);
         String[] wypalnienie;
-        if(daneSymulacji[3].equals("Marka"))
+        if(daneUsuwania[3].equals("Marka"))
         {
             wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        else if(daneSymulacji[3].equals("Model"))
+        else if(daneUsuwania[3].equals("Model"))
         {
             wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
@@ -172,14 +165,14 @@ public class ControllerUsunAutoScene {
     private void rokProdukcjiOnA() {
         wyczysc(5);
         ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
-        daneSymulacji[4] = comboBox[4].getValue().toString();
-        System.out.println(daneSymulacji[4]);
+        daneUsuwania[4] = comboBox[4].getValue().toString();
+        System.out.println(daneUsuwania[4]);
         String[] wypalnienie;
-        if(daneSymulacji[4].equals("Marka"))
+        if(daneUsuwania[4].equals("Marka"))
         {
             wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        else if(daneSymulacji[4].equals("Model"))
+        else if(daneUsuwania[4].equals("Model"))
         {
             wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
@@ -196,14 +189,14 @@ public class ControllerUsunAutoScene {
 
     @FXML
     private void rodzajPaliwaOnA() {
-        daneSymulacji[5] = comboBox[5].getValue().toString();
-        System.out.println(daneSymulacji[5]);
+        daneUsuwania[5] = comboBox[5].getValue().toString();
+        System.out.println(daneUsuwania[5]);
         usunButton.setDisable(false);
     }
 
     @FXML
     private void usunOnA(ActionEvent actionEvent) {
-        for (String s: daneSymulacji)
+        for (String s: daneUsuwania)
         {
             System.out.println(s);
         }

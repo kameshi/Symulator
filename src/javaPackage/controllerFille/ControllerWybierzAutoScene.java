@@ -22,10 +22,8 @@ import java.util.Locale;
  */
 public class ControllerWybierzAutoScene {
 
-    @FXML
-    private Pane paneWybierzAuto;
-
     private int rozmiar = 6;
+    private String[] daneSymulacji = new String[rozmiar];
 
     @FXML
     private ComboBox markaComboBox;
@@ -39,13 +37,11 @@ public class ControllerWybierzAutoScene {
     private ComboBox rokProdukcjiComboBox;
     @FXML
     private ComboBox rodzajPaliwaComboBox;
-
+    @FXML
     private ComboBox[] comboBox = new ComboBox[rozmiar];
-
     @FXML
     private Button symulujButton;
 
-    private String[] daneSymulacji = new String[rozmiar];
 
     private ControllerGlownaScene controllerGlownaScene;
 
@@ -223,7 +219,6 @@ public class ControllerWybierzAutoScene {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        controllerGlownaScene.wypisz();
     }
 
     public void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene) {
