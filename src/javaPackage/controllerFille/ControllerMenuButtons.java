@@ -29,8 +29,6 @@ public class ControllerMenuButtons
                 e.printStackTrace();
             }
             controllerGlownaScene.setCenter(pane);
-            ControllerWybierzAutoScene controllerWybierzAutoScene = loader.getController();
-            controllerWybierzAutoScene.setControllerGlownaScene(controllerGlownaScene);
             scene = 1;
         }
     }

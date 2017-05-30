@@ -1,5 +1,6 @@
 package javaPackage.controllerFille;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 
@@ -16,4 +17,6 @@ public class ControllerSymulacjaScene {
 
     }
 
+    public void zapiszOnA(ActionEvent actionEvent) {
+    }
 }

@@ -10,11 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.Pane;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.function.UnaryOperator;
 
 
 /**
@@ -22,7 +25,7 @@ import java.util.Locale;
  */
 public class ControllerWybierzAutoScene {
 
-    private int rozmiar = 6;
+    private int rozmiar = 7;
     private String[] daneSymulacji = new String[rozmiar];
 
     @FXML
@@ -38,12 +41,13 @@ public class ControllerWybierzAutoScene {
     @FXML
     private ComboBox rodzajPaliwaComboBox;
     @FXML
-    private ComboBox[] comboBox = new ComboBox[rozmiar];
+    private ComboBox[] comboBox = new ComboBox[rozmiar-1];
+    @FXML
+    private TextField predkoscText;
     @FXML
     private Button symulujButton;
-
-
-    private ControllerGlownaScene controllerGlownaScene;
+    @FXML
+    private Pane paneWybierzAuto;
 
     public void initialize() throws FileNotFoundException {
         comboBox[0] = markaComboBox;
@@ -60,16 +64,28 @@ public class ControllerWybierzAutoScene {
             markaList.add(s);
         }
         comboBox[0].setItems(markaList);
+
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String text = change.getText();
+            if (text.matches("[0-9]*")) {
+                return change;
+            }
+            return null;
+        };
+        TextFormatter<String> textFormatter = new TextFormatter<>(filter);
+        predkoscText.setTextFormatter(textFormatter);
     }
 
     private void wyczysc(int i)
     {
-        for(; i < rozmiar; i++)
+        for(; i < rozmiar-1; i++)
         {
             daneSymulacji[i] = "";
             comboBox[i].setItems(FXCollections.observableArrayList());
             comboBox[i].setDisable(true);
         }
+        predkoscText.setText("");
+        predkoscText.setDisable(true);
         symulujButton.setDisable(true);
     }
 
@@ -201,13 +217,23 @@ public class ControllerWybierzAutoScene {
 
     @FXML
     private void rodzajPaliwaOnA() {
+        wyczysc(6);
         daneSymulacji[5] = comboBox[5].getValue().toString();
         System.out.println(daneSymulacji[5]);
+        predkoscText.setDisable(false);
         symulujButton.setDisable(false);
+        predkoscText.setText("60");
+    }
+
+
+    public void predkoscOnA(ActionEvent actionEvent) {
     }
 
     @FXML
     private void symulujOnA(ActionEvent actionEvent) {
+        daneSymulacji[6] = predkoscText.getText();
+        System.out.println(daneSymulacji[6]);
+
         for (String s: daneSymulacji)
         {
             System.out.println(s);
@@ -219,10 +245,7 @@ public class ControllerWybierzAutoScene {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        paneWybierzAuto.getChildren().clear();
+        paneWybierzAuto.getChildren().add(pane);
     }
-
-    public void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene) {
-        this.controllerGlownaScene = controllerGlownaScene;
-    }
-
 }
