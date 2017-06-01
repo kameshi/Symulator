@@ -8,7 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -241,6 +243,7 @@ public class ControllerWybierzAutoScene {
         }
         if(daneSymulacji[6].equals("0"))
         {
+            daneSymulacji[7] = "0";
             String spalanie = "15";
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/symulacjaZeroScene.fxml"));
             Pane pane = null;
@@ -250,7 +253,7 @@ public class ControllerWybierzAutoScene {
                 e.printStackTrace();
             }
             ControllerSymulacjaZeroScene controllerSymulacjaZeroScene = loader.getController();
-            controllerSymulacjaZeroScene.setSpalanie(spalanie);
+            controllerSymulacjaZeroScene.ustawSpalanie(spalanie);
             paneWybierzAuto.getChildren().clear();
             paneWybierzAuto.getChildren().add(pane);
         }
@@ -263,6 +266,8 @@ public class ControllerWybierzAutoScene {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            ControllerSymulacjaScene controllerSymulacjaScene = loader.getController();
             paneWybierzAuto.getChildren().clear();
             paneWybierzAuto.getChildren().add(pane);
         }

@@ -6,9 +6,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaPackage.controllerFille.ControllerSymulacjaScene">
+<Pane prefHeight="437.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaPackage.controllerFille.ControllerSymulacjaScene">
    <children>
-      <LineChart fx:id="symulacjaLineChart">
+      <Button layoutX="522.0" layoutY="361.0" mnemonicParsing="false" onAction="#zapiszOnA" text="Zapisz" />
+      <LineChart fx:id="symulacjaLineChar" layoutX="14.0" layoutY="19.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -16,6 +17,5 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <Button layoutX="522.0" layoutY="361.0" mnemonicParsing="false" onAction="#zapiszOnA" text="Zapisz" />
    </children>
 </Pane>
