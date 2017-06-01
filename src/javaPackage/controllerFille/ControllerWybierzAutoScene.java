@@ -1,11 +1,7 @@
 package javaPackage.controllerFille;
 
-import com.sun.istack.internal.Nullable;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -16,7 +12,6 @@ import javafx.scene.layout.Pane;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.function.UnaryOperator;
 
 
@@ -25,8 +20,8 @@ import java.util.function.UnaryOperator;
  */
 public class ControllerWybierzAutoScene {
 
-    private int rozmiar = 7;
-    private String[] daneSymulacji = new String[rozmiar];
+    private int rozmiarString = 8;
+    private String[] daneSymulacji = new String[rozmiarString];
 
     @FXML
     private ComboBox markaComboBox;
@@ -40,10 +35,13 @@ public class ControllerWybierzAutoScene {
     private ComboBox rokProdukcjiComboBox;
     @FXML
     private ComboBox rodzajPaliwaComboBox;
+    private int rozmiarComboBox = rozmiarString - 2;
     @FXML
-    private ComboBox[] comboBox = new ComboBox[rozmiar-1];
+    private ComboBox[] comboBox = new ComboBox[rozmiarComboBox];
     @FXML
     private TextField predkoscText;
+    @FXML
+    private TextField iloscKmText;
     @FXML
     private Button symulujButton;
     @FXML
@@ -74,19 +72,24 @@ public class ControllerWybierzAutoScene {
         };
         TextFormatter<String> textFormatter = new TextFormatter<>(filter);
         predkoscText.setTextFormatter(textFormatter);
+        predkoscText.setText("0");
+        iloscKmText.setText("0");
     }
 
     private void wyczysc(int i)
     {
-        for(; i < rozmiar-1; i++)
+        for(; i < rozmiarComboBox; i++)
         {
             daneSymulacji[i] = "";
             comboBox[i].setItems(FXCollections.observableArrayList());
             comboBox[i].setDisable(true);
         }
-        predkoscText.setText("");
+        predkoscText.setText("0");
+        iloscKmText.setText("0");
         predkoscText.setDisable(true);
+        iloscKmText.setDisable(true);
         symulujButton.setDisable(true);
+
     }
 
     @FXML
@@ -221,31 +224,48 @@ public class ControllerWybierzAutoScene {
         daneSymulacji[5] = comboBox[5].getValue().toString();
         System.out.println(daneSymulacji[5]);
         predkoscText.setDisable(false);
+        iloscKmText.setDisable(false);
         symulujButton.setDisable(false);
-        predkoscText.setText("60");
-    }
-
-
-    public void predkoscOnA(ActionEvent actionEvent) {
     }
 
     @FXML
-    private void symulujOnA(ActionEvent actionEvent) {
+    private void symulujOnA() {
         daneSymulacji[6] = predkoscText.getText();
         System.out.println(daneSymulacji[6]);
+        daneSymulacji[7] = predkoscText.getText();
+        System.out.println(daneSymulacji[7]);
 
         for (String s: daneSymulacji)
         {
             System.out.println(s);
         }
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/symulacjaScene.fxml"));
-        Pane pane = null;
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(daneSymulacji[6].equals("0"))
+        {
+            String spalanie = "15";
+            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/symulacjaZeroScene.fxml"));
+            Pane pane = null;
+            try {
+                pane = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            ControllerSymulacjaZeroScene controllerSymulacjaZeroScene = loader.getController();
+            controllerSymulacjaZeroScene.setSpalanie(spalanie);
+            paneWybierzAuto.getChildren().clear();
+            paneWybierzAuto.getChildren().add(pane);
         }
-        paneWybierzAuto.getChildren().clear();
-        paneWybierzAuto.getChildren().add(pane);
+        else
+        {
+            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/symulacjaScene.fxml"));
+            Pane pane = null;
+            try {
+                pane = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            paneWybierzAuto.getChildren().clear();
+            paneWybierzAuto.getChildren().add(pane);
+        }
     }
+
 }
