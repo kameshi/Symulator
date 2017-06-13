@@ -2,12 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javaPackage/dane/DaneAuta.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javaPackage/dane/Historia.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaScene.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaZeroScene.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/wybierzAutoScene.fxml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerSymulacjaScene.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxmlPackage/symulacjaZeroScene.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/symulacjaZeroScene.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaZeroScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaZeroScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerSymulacjaZeroScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerWybierzAutoScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/dane/Marka.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/dane/Model.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/dane/Samochod.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/dane/Spalanie.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/fxmlPackage/symulacjaZeroScene.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaZeroScene.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/dane/Marka.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/dane/Model.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/dane/Samochod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/javaPackage/dane/Spalanie.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fxmlPackage/wybierzAutoScene.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/AktualizujDaneScene.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerAktualizujDaneScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerDodajAutoScene.class" afterPath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerDodajAutoScene.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerGlownaScene.class" afterPath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerGlownaScene.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerHistoriaScene.class" afterPath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerHistoriaScene.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerMenuButtons.class" afterPath="$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerMenuButtons.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/dodajAutoScene.fxml" afterPath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/dodajAutoScene.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/menuButtons.fxml" afterPath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/menuButtons.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/usunAutoScene.fxml" afterPath="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/usunAutoScene.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxmlPackage/menuButtons.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/menuButtons.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml" afterPath="$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerGlownaScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerGlownaScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerMenuButtons.java" afterPath="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerMenuButtons.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,55 +97,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ControllerWybierzAutoScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java">
+      <file leaf-file-name="dodajAutoScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+              <folding>
+                <marker date="1497373926207" expanded="true" signature="2347:2378" ph="..." />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerHistoriaScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#pojemnoscOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
-                <element signature="method#rodzajPaliwaOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
+                <marker date="1497373185159" expanded="true" signature="300:307" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wybierzAutoScene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fxmlPackage/wybierzAutoScene.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="DaneAuta.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/DaneAuta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="646">
+              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+              <folding>
+                <element signature="method#DaneAuta#1;class#DaneAuta#0" expanded="false" />
+                <element signature="method#DaneAuta#2;class#DaneAuta#0" expanded="false" />
+                <element signature="method#dodaj#0;class#DaneAuta#0" expanded="false" />
+                <element signature="method#dodaj#1;class#DaneAuta#0" expanded="false" />
+                <element signature="method#toString#0;class#DaneAuta#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Historia.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/Historia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="symulacjaScene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1496330339225" expanded="true" signature="625:788" ph="..." />
-                <marker date="1496330339225" expanded="true" signature="641:699" ph="..." />
-                <marker date="1496330339225" expanded="true" signature="715:769" ph="..." />
-              </folding>
+      <file leaf-file-name="ControllerAktualizujDaneScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerAktualizujDaneScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerSymulacjaScene.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java">
+      <file leaf-file-name="AktualizujDaneScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fxmlPackage/AktualizujDaneScene.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+            <state relative-caret-position="221">
+              <caret line="13" column="102" lean-forward="false" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usunAutoScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerDodajAutoScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="151" column="13" lean-forward="false" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,15 +257,11 @@
         <option value="$PROJECT_DIR$/Server/ProjektJavaServer/src/przeliczanie/Pliki.java" />
         <option value="$PROJECT_DIR$/src/przeliczanie/Pliki.java" />
         <option value="$PROJECT_DIR$/src/javaPackage/Komunikacja/Wysylanie.java" />
-        <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java" />
-        <option value="$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml" />
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/AutoUsunWybierz.java" />
-        <option value="$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml" />
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerUsunAutoScene.java" />
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerGlownaScene.java" />
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerMenuButtons.java" />
         <option value="$PROJECT_DIR$/src/fxmlPackage/historiaScene.fxml" />
-        <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java" />
         <option value="$PROJECT_DIR$/src/fxmlPackage/wybierzAutoScene.fxml" />
         <option value="$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaZeroScene.fxml" />
         <option value="$PROJECT_DIR$/src/fxmlPackage/symulacjaZeroScene.fxml" />
@@ -196,6 +269,15 @@
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java" />
         <option value="$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml" />
         <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java" />
+        <option value="$PROJECT_DIR$/src/javaPackage/dane/Historia.java" />
+        <option value="$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml" />
+        <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java" />
+        <option value="$PROJECT_DIR$/src/fxmlPackage/AktualizujDaneScene.fxml" />
+        <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerAktualizujDaneScene.java" />
+        <option value="$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml" />
+        <option value="$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java" />
+        <option value="$PROJECT_DIR$/src/javaPackage/dane/DaneAut.java" />
+        <option value="$PROJECT_DIR$/src/javaPackage/dane/DaneAuta.java" />
       </list>
     </option>
   </component>
@@ -230,7 +312,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +432,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,23 +447,24 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server/ProjektJavaServer" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Gluon/SceneBuilder.lnk" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Marek\Desktop\Symulator\Klasa Klient\ProjektJavaClassKlient\src" />
-      <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage" />
-      <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage\controllerFille" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Marek\Desktop\Symulator\Server\ProjektJavaServer\src" />
       <recent name="C:\Users\Marek\Desktop\Symulator\Server\ProjektJavaServer\src\main" />
       <recent name="C:\Users\Marek\Desktop\Symulator\src" />
       <recent name="C:\Users\Marek\Desktop\Symulator\Server\ProjektJavaServer" />
       <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage\dane" />
+      <recent name="C:\Users\Marek\Desktop\Symulator\Klasa Klient\ProjektJavaClassKlient\src" />
+      <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage" />
+      <recent name="C:\Users\Marek\Desktop\Symulator\src\javaPackage\controllerFille" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -747,54 +830,32 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08773784" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27597404" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04004329" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.019480519" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.020084567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08773784" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.020084567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16067654" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.040169135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19010417" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -806,7 +867,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -815,42 +876,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#pojemnoscOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
-            <element signature="method#rodzajPaliwaOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="47" lean-forward="true" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/mainFille/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fxmlPackage/glownaScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerGlownaScene.java">
@@ -862,14 +896,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fxmlPackage/pomocScene.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerPomocScene.java">
@@ -890,14 +924,14 @@
     <entry file="file://$PROJECT_DIR$/Klasa Klient/ProjektJavaClassKlient/src/Komunikacja/Wysylanie.java" />
     <entry file="file://$PROJECT_DIR$/Server/ProjektJavaServer/src/przeliczanie/Pliki.java" />
     <entry file="file://$PROJECT_DIR$/src/fxmlPackage/menuButtons.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="164" lean-forward="false" selection-start-line="7" selection-start-column="153" selection-end-line="7" selection-end-column="164" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Klasa Klient/ProjektJavaClassKlient/bin/Komunikacja/Wysylanie.class" />
@@ -937,16 +971,8 @@
         <state relative-caret-position="673">
           <caret line="208" column="9" lean-forward="false" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/mainFille/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,35 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/Samochod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="67" column="8" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="74" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerMenuButtons.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
@@ -1003,27 +1000,6 @@
             <element signature="method#dodajSamochodOnA#0;class#ControllerMenuButtons#0" expanded="false" />
             <element signature="method#usunSamochodOnA#0;class#ControllerMenuButtons#0" expanded="false" />
             <element signature="method#pomocOnA#0;class#ControllerMenuButtons#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/historiaScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="77" lean-forward="true" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1037,53 +1013,40 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fxmlPackage/glownaScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="212" lean-forward="false" selection-start-line="5" selection-start-column="212" selection-end-line="5" selection-end-column="212" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-          <folding />
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Symulator/fxmlPackage/pomocScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaZeroScene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaZeroScene.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Symulator/javaPackage/controllerFille/ControllerGlownaScene.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1427#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,32 +1054,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#4650#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Symulator/fxmlPackage/symulacjaScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerGlownaScene.java">
@@ -1132,68 +1080,168 @@
         <state relative-caret-position="306">
           <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#310#311#0" expanded="false" />
+            <element signature="e#364#365#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fxmlPackage/symulacjaZeroScene.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="84" lean-forward="false" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/wybierzAutoScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerWybierzAutoScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#pojemnoscOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
-            <element signature="method#rodzajPaliwaOnA#0;class#ControllerWybierzAutoScene#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/symulacjaScene.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1496330339225" expanded="true" signature="625:788" ph="..." />
-            <marker date="1496330339225" expanded="true" signature="641:699" ph="..." />
-            <marker date="1496330339225" expanded="true" signature="715:769" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerSymulacjaScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="272">
           <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/historiaScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="77" lean-forward="false" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/mainFille/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/Dane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/Samochod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/Historia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/dodajAutoScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <marker date="1497373926207" expanded="true" signature="2347:2378" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerHistoriaScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1497373185159" expanded="true" signature="300:307" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerAktualizujDaneScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/usunAutoScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlPackage/AktualizujDaneScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="102" lean-forward="false" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/controllerFille/ControllerDodajAutoScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="151" column="13" lean-forward="false" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaPackage/dane/DaneAuta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <element signature="method#DaneAuta#1;class#DaneAuta#0" expanded="false" />
+            <element signature="method#DaneAuta#2;class#DaneAuta#0" expanded="false" />
+            <element signature="method#dodaj#0;class#DaneAuta#0" expanded="false" />
+            <element signature="method#dodaj#1;class#DaneAuta#0" expanded="false" />
+            <element signature="method#toString#0;class#DaneAuta#0" expanded="false" />
           </folding>
         </state>
       </provider>

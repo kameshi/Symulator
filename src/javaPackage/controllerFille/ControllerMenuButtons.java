@@ -1,6 +1,5 @@
 package javaPackage.controllerFille;
 
-import com.sun.deploy.uitoolkit.impl.fx.FXWindow;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +20,7 @@ public class ControllerMenuButtons
     public void wybierzSamochodOnA( )
     {
         if(scene != 1) {
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/wybierzAutoScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/AktualizujDaneScene.fxml"));
             Pane pane = null;
             try {
                 pane = loader.load();

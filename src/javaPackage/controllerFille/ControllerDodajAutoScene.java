@@ -1,24 +1,23 @@
 package javaPackage.controllerFille;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javaPackage.dane.DaneAuta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javaPackage.Komunikacja.*;
 import javafx.scene.control.TextFormatter;
-
-import java.util.Locale.Category;
 import java.util.function.UnaryOperator;
 
 /**
  * Created by Marek on 11.05.2017.
  */
 public class ControllerDodajAutoScene {
+
+
+    private DaneAuta daneAuta = new DaneAuta();
 
     Wysylanie wysylanie = new Wysylanie();
     private boolean maloTekstu = false;
@@ -35,7 +34,8 @@ public class ControllerDodajAutoScene {
     private Label pojemnoscLabel;
     @FXML
     private Label rodzajPaliwaLabel;
-
+    @FXML
+    private Label rejestracjaLabel;
     @FXML
     private TextField markaText;
     @FXML 
@@ -47,6 +47,8 @@ public class ControllerDodajAutoScene {
     @FXML
     private TextField rokProdukcjiText;
     @FXML
+    private TextField rejestracjaText;
+    @FXML
     private ComboBox rodzajPaliwaComboBox;
 
     @FXML
@@ -54,11 +56,11 @@ public class ControllerDodajAutoScene {
     @FXML
     private Label wyjatekDwaLabel;
     
-    private static final int rozmiar = 5;
+    private static final int rozmiar = 6;
     private Label[] label = new Label[rozmiar];
     private TextField[] textField = new TextField[rozmiar];
-    private static final String[] textwyjatek = {"Marka*", "Model*", "Pojemność(cm^3)*", "Moc(KM)*", "Rok produkcji*"};
-    private static final String[] text = {"Marka", "Model", "Pojemność(cm^3)", "Moc(KM)", "Rok produkcji"};
+    private static final String[] textwyjatek = {"Marka*", "Model*", "Pojemność(cm^3)*", "Moc(KM)*", "Rok produkcji*", "***Rejestracja*"};
+    private static final String[] text = {"Marka", "Model", "Pojemność(cm^3)", "Moc(KM)", "Rok produkcji","***Rejestracja"};
     private static final String[] rodzajPaliwaString = {"Benzyna", "Gaz", "Hybryda", "Diesel"};
     private ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
 
@@ -81,12 +83,14 @@ public class ControllerDodajAutoScene {
         label[2] = pojemnoscLabel;
         label[3] = mocLabel;
         label[4] = rokProdukcjiLabel;
+        label[5] = rejestracjaLabel;
 
         textField[0] = markaText;
         textField[1] = modelText;
         textField[2] = pojemnoscText;
         textField[3] = mocText;
         textField[4] = rokProdukcjiText;
+        textField[5] = rejestracjaText;
 
         textField[2].setTextFormatter(textFormatter1);
         textField[3].setTextFormatter(textFormatter2);
@@ -102,7 +106,7 @@ public class ControllerDodajAutoScene {
     
 
     @FXML
-    private void dodajOnA(ActionEvent actionEvent)
+    private void dodajOnA()
     {
         String[] dane = new String[rozmiar+1];
         maloTekstu = false;
@@ -146,17 +150,9 @@ public class ControllerDodajAutoScene {
             {
                 System.out.println(dane[i]);
             }
-            //wysylanie.wyslij(dane,rozmiar+1);
+            daneAuta.dodaj(dane[0],dane[1],dane[2],dane[3],dane[4],dane[6],dane[5]);
+            //wysylanie.wyslij(daneAuta);
         }
-    }
-
-    @FXML
-    private void mocOnKeyR() {
-    }
-
-    @FXML
-    private void pojemnoscOnKeyR()
-    {
     }
 
 }

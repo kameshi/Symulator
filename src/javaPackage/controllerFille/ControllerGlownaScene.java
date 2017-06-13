@@ -15,7 +15,7 @@ public class ControllerGlownaScene {
 
     public void initialize()
     {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/wybierzAutoScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/AktualizujDaneScene.fxml"));
         Pane pane = null;
         try
         {
