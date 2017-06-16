@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerFille.ControllerAktualizujDaneScene">
+   <children>
+      <Label fx:id="rejestracjaLabel" layoutX="131.0" layoutY="43.0" text="Numer Rejestracyjny" />
+      <Label fx:id="przebiegLabel" layoutX="617.0" layoutY="43.0" text="Przebieg" />
+      <Label fx:id="spalanieLabel" layoutX="1031.0" layoutY="43.0" text="Średnie spalanie" />
+      <Label fx:id="przegladLabel" layoutX="162.0" layoutY="161.0" text="Przegląd" />
+      <Label fx:id="wymianaOlejuLabel" layoutX="600.0" layoutY="161.0" text="Wymiana Oleju" />
+      <Label fx:id="wymainaRozrzaduLabel" layoutX="1025.0" layoutY="161.0" text="Wymiana rozrządu" />
+      <TextField fx:id="rejestracjaText" layoutX="110.0" layoutY="90.0" prefWidth="150.0" />
+      <TextField fx:id="przebiegText" layoutX="566.0" layoutY="90.0" />
+      <TextField fx:id="spalanieText" layoutX="1000.0" layoutY="90.0" />
+      <CheckBox fx:id="przegladCheckBox" layoutX="174.0" layoutY="191.0" mnemonicParsing="false" />
+      <CheckBox fx:id="wymainaRozrzaduCheckBox" layoutX="1064.0" layoutY="193.0" mnemonicParsing="false" />
+      <CheckBox fx:id="wymainaOlejuCheckBox" layoutX="630.0" layoutY="193.0" mnemonicParsing="false" />
+      <Label fx:id="wyjatekLabel" layoutX="24.0" layoutY="644.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />
+      <Label layoutX="24.0" layoutY="661.0" prefHeight="17.0" prefWidth="797.0" text="** Rejestrację należy podać w jednym z czterech formatów: XX YYYY, XX YYYYY, XXX YYYY, XXX YYYYY." />
+      <Label layoutX="24.0" layoutY="678.0" text="X-dowolna litera, Y-dowolna liczba lub litera" />
+
+      <Button layoutX="570.0" layoutY="389.0" mnemonicParsing="false" onAction="#dodajOnA" prefHeight="97.0" prefWidth="140.0" text="Dodaj" />
+
+   </children>
+</Pane>

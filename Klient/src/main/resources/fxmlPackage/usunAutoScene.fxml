@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerFille.ControllerUsunAutoScene">
+    <children>
+        <Label fx:id="rejestracjaLabel" layoutX="126.0" layoutY="43.0" text="**Numer Rejestracyjny" />
+        <Label fx:id="markaLabel" layoutX="617.0" layoutY="43.0" text="Marka" />
+        <Label fx:id="modelLabel" layoutX="1057.0" layoutY="43.0" text="Model" />
+
+        <TextField fx:id="markaText" layoutX="566.0" layoutY="90.0" />
+        <TextField fx:id="modelText" layoutX="1000.0" layoutY="90.0" />
+        <TextField fx:id="rejestracjaText" layoutX="111.0" layoutY="90.0" />
+
+        <Label fx:id="wyjatekLabel" layoutX="34.0" layoutY="654.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />
+        <Label layoutX="34.0" layoutY="671.0" prefHeight="17.0" prefWidth="797.0" text="** Rejestrację należy podać w jednym z czterech formatów: XX YYYY, XX YYYYY, XXX YYYY, XXX YYYYY." />
+        <Label layoutX="34.0" layoutY="688.0" text="X-dowolna litera, Y-dowolna liczba lub litera" />
+
+        <Button layoutX="570.0" layoutY="389.0" mnemonicParsing="false" onAction="#usunOnA" prefHeight="97.0" prefWidth="140.0" text="Usun" />
+    </children>
+</Pane>
