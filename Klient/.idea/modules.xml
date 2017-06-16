@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Dane/Dane.iml" filepath="$PROJECT_DIR$/../Dane/Dane.iml" />
       <module fileurl="file://$PROJECT_DIR$/Klient.iml" filepath="$PROJECT_DIR$/Klient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Serwer/Server.iml" filepath="$PROJECT_DIR$/../Serwer/Server.iml" />
+      <module fileurl="file://C:\Users\Marek\Desktop\Symulator\Serwer\Server.iml" filepath="C:\Users\Marek\Desktop\Symulator\Serwer\Server.iml" />
     </modules>
   </component>
 </project>
