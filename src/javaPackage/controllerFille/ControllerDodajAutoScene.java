@@ -1,7 +1,6 @@
 package javaPackage.controllerFille;
 
 import javaPackage.dane.DaneAuta;
-import javaPackage.oknaDialogowe.OknaDialogowe;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,20 +9,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javaPackage.Komunikacja.*;
 import javafx.scene.control.TextFormatter;
-import javafx.scene.paint.Paint;
-
-import java.util.Calendar;
 import java.util.function.UnaryOperator;
 
 /**
  * Created by Marek on 11.05.2017.
  */
-public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu DaneAuta
+public class ControllerDodajAutoScene {
 
-    OknaDialogowe okno = new OknaDialogowe();
 
     private DaneAuta daneAuta = new DaneAuta();
-    private String[] dane = new String[rozmiar+1];
 
     Wysylanie wysylanie = new Wysylanie();
     private boolean maloTekstu = false;
@@ -65,18 +59,14 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     private static final int rozmiar = 6;
     private Label[] label = new Label[rozmiar];
     private TextField[] textField = new TextField[rozmiar];
-    private static final String[] textwyjatek = {"Marka*", "Model*", "Pojemność(cm^3)*", "Moc(KM)*", "***Rok produkcji*", "****Rejestracja*"};
-    private static final String[] text = {"Marka", "Model", "Pojemność(cm^3)", "Moc(KM)", "***Rok produkcji","****Rejestracja"};
-    private static final String[] rodzajPaliwaString = {"benzyna", "gaz", "hybryda", "diesel"};
+    private static final String[] textwyjatek = {"Marka*", "Model*", "Pojemność(cm^3)*", "Moc(KM)*", "Rok produkcji*", "***Rejestracja*"};
+    private static final String[] text = {"Marka", "Model", "Pojemność(cm^3)", "Moc(KM)", "Rok produkcji","***Rejestracja"};
+    private static final String[] rodzajPaliwaString = {"Benzyna", "Gaz", "Hybryda", "Diesel"};
     private ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
 
 
     public void initialize()
     {
-        for(int i = 0; i < rozmiar+1; i++)
-        {
-            dane[i] = new String();
-        }
         UnaryOperator<TextFormatter.Change> filter = change -> {
             String text = change.getText();
             if (text.matches("[0-9]*")) {
@@ -84,8 +74,6 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             }
             return null;
         };
-
-
         TextFormatter<String> textFormatter1 = new TextFormatter<>(filter);
         TextFormatter<String> textFormatter2 = new TextFormatter<>(filter);
         TextFormatter<String> textFormatter3 = new TextFormatter<>(filter);
@@ -115,117 +103,12 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
         rodzajPaliwaComboBox.setItems(rodzajPaliwaList);
         rodzajPaliwaComboBox.setValue("Wybierz");
     }
-
-    private boolean czyLiteraLiczba(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[5].charAt(i) >= 65 && dane[5].charAt(i) <= 90) || (dane[5].charAt(i) >= 97 && dane[5].charAt(i) <= 122) || (dane[5].charAt(i) >= 48 && dane[5].charAt(i) <= 57)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean czyLitera(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[5].charAt(i) >= 65 && dane[5].charAt(i) <= 90) || (dane[5].charAt(i) >= 97 && dane[5].charAt(i) <= 122)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
     
-    private boolean sprawdzRejestracje()
-    {
-        if(dane[5].length() < 7)
-        {
-            return true;
-        }
-        else if(dane[5].length() > 9)
-        {
-            return true;
-        }
-        else
-        {
-            if(dane[5].charAt(3) != ' ')
-            {
-                if(dane[5].charAt(2) != ' ')
-                {
-                    return true;
-                }
-                if(dane[5].length() == 7)
-                {
-                    if(czyLiteraLiczba(3,7))
-                    {
-                        return true;
-                    }
-                }
-                if(dane[5].length() == 8)
-                {
-                    if(czyLiteraLiczba(3,8))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[5].charAt(2) == ' ')
-                {
-                    return true;
-                }
-            }
-            if(dane[5].charAt(2) != ' ')
-            {
-                if(dane[5].charAt(3) != ' ')
-                {
-                    return true;
-                }
-
-                if(dane[5].length() == 8)
-                {
-                    if(czyLiteraLiczba(4,8))
-                    {
-                        return true;
-                    }
-
-                }
-                if(dane[5].length() == 9)
-                {
-                    if(czyLiteraLiczba(4,9))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[5].charAt(3) == ' ')
-                {
-                    return true;
-                }
-            }
-
-            if(czyLitera(0,2))
-            {
-                return true;
-            }
-            if(czyLitera(2,2) && dane[5].charAt(2) == ' ' )
-            {
-                return true;
-            }
-        }
-        return false;
-    }
 
     @FXML
     private void dodajOnA()
     {
+        String[] dane = new String[rozmiar+1];
         maloTekstu = false;
 
         for(int i = 0 ; i < rozmiar ; i++)
@@ -243,6 +126,11 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             }
         }
 
+        if(!maloTekstu)
+        {
+            wyjatekLabel.setVisible(false);
+        }
+
         if (rodzajPaliwaComboBox.getValue().toString().equals("Wybierz"))
         {
             rodzajPaliwaLabel.setText("Rodzaj paliwa**");
@@ -256,53 +144,15 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             wyjatekDwaLabel.setVisible(false);
         }
 
-        Calendar calendar = Calendar.getInstance();
-        if (!(dane[4].isEmpty()))
-        {
-            if(!(Integer.parseInt(dane[4]) > 1930 && Integer.parseInt(dane[4]) < calendar.get(Calendar.YEAR)) )
-            {
-                label[4].setTextFill(Paint.valueOf("RED"));
-                maloTekstu = true;
-            }
-            else
-            {
-                label[4].setTextFill(Paint.valueOf("BLACK"));
-            }
-        }
-
-        if(sprawdzRejestracje())
-        {
-            label[5].setTextFill(Paint.valueOf("RED"));
-            maloTekstu = true;
-            System.out.println("red");
-        }
-        else
-        {
-            label[5].setTextFill(Paint.valueOf("BLACK"));
-            System.out.println("black");
-        }
-
         if(!maloTekstu)
         {
-            wyjatekLabel.setVisible(false);
+            for(int i = 0; i < rozmiar+1; i++)
+            {
+                System.out.println(dane[i]);
+            }
             daneAuta.dodaj(dane[0],dane[1],dane[2],dane[3],dane[4],dane[6],dane[5]);
-            System.out.println(daneAuta.toString());
-            //wysyła tutaj
-            if(dane[6].equals("benzyna"))
-            {
-                okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
-            }
-            else
-            {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-                for(int i = 0 ; i < rozmiar ; i++)
-                {
-                    textField[i].clear();
-                }
-                rodzajPaliwaComboBox.setValue("Wybierz");
-            }
+            //wysylanie.wyslij(daneAuta);
         }
     }
-
 
 }

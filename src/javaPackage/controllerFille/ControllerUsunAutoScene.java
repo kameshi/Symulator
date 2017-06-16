@@ -1,218 +1,204 @@
 package javaPackage.controllerFille;
 
-import javaPackage.dane.Historia;
-import javaPackage.oknaDialogowe.OknaDialogowe;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.paint.Paint;
-
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
-import java.text.ParsePosition;
-import java.util.Calendar;
-import java.util.function.UnaryOperator;
 
 
 /**
  * Created by Marek on 12.05.2017.
  */
-public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z rejestracja marka i modelem moge to zrobić na obiekcie DaneAuta jak trzeba
+public class ControllerUsunAutoScene {
 
-    OknaDialogowe okno = new OknaDialogowe();
-
-    private String[] dane = new String[rozmiar];
-
-    private boolean maloTekstu = false;
+    private int rozmiar = 6;
+    private String[] daneUsuwania = new String[rozmiar];
 
     @FXML
-    private Label rejestracjaLabel;
+    private ComboBox markaComboBox;
     @FXML
-    private Label markaLabel;
+    private ComboBox modelComboBox;
     @FXML
-    private Label modelLabel;
+    private ComboBox pojemnoscComboBox;
+    @FXML
+    private ComboBox mocComboBox;
+    @FXML
+    private ComboBox rokProdukcjiComboBox;
+    @FXML
+    private ComboBox rodzajPaliwaComboBox;
+    @FXML
+    private ComboBox[] comboBox = new ComboBox[rozmiar];
+    @FXML
+    private Button usunButton;
 
-    @FXML
-    private TextField rejestracjaText;
-    @FXML
-    private TextField markaText;
-    @FXML
-    private TextField modelText;
-
-    @FXML
-    private Label wyjatekLabel;
-
-    private static final int rozmiar = 3;
-    private Label[] label = new Label[rozmiar];
-    private TextField[] textField = new TextField[rozmiar];
-    private static final String[] textwyjatek = {"**Rejestracja*","Marka*", "Model*"};
-    private static final String[] text = {"**Rejestracja","Marka", "Model"};
-
-    @FXML
-    public void initialize()
-    {
-        for(int i = 0; i < rozmiar; i++)
+    public void initialize() throws FileNotFoundException {
+        comboBox[0] = markaComboBox;
+        comboBox[1] = modelComboBox;
+        comboBox[2] = pojemnoscComboBox;
+        comboBox[3] = mocComboBox;
+        comboBox[4] = rokProdukcjiComboBox;
+        comboBox[5] = rodzajPaliwaComboBox;
+        ObservableList<String> markaList = FXCollections.observableArrayList();
+        String[] wypalnienie = {"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
+        for (String s: wypalnienie)
         {
-            dane[i] = new String();
+            markaList.add(s);
         }
-        label[0] = rejestracjaLabel;
-        label[1] = markaLabel;
-        label[2] = modelLabel;
-
-        textField[0] = rejestracjaText;
-        textField[1] = markaText;
-        textField[2] = modelText;
-
+        comboBox[0].setItems(markaList);
     }
 
-
-    private boolean czyLiteraLiczba(int i, int j)
+    private void wyczysc(int i)
     {
-        for(; i < j; i++)
+        for(; i < rozmiar; i++)
         {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122) || (dane[0].charAt(i) >= 48 && dane[0].charAt(i) <= 57)))
-            {
-                return true;
-            }
+            daneUsuwania[i] = "";
+            comboBox[i].setItems(FXCollections.observableArrayList());
+            comboBox[i].setDisable(true);
         }
-        return false;
+        usunButton.setDisable(true);
     }
 
-    private boolean czyLitera(int i, int j)
-    {
-        for(; i < j; i++)
+    @FXML
+    private void markaOnA() {
+        wyczysc(1);
+        ObservableList<String> modelList = FXCollections.observableArrayList();
+        daneUsuwania[0] = comboBox[0].getValue().toString();
+        System.out.println(daneUsuwania[0]);
+        String[] wypalnienie;
+        if(daneUsuwania[0].equals("Marka"))
         {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122)))
-            {
-                return true;
-            }
+            wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
         }
-        return false;
-    }
-
-    private boolean sprawdzRejestracje()
-    {
-        if(dane[0].length() < 7)
+        else if(daneUsuwania[0].equals("Model"))
         {
-            return true;
-        }
-        else if(dane[0].length() > 9)
-        {
-            return true;
+            wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
         else
+            wypalnienie = new String[]{"Marka", "Model", "Rok produkcji"};
+        for (String s: wypalnienie)
         {
-            if(dane[0].charAt(3) != ' ')
-            {
-                if(dane[0].charAt(2) != ' ')
-                {
-                    return true;
-                }
-                if(dane[0].length() == 7)
-                {
-                    if(czyLiteraLiczba(3,7))
-                    {
-                        return true;
-                    }
-                }
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(3,8))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(2) == ' ')
-                {
-                    return true;
-                }
-            }
-            if(dane[0].charAt(2) != ' ')
-            {
-                if(dane[0].charAt(3) != ' ')
-                {
-                    return true;
-                }
-
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(4,8))
-                    {
-                        return true;
-                    }
-
-                }
-                if(dane[0].length() == 9)
-                {
-                    if(czyLiteraLiczba(4,9))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(3) == ' ')
-                {
-                    return true;
-                }
-            }
-
-            if(czyLitera(0,2))
-            {
-                return true;
-            }
-            if(czyLitera(2,2) && dane[0].charAt(2) == ' ' )
-            {
-                return true;
-            }
+            modelList.add(s);
         }
-        return false;
+        comboBox[1].setItems(modelList);
+        comboBox[1].setDisable(false);
     }
 
     @FXML
-    void usunOnA(ActionEvent event) {
-        maloTekstu = false;
-
-        for (int i = 0; i < rozmiar; i++) {
-            if (textField[i].getLength() == 0) {
-                label[i].setText(textwyjatek[i]);
-                wyjatekLabel.setVisible(true);
-                maloTekstu = true;
-            } else {
-                label[i].setText(text[i]);
-                dane[i] = textField[i].getText();
-            }
-        }
-
-        if(sprawdzRejestracje())
+    private void modelOnA() {
+        wyczysc(2);
+        ObservableList<String> pojemnoscList = FXCollections.observableArrayList();
+        daneUsuwania[1] = comboBox[1].getValue().toString();
+        System.out.println(daneUsuwania[1]);
+        String[] wypalnienie;
+        if(daneUsuwania[1].equals("Marka"))
         {
-            label[0].setTextFill(Paint.valueOf("RED"));
-            maloTekstu = true;
-            System.out.println("red");
+            wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else if(daneUsuwania[1].equals("Model"))
+        {
+            wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
         }
         else
+            wypalnienie = new String[]{"Marka", "Model", "Rok produkcji"};
+        for (String s: wypalnienie)
         {
-            label[0].setTextFill(Paint.valueOf("BLACK"));
-            System.out.println("black");
+            pojemnoscList.add(s);
         }
+        comboBox[2].setItems(pojemnoscList);
+        comboBox[2].setDisable(false);
+    }
 
-        if (!maloTekstu) {
-            wyjatekLabel.setVisible(false);
-            //wysyła tutaj
-            if (false) {
-                okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-            } else {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-                for (int i = 0; i < rozmiar; i++) {
-                    textField[i].clear();
-                }
-            }
+    @FXML
+    private void pojemnoscOnA() {
+        wyczysc(3);
+        ObservableList<String> mocList = FXCollections.observableArrayList();
+        daneUsuwania[2] = comboBox[2].getValue().toString();
+        System.out.println(daneUsuwania[2]);
+        String[] wypalnienie;
+        if(daneUsuwania[2].equals("Marka"))
+        {
+            wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else if(daneUsuwania[2].equals("Model"))
+        {
+            wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else
+            wypalnienie = new String[]{"Marka", "Model", "Rok produkcji"};
+        for (String s: wypalnienie)
+        {
+            mocList.add(s);
+        }
+        comboBox[3].setItems(mocList);
+        comboBox[3].setDisable(false);
+    }
+
+    @FXML
+    private void mocOnA() {
+        wyczysc(4);
+        ObservableList<String> rokProdukcjiList = FXCollections.observableArrayList();
+        daneUsuwania[3] = comboBox[3].getValue().toString();
+        System.out.println(daneUsuwania[3]);
+        String[] wypalnienie;
+        if(daneUsuwania[3].equals("Marka"))
+        {
+            wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else if(daneUsuwania[3].equals("Model"))
+        {
+            wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else
+            wypalnienie = new String[]{"Marka", "Model", "Rok produkcji"};
+        for (String s: wypalnienie)
+        {
+            rokProdukcjiList.add(s);
+        }
+        comboBox[4].setItems(rokProdukcjiList);
+        comboBox[4].setDisable(false);
+    }
+
+    @FXML
+    private void rokProdukcjiOnA() {
+        wyczysc(5);
+        ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
+        daneUsuwania[4] = comboBox[4].getValue().toString();
+        System.out.println(daneUsuwania[4]);
+        String[] wypalnienie;
+        if(daneUsuwania[4].equals("Marka"))
+        {
+            wypalnienie = new String[]{"Marka", "Model", "Moc(KM)", "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else if(daneUsuwania[4].equals("Model"))
+        {
+            wypalnienie = new String[]{ "Pojemność(cm^3)", "Rok produkcji"};
+        }
+        else
+            wypalnienie = new String[]{"Marka", "Model", "Rok produkcji"};
+        for (String s: wypalnienie)
+        {
+            rodzajPaliwaList.add(s);
+        }
+        comboBox[5].setItems(FXCollections.observableArrayList());
+        comboBox[5].setItems(rodzajPaliwaList);
+        comboBox[5].setDisable(false);
+    }
+
+    @FXML
+    private void rodzajPaliwaOnA() {
+        daneUsuwania[5] = comboBox[5].getValue().toString();
+        System.out.println(daneUsuwania[5]);
+        usunButton.setDisable(false);
+    }
+
+    @FXML
+    private void usunOnA(ActionEvent actionEvent) {
+        for (String s: daneUsuwania)
+        {
+            System.out.println(s);
         }
     }
 }

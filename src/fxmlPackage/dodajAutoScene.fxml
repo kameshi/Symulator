@@ -12,9 +12,9 @@
       <Label fx:id="modelLabel" layoutX="543.0" layoutY="47.0" text="Model" />
       <Label fx:id="pojemnoscLabel" layoutX="723.0" layoutY="47.0" text="Pojemność(cm^3)" />
       <Label fx:id="mocLabel" layoutX="313.0" layoutY="149.0" text="Moc(KM)" />
-      <Label fx:id="rokProdukcjiLabel" layoutX="514.0" layoutY="149.0" text="***Rok produkcji" />
+      <Label fx:id="rokProdukcjiLabel" layoutX="524.0" layoutY="149.0" text="Rok produkcji" />
       <Label fx:id="rodzajPaliwaLabel" layoutX="524.0" layoutY="247.0" text="Rodzaj Paliwa" />
-      <Label fx:id="rejestracjaLabel" layoutX="734.0" layoutY="149.0" text="****Rejestracja" />
+      <Label fx:id="rejestracjaLabel" layoutX="734.0" layoutY="149.0" text="***Rejestracja" />
 
       <TextField fx:id="markaText" layoutX="262.0" layoutY="85.0" />
       <TextField fx:id="modelText" layoutX="486.0" layoutY="85.0" />
@@ -26,9 +26,7 @@
 
       <Label fx:id="wyjatekLabel" layoutX="14.0" layoutY="617.0" prefHeight="17.0" prefWidth="368.0" text="* Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />
       <Label fx:id="wyjatekDwaLabel" layoutX="14.0" layoutY="634.0" prefHeight="17.0" prefWidth="368.0" text="** Zaznaczone pole nie może być puste wybierz poprawne dane." visible="false" />
-      <Label layoutX="12.0" layoutY="651.0" text="*** Rok musi być z przedziału od 1930 do dzisiejszej daty" />
-      <Label fx:id="wyjatekTrzyLabel" layoutX="12.0" layoutY="668.0" prefHeight="17.0" prefWidth="797.0" text="**** Rejestrację należy podać w jednym z czterech formatów: XX YYYY, XX YYYYY, XXX YYYY, XXX YYYYY." />
-      <Label layoutX="12.0" layoutY="682.0" text="X-dowolna litera, Y-dowolna liczba lub litera" />
+      <Label fx:id="wyjatekTrzyLabel" layoutX="14.0" layoutY="651.0" prefHeight="17.0" prefWidth="368.0" text="*** Rejestrację należy podać w formacie XXX XXXXX." />
 
       <Button layoutX="947.0" layoutY="557.0" mnemonicParsing="false" onAction="#dodajOnA" prefHeight="94.0" prefWidth="121.0" text="Dodaj" />
    </children>
