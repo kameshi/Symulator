@@ -1,4 +1,4 @@
-package Komunikacja;
+package komunikacja;
 
 import java.io.*;
 import java.net.Socket;

@@ -1,14 +1,14 @@
 package controllerFille;
 
 import dane.DaneAuta;
-import oknaDialogowe.OknaDialogowe;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
-import Komunikacja.*;
+import komunikacja.*;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.paint.Paint;
 
@@ -20,7 +20,7 @@ import java.util.function.UnaryOperator;
  */
 public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu DaneAuta
 
-    OknaDialogowe okno = new OknaDialogowe();
+    //OknaDialogowe okno = new OknaDialogowe();
 
     private DaneAuta daneAuta = new DaneAuta();
     private String[] dane = new String[rozmiar+1];
@@ -290,11 +290,11 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             //wysyła tutaj
             if(dane[6].equals("benzyna"))
             {
-                okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
+                //okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
             }
             else
             {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
+                //0okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
                 for(int i = 0 ; i < rozmiar ; i++)
                 {
                     textField[i].clear();

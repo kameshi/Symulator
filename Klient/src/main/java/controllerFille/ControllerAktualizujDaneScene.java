@@ -1,7 +1,6 @@
 package controllerFille;
 
 import dane.Historia;
-import oknaDialogowe.OknaDialogowe;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
@@ -17,7 +16,7 @@ import java.util.function.UnaryOperator;
  */
 public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu Historia oraz numer rejstracji typu String
 
-    OknaDialogowe okno = new OknaDialogowe();
+    //OknaDialogowe okno = new OknaDialogowe();
 
     private Historia historia = new Historia();
     private String[] dane = new String[2*rozmiar];
@@ -276,9 +275,9 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
             System.out.println(historia.toString());
             //wysyła tutaj
             if (false) {
-                okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
+                //okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
             } else {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
+                //okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
                 for (int i = 0; i < rozmiar; i++) {
                     textField[i].clear();
                     checkBox[i].setSelected(false);

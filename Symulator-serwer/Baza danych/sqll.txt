@@ -1,0 +1,44 @@
+LOAD DATA
+infile samochod.csv
+REPLACE
+INTO TABLE Samochod
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+  IdSamochod,
+  Marka,
+  Model,
+  Pojemnosc,
+  Moc,
+  RokProdukcji,
+  Paliwo
+)
+
+LOAD DATA
+infile rejestracja.csv
+REPLACE
+INTO TABLE Rejestracja
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+	IdRejestracja,
+    IdSamochod,
+    NumerRejestracji
+)
+
+LOAD DATA
+infile historia.csv
+REPLACE
+INTO TABLE Historia
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+	IdHistoria,
+    IdRejestracja ,
+    Przebieg ,
+    Spalanie ,
+	Przeglad,
+	WymianaOleju,
+	WymianaRozrzadu,
+    Data 
+)

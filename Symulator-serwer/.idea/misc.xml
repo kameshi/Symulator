@@ -4,9 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../Symulator-serwer/pom.xml" />
-        <option value="$PROJECT_DIR$/../Serwer/pom.xml" />
-        <option value="$PROJECT_DIR$/../Dane/pom.xml" />
       </list>
     </option>
   </component>
