@@ -20,4 +20,7 @@ public class BazaDanych {
     public String getRejestracja(int i) {
         return auto.get(i).getRejestracja();
     }
+    public String getIdRejestracja(int i) {
+        return auto.get(i).getIdRejestracja();
+    }
 }

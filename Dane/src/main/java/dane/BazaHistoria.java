@@ -16,4 +16,9 @@ public class BazaHistoria {
     public void add(Historia dane){
         historia.add(dane);
     }
+    public int getIdRej(int i){
+        String kon;
+        kon = historia.get(i).getIdRejestracja();
+        return Integer.valueOf(kon);
+    }
 }

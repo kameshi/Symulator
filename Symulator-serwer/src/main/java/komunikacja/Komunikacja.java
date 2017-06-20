@@ -1,99 +1,147 @@
 package komunikacja;
 
 import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.channels.SocketChannel;
 import java.sql.SQLException;
 
 import bazaDanych.ObslugaBazyDanych;
 import dane.*;
 
+
+
 public class Komunikacja implements Runnable{
-    ObjectInputStream czytelnik;
-    Socket gniazdo;
-    ObjectOutputStream pisarz;
+    BazaHistoria bazaHistoria = new BazaHistoria();
     BazaDanych baza = new BazaDanych();
     ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
+    private int Port;
+    private ServerSocket gniazdoSerwer;
+    private Socket gniazdoKlienta;
+    private ObjectOutputStream pisarz;
+    private ObjectInputStream czytelnik;
+    private String host;
 
-    public Komunikacja(Socket gniazdoKlienta) throws SQLException, ClassNotFoundException {
+    public Komunikacja(int port, String host) throws SQLException, ClassNotFoundException {
+        Port = port;
+        host = host;
         try{
-            gniazdo = gniazdoKlienta;
-            czytelnik = new ObjectInputStream(gniazdo.getInputStream());
-            pisarz = new ObjectOutputStream(gniazdo.getOutputStream());
-        }catch(Exception ex){
-            ex.printStackTrace();
+            gniazdoSerwer = new ServerSocket(Port);
+        }catch(IOException e) {
+            System.out.println(e);
         }
     }
+
     public void run() {
-        String semafor = null;
-        try{
-            semafor =(String) czytelnik.readObject();
+        System.out.println("Serwer startuje na hoscie " + host);
+        try {
+            try {
+                gniazdoKlienta = gniazdoSerwer.accept();
+            } catch (IOException e) {
+                System.out.println("Nie moz na polaczyc sie z klientem " + e);
+                System.exit(1);
+            }
+            pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
+            pisarz.flush();
+            czytelnik = new ObjectInputStream(gniazdoKlienta.getInputStream());
+            String semafor;
+            try{
+                semafor = (String) czytelnik.readObject();
+
                 if(semafor.equals("nowe")){
-                    noweAuto();
+                    //noweAuto();
                 }else if(semafor.equals("stare")){
                     stareAuto();
                 }else if(semafor.equals("historia")){
                     historia();
+                }else if(semafor.equals("usun")) {
+                    usun();
                 }
-        }catch(Exception ex){
-            ex.printStackTrace();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            pisarz.close();
+            czytelnik.close();
+            gniazdoKlienta.close();
+        }
+        catch (Exception e) {
+            System.out.println("Wyjatek serwera " + e);
         }
     }
     private void stareAuto() throws SQLException, ClassNotFoundException, IOException {
-        ListaPomocnicza list = new ListaPomocnicza();
-        //baza = obslugaBaza.odczyt();
-        for(int i = 0; i<baza.size(); i++) {
-            list.set(baza.getRejestracja(i));
-        }
-        //rozeslanie(list);
-        String komunikat;
-        Double kiloMetry;
-        int j = 0;
-        komunikat =(String) czytelnik.readObject();
-        kiloMetry =(Double) czytelnik.readObject();
-        DaneAuta auto = new DaneAuta();
-        for(int i = 0; i<baza.size(); i++) {
-            if (baza.getRejestracja(i) == komunikat) {
-                auto = baza.getObject(i);
-                j = i;
+        boolean kontrol = false;
+        String nrRejestracyjny;
+        Historia historia;
+        nrRejestracyjny = (String) czytelnik.readObject();
+        System.out.println(nrRejestracyjny);
+
+        historia = (Historia) czytelnik.readObject();
+
+        baza = obslugaBazy.odczytSamochodu();
+        for(int i = 0; i <baza.size(); i++) {
+            if (nrRejestracyjny.equals(baza.getRejestracja(i))) {
+                historia.setIdRejestracja(baza.getIdRejestracja(i));
+                kontrol = true;
+                System.out.println(baza.getRejestracja(i));
+                break;
             }
         }
-        //Obliczania wynik = new Obliczenie(auto);
-        //rozeslanie(wynik.dzialanie(kiloMetry));
-        //baza.setPrzejechaneKM(auto.getPrzejechaneKM(), j);
-        //obslugaBaza.zapis(baza);
+        if(kontrol) {
+            bazaHistoria = obslugaBazy.odczytHistori();
+            Integer max = 1;
+            for (int i = 0; i < bazaHistoria.size(); i++) {
+                if (max < bazaHistoria.getIdRej(i)) {
+                    max = bazaHistoria.getIdRej(i);
+                    System.out.println(max);
+
+                }
+            }
+            historia.setIdHistoria(max.toString());
+            obslugaBazy.zapisHistoria(historia);
+        }
+        System.out.println(historia.toString());
+        rozeslanie(kontrol);
     }
     private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
-        DaneAuta auto; //= new DaneAuta();
+        DaneAuta auto;
         auto =(DaneAuta) czytelnik.readObject();
         Boolean kontrol = true;
-        //baza = obslugaBaza.odczyt();;
+        baza = obslugaBazy.odczytSamochodu();
         for(int i = 0; i<baza.size(); i++) {
             if (baza.getObject(i).equals(auto)) {
                 kontrol = false;
             }
         }
         if(kontrol){
-            //baza.add(auto);
-            //obslugaBaza.zapis(baza);
+            obslugaBazy.zapisSamochodu(auto);
         }
+        rozeslanie(kontrol);
     }
-    private void historia(){
-        //baza = obslugaBaza.odczyt();;
-        //rozeslanie(baza)
+    private void historia() throws SQLException {
+        boolean kontrol = true;
+        if(bazaHistoria.size() < 0){
+            kontrol = false;
+        }else {
+            bazaHistoria = obslugaBazy.odczytHistori();
+            rozeslanie(bazaHistoria);
+        }
+        rozeslanie(kontrol);
     }
-    private void rozeslanie(Double liczba){
-            try{
-                pisarz.writeObject(liczba);
-            }catch(Exception ex){ex.printStackTrace();}
+    private void usun() throws IOException, ClassNotFoundException {
+        pisarz.writeObject("usun");
+        String g = (String) czytelnik.readObject();
+        System.out.println(g);
+        g = (String) czytelnik.readObject();
+        System.out.println(g);
     }
-    private void rozeslanie(BazaDanych baza){
+    private void rozeslanie(BazaHistoria baza){
             try{
                 pisarz.writeObject(baza);
             }catch(Exception ex){ex.printStackTrace();}
     }
-    private void rozeslanie(ListaPomocnicza list){
-            try{
-                pisarz.writeObject(list);
-            }catch(Exception ex){ex.printStackTrace();}
+    private void rozeslanie(boolean zmienna){
+        try{
+            pisarz.writeObject(zmienna);
+        }catch(Exception ex){ex.printStackTrace();}
     }
 }

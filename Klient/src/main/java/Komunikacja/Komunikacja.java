@@ -1,53 +1,64 @@
-package komunikacja;
+package Komunikacja;
 
-import java.util.Scanner;
+import dane.BazaHistoria;
+import dane.DaneAuta;
+import dane.Historia;
 
-public class Komunikacja {
-	
-	private String wiadomosc;
-	
-	private Wysylanie wysylanie = new Wysylanie();
-//	/*Przyk�ad dzia�ania
-	public static void main(String[] args){
-		Scanner scannerI = new Scanner(System.in);
-		Scanner scannerS = new Scanner(System.in);
-		Komunikacja k = new Komunikacja();	
-		boolean n = true;
-		do{
-			System.out.println("Podaj co robic \n1.nowe auto\n2.stare auto\n3.koniec");
-			int kon;
-			kon = scannerI.nextInt(); 
-			if(kon == 1){
-				String marka, model, km, paliwo, silnik;
-				System.out.println("Marka: ");
-				marka = scannerS.nextLine();
-				System.out.println("Modle: ");
-				model = scannerS.nextLine();
-				System.out.println("KM: ");
-				km = scannerS.nextLine();
-				System.out.println("Paliwo: ");
-				paliwo = scannerS.nextLine();
-				System.out.println("Silnik: ");
-				silnik = scannerS.nextLine();
-				k.wyslij(marka, model, km, paliwo, silnik);
-				System.out.println("Srednie spalanie na " + km + " Km " + " wynosi: " + k.odebrane());
-			}else if(kon == 2){
-				
-			}else if(kon == 0){
-				n = false;
-			}
-		}while(n);
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+public class Komunikacja{
+	private int port;
+	private Socket gniazdoKlienta;
+	private ObjectOutputStream pisarz;
+	private ObjectInputStream czytelnik;
+	private String host;
+	public Komunikacja(String host, int port) throws IOException {
+		host = host;
+		port = port;
+		gniazdoKlienta = new Socket("127.0.0.1", 6000);
+		pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
+		czytelnik = new ObjectInputStream(gniazdoKlienta.getInputStream());
 	}
-//	*/
-	public void komunikacja(){}
-	public void komunikacja(int port , String IP){
-		wysylanie.setPort(port);
-		wysylanie.setIP(IP);
+	public void wyslij(String semafor) {
+		try {
+			pisarz.flush();
+			pisarz.writeObject(semafor);
+		} catch(Exception e) {
+			System.out.println("Wyjatek klienta " + e);    }
 	}
-	public void wyslij(String marka , String model , String km , String paliwo , String silnik){
-		this.wiadomosc = wysylanie.dzialanie(marka, model, km, paliwo, silnik);
+	public void wyslij(DaneAuta auto) {
+		try {
+			pisarz.flush();
+			pisarz.writeObject(auto);
+		} catch(Exception e) {
+			System.out.println("Wyjatek klienta " + e);    }
 	}
-	public String odebrane(){
-		return wiadomosc;
+	public void wyslij(Historia historia) {
+		try {
+			pisarz.flush();
+			pisarz.writeObject(historia);
+		} catch(Exception e) {
+			System.out.println("Wyjatek klienta " + e);    }
+	}
+	public BazaHistoria odbierz() {
+		BazaHistoria baza = null;
+		try {
+			baza = (BazaHistoria) czytelnik.readObject();
+		} catch(Exception e) {
+			System.out.println("Wyjatek klienta " + e);
+		}
+		return baza;
+	}
+	public boolean odbierzKontrol() {
+		boolean kontrol = false;
+		try {
+			kontrol = (boolean) czytelnik.readObject();
+		} catch(Exception e) {
+			System.out.println("Wyjatek klienta " + e);
+		}
+		return kontrol;
 	}
 }

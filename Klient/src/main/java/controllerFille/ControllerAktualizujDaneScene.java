@@ -1,10 +1,12 @@
 package controllerFille;
 
+import Komunikacja.Komunikacja;
 import dane.Historia;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
 import java.util.Calendar;
@@ -218,7 +220,7 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
     }
 
     @FXML
-    void dodajOnA() {
+    void dodajOnA() throws IOException, ClassNotFoundException {
         maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
@@ -242,12 +244,12 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
         {
             label[0].setTextFill(Paint.valueOf("RED"));
             maloTekstu = true;
-            System.out.println("red");
+            //System.out.println("red");
         }
         else
         {
             label[0].setTextFill(Paint.valueOf("BLACK"));
-            System.out.println("black");
+           // System.out.println("black");
         }
 
         if (!maloTekstu) {
@@ -273,16 +275,20 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
             }
             historia.dodaj(dane[1], dane[2], dane[3], dane[4], dane[5], data);
             System.out.println(historia.toString());
-            //wysyła tutaj
-            if (false) {
+            Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+            kom.wyslij("stare");
+            kom.wyslij(dane[0]);
+            kom.wyslij(historia);
+            kom.odbierzKontrol();
+           // if (false) {
                 //okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-            } else {
+           // } else {
                 //okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
                 for (int i = 0; i < rozmiar; i++) {
                     textField[i].clear();
                     checkBox[i].setSelected(false);
                 }
-            }
+           // }
         }
     }
 

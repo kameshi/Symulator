@@ -66,6 +66,7 @@ public class ControllerHistoriaScene {
     @FXML
     public void initialize()
     {
+
         Wiersz nowy = new Wiersz("fds","sdfs","fsdf", "fsd", "gdfg", "gdfg", "gdfg", "gfd", "dfgdf","fds","fgd","egr","gdfg");
         dane = FXCollections.<Wiersz> observableArrayList(nowy);
         historiaTable.setItems(dane);

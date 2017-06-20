@@ -1,5 +1,6 @@
 package controllerFille;
 
+import Komunikacja.Komunikacja;
 import dane.DaneAuta;
 
 import javafx.collections.FXCollections;
@@ -8,10 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
-import komunikacja.*;
+import Komunikacja.*;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.paint.Paint;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.function.UnaryOperator;
 
@@ -25,7 +27,6 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     private DaneAuta daneAuta = new DaneAuta();
     private String[] dane = new String[rozmiar+1];
 
-    Wysylanie wysylanie = new Wysylanie();
     private boolean maloTekstu = false;
 
     @FXML
@@ -224,8 +225,7 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     }
 
     @FXML
-    private void dodajOnA()
-    {
+    private void dodajOnA() throws IOException {
         maloTekstu = false;
 
         for(int i = 0 ; i < rozmiar ; i++)
@@ -287,7 +287,8 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             wyjatekLabel.setVisible(false);
             daneAuta.dodaj(dane[0],dane[1],dane[2],dane[3],dane[4],dane[6],dane[5]);
             System.out.println(daneAuta.toString());
-            //wysyła tutaj
+            //Komunikacja kom = new Komunikacja();
+            ///kom.wyslij(daneAuta);
             if(dane[6].equals("benzyna"))
             {
                 //okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
