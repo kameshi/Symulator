@@ -49,7 +49,7 @@ public class Komunikacja implements Runnable{
                 semafor = (String) czytelnik.readObject();
 
                 if(semafor.equals("nowe")){
-                    //noweAuto();
+                    noweAuto();
                 }else if(semafor.equals("stare")){
                     stareAuto();
                 }else if(semafor.equals("historia")){
@@ -73,48 +73,48 @@ public class Komunikacja implements Runnable{
         String nrRejestracyjny;
         Historia historia;
         nrRejestracyjny = (String) czytelnik.readObject();
-        System.out.println(nrRejestracyjny);
-
         historia = (Historia) czytelnik.readObject();
-
         baza = obslugaBazy.odczytSamochodu();
-        for(int i = 0; i <baza.size(); i++) {
+        System.out.println(baza.getRejestracja(1));
+        for(int i = 0; i < baza.size(); i++) {
             if (nrRejestracyjny.equals(baza.getRejestracja(i))) {
                 historia.setIdRejestracja(baza.getIdRejestracja(i));
                 kontrol = true;
-                System.out.println(baza.getRejestracja(i));
                 break;
             }
         }
         if(kontrol) {
             bazaHistoria = obslugaBazy.odczytHistori();
-            Integer max = 1;
-            for (int i = 0; i < bazaHistoria.size(); i++) {
-                if (max < bazaHistoria.getIdRej(i)) {
-                    max = bazaHistoria.getIdRej(i);
-                    System.out.println(max);
-
-                }
-            }
+            Integer max = bazaHistoria.size()+1;
             historia.setIdHistoria(max.toString());
             obslugaBazy.zapisHistoria(historia);
         }
-        System.out.println(historia.toString());
         rozeslanie(kontrol);
     }
     private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
+        System.out.println("nowe");
         DaneAuta auto;
         auto =(DaneAuta) czytelnik.readObject();
         Boolean kontrol = true;
         baza = obslugaBazy.odczytSamochodu();
-        for(int i = 0; i<baza.size(); i++) {
-            if (baza.getObject(i).equals(auto)) {
-                kontrol = false;
+        Integer max = 1;
+        System.out.println("2");
+        for(int i=0; i <baza.size(); i++){
+            if(max < Integer.valueOf(baza.getIdRejestracja(i))){
+                max = Integer.valueOf(baza.getIdRejestracja(i));
             }
         }
+        System.out.println(max);
+        if (obslugaBazy.szukajAuta(auto , baza)) {
+            auto.setIdRejestracja(max.toString());
+            obslugaBazy.zapisSamochodu(auto);
+            kontrol = false;
+        }
         if(kontrol){
+            auto.setIdRejestracja(max.toString());
             obslugaBazy.zapisSamochodu(auto);
         }
+        System.out.println(auto.toString());
         rozeslanie(kontrol);
     }
     private void historia() throws SQLException {

@@ -1,9 +1,11 @@
 package dane;
 
+import java.io.Serializable;
+
 /**
  * Created by Marek on 15.06.2017.
  */
-public class Wiersz {
+public class Wiersz implements Serializable {
     private String rejestracja, marka, model, pojemnosc, moc, rok, paliwo, przebieg, spalanie, przeglad, wymianaOleju, wymianaRozrzadu, data;
 
     public Wiersz(String rejestracja, String marka, String model, String pojemnosc, String moc, String rok, String paliwo, String przebieg, String spalanie, String przeglad, String wymianaOleju, String wymianaRozrzadu, String data) {

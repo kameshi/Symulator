@@ -80,6 +80,21 @@ public class ObslugaBazyDanych {
         String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji;
         stmtHistoria.executeUpdate(historia);
     }
+    public boolean szukajAuta(DaneAuta autoSzukane, BazaDanych baza) {
+       String rej = autoSzukane.getRejestracja();
+       autoSzukane.setRejestracja(null);
+        for(int i = 0; i < baza.size(); i++){
+            if(baza.getNieObject(i).equals(autoSzukane)){
+                autoSzukane.setRejestracja(rej);
+                autoSzukane.setIdSamochod(baza.getIdSamochodu(i));
+                return true;
+            }
+        }
+        Integer kon = baza.size()+1;
+        autoSzukane.setIdSamochod(kon.toString());
+        autoSzukane.setRejestracja(rej);
+        return false;
+    }
 
 
 }

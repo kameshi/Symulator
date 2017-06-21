@@ -1,11 +1,12 @@
 package dane;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Marek on 12.06.2017.
  */
-public class BazaHistoria {
+public class BazaHistoria implements Serializable {
     private ArrayList<Historia> historia = new ArrayList<Historia>();
     public int size(){
         return historia.size();
@@ -16,9 +17,9 @@ public class BazaHistoria {
     public void add(Historia dane){
         historia.add(dane);
     }
-    public int getIdRej(int i){
+    public int getIdHistoria(int i){
         String kon;
-        kon = historia.get(i).getIdRejestracja();
+        kon = historia.get(i).getIdHistoria();
         return Integer.valueOf(kon);
     }
 }

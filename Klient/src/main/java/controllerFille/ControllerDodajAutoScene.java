@@ -287,21 +287,22 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             wyjatekLabel.setVisible(false);
             daneAuta.dodaj(dane[0],dane[1],dane[2],dane[3],dane[4],dane[6],dane[5]);
             System.out.println(daneAuta.toString());
-            //Komunikacja kom = new Komunikacja();
-            ///kom.wyslij(daneAuta);
-            if(dane[6].equals("benzyna"))
+            Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+            kom.wyslij("nowe");
+            kom.wyslij(daneAuta);
+          /*  if(!kom.odbierzKontrol())
             {
-                //okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
+                okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
             }
             else
             {
-                //0okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
+                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
                 for(int i = 0 ; i < rozmiar ; i++)
                 {
                     textField[i].clear();
                 }
                 rodzajPaliwaComboBox.setValue("Wybierz");
-            }
+            }*/
         }
     }
 
