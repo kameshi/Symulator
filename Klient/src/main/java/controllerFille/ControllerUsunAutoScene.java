@@ -1,5 +1,6 @@
 package controllerFille;
 
+import komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -196,6 +197,12 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
         if (!maloTekstu) {
             wyjatekLabel.setVisible(false);
             //wysyła tutaj
+            Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+            kom.wyslij("usun");
+            for(int i = 0;i < 3; i++){
+                kom.wyslij(dane[i]);
+            }
+            kom.odbierzKontrol();
             if (false) {
                 okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
             } else {

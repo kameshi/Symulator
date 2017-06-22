@@ -157,8 +157,13 @@ public class ObslugaBazyDanych {
                 return true;
             }
         }
-        Integer kon = baza.size()+1;
-        autoSzukane.setIdSamochod(kon.toString());
+        Integer max = 1;
+        for (int i = 0; i < baza.size(); i++) {
+            if (max <= Integer.valueOf(baza.getIdSamochodu(i))) {
+                max = Integer.valueOf(baza.getIdSamochodu(i)) + 2;
+            }
+        }
+        autoSzukane.setIdSamochod(max.toString());
         autoSzukane.setRejestracja(rej);
         return false;
     }

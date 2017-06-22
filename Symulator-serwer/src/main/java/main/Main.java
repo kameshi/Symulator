@@ -21,6 +21,8 @@ public class Main {
 
     private ServerSocket gniazdoServer;
     private int Port = 6000;
+    private ServerSocket gniazdoSerwer;
+    private Socket gniazdoKlienta;
 
     public static void main(String[] args){
         logger.info("Włączenie serwera");
@@ -40,26 +42,21 @@ public class Main {
         } catch (UnknownHostException e) {
             logger.error("Brak sterownika",e);
         }
-        int Port = 6000;
-       
-            Komunikacja s2 = new Komunikacja(Port, host);
+
+        try {
+            gniazdoSerwer = new ServerSocket(Port);
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        }
+        while(true) {
+            try {
+                gniazdoKlienta = gniazdoSerwer.accept();
+            } catch (IOException e) {
+                logger.error("Brak sterownika",e);
+            }
+            Komunikacja s2 = new Komunikacja(Port, "localhost", gniazdoKlienta);
             Thread t = new Thread(s2);
             t.start();
-
-
-       /* try {
-            gniazdoServer = new ServerSocket(Port);
-            System.out.println("Server w��czony.");
-
-            while (true) {
-
-                Komunikacja k = new Komunikacja(gniazdoServer);
-                Thread t = new Thread(k);
-                t.start();
-                System.out.println("Po��czenie uzyskane z klientem.");
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
+        }
     }
 }
