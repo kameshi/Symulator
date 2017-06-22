@@ -17,7 +17,7 @@ public class BazaDanych implements Serializable {
     }
     public DaneAuta getNieObject(int i){
         DaneAuta dane = new DaneAuta();
-        dane.dodaj(auto.get(i).getMarka(), auto.get(i).getModel(), auto.get(i).getPojemnosc(), auto.get(i).getMoc(), auto.get(i).getRok(), auto.get(i).getPaliwo(), null);
+        dane.dodaj(null,null, auto.get(i).getMarka(), auto.get(i).getModel(), auto.get(i).getPojemnosc(), auto.get(i).getMoc(), auto.get(i).getRok(), auto.get(i).getPaliwo(), null);
         return dane;
     }
     public void add(DaneAuta dane){

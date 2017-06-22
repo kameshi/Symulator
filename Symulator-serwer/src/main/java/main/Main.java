@@ -17,6 +17,8 @@ import java.sql.SQLException;
 public class Main {
     private ServerSocket gniazdoServer;
     private int Port = 6000;
+    private ServerSocket gniazdoSerwer;
+    private Socket gniazdoKlienta;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
         Main server = new Main();
@@ -30,26 +32,13 @@ public class Main {
 
     public void dzialanie() throws ClassNotFoundException, IOException, SQLException {
         String host = InetAddress.getLocalHost().getHostName();
-        int Port = 6000;
-       
-            Komunikacja s2 = new Komunikacja(Port, host);
+        gniazdoSerwer = new ServerSocket(Port);
+        while(true) {
+            gniazdoKlienta = gniazdoSerwer.accept();
+            Komunikacja s2 = new Komunikacja(Port, "localhost", gniazdoKlienta);
+
             Thread t = new Thread(s2);
             t.start();
-
-
-       /* try {
-            gniazdoServer = new ServerSocket(Port);
-            System.out.println("Server w��czony.");
-
-            while (true) {
-
-                Komunikacja k = new Komunikacja(gniazdoServer);
-                Thread t = new Thread(k);
-                t.start();
-                System.out.println("Po��czenie uzyskane z klientem.");
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
+        }
     }
 }

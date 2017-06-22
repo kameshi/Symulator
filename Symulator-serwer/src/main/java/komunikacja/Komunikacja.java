@@ -16,31 +16,20 @@ public class Komunikacja implements Runnable{
     BazaDanych baza = new BazaDanych();
     ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
     private int Port;
-    private ServerSocket gniazdoSerwer;
     private Socket gniazdoKlienta;
     private ObjectOutputStream pisarz;
     private ObjectInputStream czytelnik;
     private String host;
 
-    public Komunikacja(int port, String host) throws SQLException, ClassNotFoundException {
+    public Komunikacja(int port, String host, Socket gniazdoKlienta) throws SQLException, ClassNotFoundException {
         Port = port;
         host = host;
-        try{
-            gniazdoSerwer = new ServerSocket(Port);
-        }catch(IOException e) {
-            System.out.println(e);
-        }
+        this.gniazdoKlienta = gniazdoKlienta;
     }
 
     public void run() {
         System.out.println("Serwer startuje na hoscie " + host);
         try {
-            try {
-                gniazdoKlienta = gniazdoSerwer.accept();
-            } catch (IOException e) {
-                System.out.println("Nie moz na polaczyc sie z klientem " + e);
-                System.exit(1);
-            }
             pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
             pisarz.flush();
             czytelnik = new ObjectInputStream(gniazdoKlienta.getInputStream());
@@ -75,7 +64,6 @@ public class Komunikacja implements Runnable{
         nrRejestracyjny = (String) czytelnik.readObject();
         historia = (Historia) czytelnik.readObject();
         baza = obslugaBazy.odczytSamochodu();
-        System.out.println(baza.getRejestracja(1));
         for(int i = 0; i < baza.size(); i++) {
             if (nrRejestracyjny.equals(baza.getRejestracja(i))) {
                 historia.setIdRejestracja(baza.getIdRejestracja(i));
@@ -92,29 +80,21 @@ public class Komunikacja implements Runnable{
         rozeslanie(kontrol);
     }
     private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
-        System.out.println("nowe");
         DaneAuta auto;
         auto =(DaneAuta) czytelnik.readObject();
         Boolean kontrol = true;
         baza = obslugaBazy.odczytSamochodu();
-        Integer max = 1;
-        System.out.println("2");
-        for(int i=0; i <baza.size(); i++){
-            if(max < Integer.valueOf(baza.getIdRejestracja(i))){
-                max = Integer.valueOf(baza.getIdRejestracja(i));
-            }
-        }
-        System.out.println(max);
+        Integer max = baza.size() + 4;
         if (obslugaBazy.szukajAuta(auto , baza)) {
             auto.setIdRejestracja(max.toString());
-            obslugaBazy.zapisSamochodu(auto);
+            obslugaBazy.zapisRejestracji(auto);
             kontrol = false;
         }
         if(kontrol){
             auto.setIdRejestracja(max.toString());
             obslugaBazy.zapisSamochodu(auto);
+            obslugaBazy.zapisRejestracji(auto);
         }
-        System.out.println(auto.toString());
         rozeslanie(kontrol);
     }
     private void historia() throws SQLException {
@@ -128,11 +108,12 @@ public class Komunikacja implements Runnable{
         rozeslanie(kontrol);
     }
     private void usun() throws IOException, ClassNotFoundException {
-        pisarz.writeObject("usun");
-        String g = (String) czytelnik.readObject();
-        System.out.println(g);
-        g = (String) czytelnik.readObject();
-        System.out.println(g);
+        String[] dane = new String[3];
+        for(int i = 0; i < 3; i++){
+            dane[i] = (String) czytelnik.readObject();
+            System.out.println(dane[i]);
+        }
+
     }
     private void rozeslanie(BazaHistoria baza){
             try{

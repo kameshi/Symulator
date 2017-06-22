@@ -1,10 +1,13 @@
 package controllerFille;
 
+import Komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+
+import java.io.IOException;
 
 
 /**
@@ -167,7 +170,7 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
     }
 
     @FXML
-    void usunOnA(ActionEvent event) {
+    void usunOnA(ActionEvent event) throws IOException {
         maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
@@ -195,7 +198,12 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
 
         if (!maloTekstu) {
             wyjatekLabel.setVisible(false);
-            //wysyła tutaj
+            Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+            kom.wyslij("usun");
+            for(int i = 0;i < 3; i++){
+                kom.wyslij(dane[i]);
+            }
+            kom.odbierzKontrol();
             if (false) {
                 okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
             } else {
