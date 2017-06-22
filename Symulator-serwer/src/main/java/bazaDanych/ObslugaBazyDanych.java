@@ -1,11 +1,13 @@
 package bazaDanych;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import dane.*;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 
 public class ObslugaBazyDanych {
+
+    private final static Logger logger = Logger.getLogger(ObslugaBazyDanych.class);
 
     String driver = "oracle.jdbc.driver.OracleDriver";
     String url = "jdbc:oracle:thin:projektjava@//localhost:1521/xe";
@@ -21,27 +23,27 @@ public class ObslugaBazyDanych {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            logger.error("Brak sterownika",e);
         }
         try {
             conection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Błędne dane logowania",e);
         }
         try {
             stmtRejestracja = conection.createStatement();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można nawiązać połączenia",e);
         }
         try {
             stmtSamochod = conection.createStatement();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można nawiązać połączenia",e);
         }
         try {
             stmtHistoria = conection.createStatement();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można nawiązać połączenia",e);
         }
     }
 
@@ -53,20 +55,20 @@ public class ObslugaBazyDanych {
         try {
             rejestracja = stmtRejestracja.executeQuery("SELECT * FROM Rejestracja ORDER BY IdRejestracja");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania do bazy",e);
         }
         try {
             while (rejestracja.next()) {
                 try {
                     samochod = stmtSamochod.executeQuery("SELECT * FROM Samochod WHERE IdSamochod = " + rejestracja.getString(2));
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    logger.error("Nie można wykonać podanego zapytania do bazy",e);
                 }
                 samochod.next();
                 baza.add(new DaneAuta(rejestracja.getString(1), samochod.getString(1), samochod.getString(2),samochod.getString(3),samochod.getString(4),samochod.getString(5),samochod.getString(6), samochod.getString(7), rejestracja.getString(3)));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można pobrać danych z bazy",e);
         }
         return baza;
     }
@@ -78,7 +80,7 @@ public class ObslugaBazyDanych {
         try {
             historia = stmtHistoria.executeQuery("SELECT * FROM Historia");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania do bazy",e);
         }
         try {
             while (historia.next())
@@ -86,7 +88,7 @@ public class ObslugaBazyDanych {
                 baza.add(new Historia(historia.getString(1), historia.getString(2),historia.getString(3),historia.getString(4),historia.getString(5),historia.getString(6),historia.getString(6),historia.getString(8)));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można pobrać danych z bazy",e);
         }
         return baza;
     }
@@ -98,7 +100,7 @@ public class ObslugaBazyDanych {
         try {
             stmtSamochod.executeUpdate(samochod);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania na bazie",e);
         }
     }
 
@@ -109,7 +111,7 @@ public class ObslugaBazyDanych {
         try {
             stmtRejestracja.executeUpdate(rejestracja);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania na bazie",e);
         }
     }
 
@@ -120,7 +122,7 @@ public class ObslugaBazyDanych {
         try {
             stmtHistoria.executeUpdate(historia);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania na bazie",e);
         }
     }
 
@@ -130,7 +132,7 @@ public class ObslugaBazyDanych {
         try {
             stmtRejestracja.executeUpdate(rejestracja);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania na bazie",e);
         }
     }
 
@@ -140,7 +142,7 @@ public class ObslugaBazyDanych {
         try {
             stmtHistoria.executeUpdate(historia);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Nie można wykonać podanego zapytania na bazie",e);
         }
     }
 

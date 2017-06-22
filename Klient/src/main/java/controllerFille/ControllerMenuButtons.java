@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -13,19 +14,21 @@ import java.io.IOException;
 public class ControllerMenuButtons
 {
 
+    private final static Logger logger = Logger.getLogger(ControllerMenuButtons.class);
+
     private int scene = 0;
     private ControllerGlownaScene controllerGlownaScene;
 
     @FXML
-    public void wybierzSamochodOnA( )
+    public void aktualizujDaneOnA( )
     {
         if(scene != 1) {
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/AktualizujDaneScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/aktualizujDaneScene.fxml"));
             Pane pane = null;
             try {
                 pane = loader.load();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("NIe można załadować strony aktualizuj dane.",e);
             }
             controllerGlownaScene.setCenter(pane);
             scene = 1;
@@ -41,7 +44,7 @@ public class ControllerMenuButtons
             try {
                 pane = loader.load();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("NIe można załadować strony dodaj auto.",e);
             }
             controllerGlownaScene.setCenter(pane);
             scene = 2;
@@ -58,7 +61,7 @@ public class ControllerMenuButtons
             try {
                 pane = loader.load();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("NIe można załadować strony usuń auto.",e);
             }
             controllerGlownaScene.setCenter(pane);
             scene = 3;
@@ -75,7 +78,7 @@ public class ControllerMenuButtons
             try {
                 pane = loader.load();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("NIe można załadować strony historia.",e);
             }
             controllerGlownaScene.setCenter(pane);
             scene = 4;
@@ -92,7 +95,7 @@ public class ControllerMenuButtons
             try {
                 pane = loader.load();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("NIe można załadować strony pomoc.",e);
             }
             controllerGlownaScene.setCenter(pane);
             scene = 5;

@@ -5,6 +5,7 @@ package main;
 import bazaDanych.ObslugaBazyDanych;
 import dane.BazaDanych;
 import komunikacja.Komunikacja;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,10 +16,14 @@ import java.nio.channels.SocketChannel;
 import java.sql.SQLException;
 
 public class Main {
+
+    private final static Logger logger = Logger.getLogger(Main.class);
+
     private ServerSocket gniazdoServer;
     private int Port = 6000;
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
+    public static void main(String[] args){
+        logger.info("Włączenie serwera");
         Main server = new Main();
         server.dzialanie();
     }
@@ -28,8 +33,13 @@ public class Main {
         this.Port = port;
     }
 
-    public void dzialanie() throws ClassNotFoundException, IOException, SQLException {
-        String host = InetAddress.getLocalHost().getHostName();
+    public void dzialanie(){
+        String host = null;
+        try {
+            host = InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            logger.error("Brak sterownika",e);
+        }
         int Port = 6000;
        
             Komunikacja s2 = new Komunikacja(Port, host);

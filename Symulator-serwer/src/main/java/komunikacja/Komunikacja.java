@@ -3,15 +3,16 @@ package komunikacja;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.channels.SocketChannel;
-import java.sql.SQLException;
 
 import bazaDanych.ObslugaBazyDanych;
 import dane.*;
-
+import org.apache.log4j.Logger;
 
 
 public class Komunikacja implements Runnable{
+
+    private final static Logger logger = Logger.getLogger(Komunikacja.class);
+    
     BazaHistoria bazaHistoria = new BazaHistoria();
     BazaDanych baza = new BazaDanych();
     ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
@@ -22,13 +23,13 @@ public class Komunikacja implements Runnable{
     private ObjectInputStream czytelnik;
     private String host;
 
-    public Komunikacja(int port, String host) throws SQLException, ClassNotFoundException {
+    public Komunikacja(int port, String host){
         Port = port;
         host = host;
         try{
             gniazdoSerwer = new ServerSocket(Port);
         }catch(IOException e) {
-            System.out.println(e);
+            logger.error("Nie moz na polaczyc sie z klientem",e);
         }
     }
 
@@ -38,7 +39,7 @@ public class Komunikacja implements Runnable{
             try {
                 gniazdoKlienta = gniazdoSerwer.accept();
             } catch (IOException e) {
-                System.out.println("Nie moz na polaczyc sie z klientem " + e);
+                logger.error("Nie moz na polaczyc sie z klientem",e);
                 System.exit(1);
             }
             pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
@@ -58,22 +59,34 @@ public class Komunikacja implements Runnable{
                     usun();
                 }
             }catch(Exception ex){
-                ex.printStackTrace();
+                logger.error("Wyjatek serwera",ex);
             }
             pisarz.close();
             czytelnik.close();
             gniazdoKlienta.close();
         }
         catch (Exception e) {
-            System.out.println("Wyjatek serwera " + e);
+            logger.error("Wyjatek serwera",e);
         }
     }
-    private void stareAuto() throws SQLException, ClassNotFoundException, IOException {
+    private void stareAuto(){
         boolean kontrol = false;
-        String nrRejestracyjny;
-        Historia historia;
-        nrRejestracyjny = (String) czytelnik.readObject();
-        historia = (Historia) czytelnik.readObject();
+        String nrRejestracyjny = null;
+        Historia historia = null;
+        try {
+            nrRejestracyjny = (String) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
+        try {
+            historia = (Historia) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
         baza = obslugaBazy.odczytSamochodu();
         System.out.println(baza.getRejestracja(1));
         for(int i = 0; i < baza.size(); i++) {
@@ -91,10 +104,16 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
-    private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
+    private void noweAuto(){
         System.out.println("nowe");
-        DaneAuta auto;
-        auto =(DaneAuta) czytelnik.readObject();
+        DaneAuta auto = null;
+        try {
+            auto =(DaneAuta) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
         Boolean kontrol = true;
         baza = obslugaBazy.odczytSamochodu();
         Integer max = 1;
@@ -117,7 +136,7 @@ public class Komunikacja implements Runnable{
         System.out.println(auto.toString());
         rozeslanie(kontrol);
     }
-    private void historia() throws SQLException {
+    private void historia(){
         boolean kontrol = true;
         if(bazaHistoria.size() < 0){
             kontrol = false;
@@ -127,11 +146,28 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
-    private void usun() throws IOException, ClassNotFoundException {
-        pisarz.writeObject("usun");
-        String g = (String) czytelnik.readObject();
+    private void usun(){
+        try {
+            pisarz.writeObject("usun");
+        } catch (IOException e) {
+            logger.error("Nie moz na polaczyc sie z klientem",e);
+        }
+        String g = null;
+        try {
+            g = (String) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Nie moz na polaczyc sie z klientem",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Nie moz na polaczyc sie z klientem",e);
+        }
         System.out.println(g);
-        g = (String) czytelnik.readObject();
+        try {
+            g = (String) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Nie moz na polaczyc sie z klientem",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Nie moz na polaczyc sie z klientem",e);
+        }
         System.out.println(g);
     }
     private void rozeslanie(BazaHistoria baza){

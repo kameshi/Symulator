@@ -1,0 +1,19 @@
+Main:19 DEBUG - Sorry, something wrong! 2017-06-22 14:34:45 
+ Main:21 DEBUG - This is debug :  2017-06-22 14:34:45 
+ Main:25 INFO  - This is info :  2017-06-22 14:34:45 
+ Main:27 WARN  - This is warn :  2017-06-22 14:34:45 
+ Main:28 ERROR - This is error :  2017-06-22 14:34:45 
+ Main:29 FATAL - This is fatal :  2017-06-22 14:34:45 
+ Main:21 DEBUG - This is debug :  2017-06-22 14:48:19 
+ Main:25 INFO  - This is info :  2017-06-22 14:48:19 
+ Main:27 WARN  - This is warn :  2017-06-22 14:48:19 
+ Main:28 ERROR - This is error :  2017-06-22 14:48:19 
+ Main:29 FATAL - This is fatal :  2017-06-22 14:48:19 
+ Main:21 DEBUG - This is debug :  2017-06-22 16:27:07 
+ Main:25 INFO  - This is info :  2017-06-22 16:27:07 
+ Main:27 WARN  - This is warn :  2017-06-22 16:27:07 
+ Main:28 ERROR - This is error :  2017-06-22 16:27:07 
+ Main:29 FATAL - This is fatal :  2017-06-22 16:27:07 
+ Main:17 INFO  - Uruchomiono program. 2017-06-22 16:51:32 
+ Main:26 INFO  - Włączenie serwera 2017-06-22 16:51:56 
+ 
