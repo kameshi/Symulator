@@ -17,4 +17,7 @@ public class BazaWiersz implements Serializable{
     public void add(Wiersz dane){
         wiersz.add(dane);
     }
+    public String toString(int i){
+        return "Wiersz : " + wiersz.get(i).toString();
+    }
 }

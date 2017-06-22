@@ -63,4 +63,9 @@ public class Wiersz implements Serializable {
     public String getData() {
         return data;
     }
+    public String toString(){
+        return rejestracja +" "+ marka +" "+ model +" "+ pojemnosc +" "+ moc +" "
+                + rok +" "+ paliwo +" "+ przebieg +" "+ spalanie +" "+ przeglad +" "
+                + wymianaOleju +" "+ wymianaRozrzadu +" "+ data;
+    }
 }

@@ -117,7 +117,7 @@ public class ObslugaBazyDanych {
 
     public void zapisHistoria(Historia dane)
     {
-        String historia = "INSERT INTO Historia VALUES('" + dane.getIdHistoria() + "','" + dane.getIdRejestracja() + "','" + dane.getPrzebieg() + "','" + dane.getSpalenie() + "','" + dane.getPrzeglad() + "','" + dane.getWymianaOleju() + "','" + dane.getWymianaRozrzadu() + "','" + dane.getData() + "')";
+        String historia = "INSERT INTO Historia VALUES('" + dane.getIdHistoria() + "','" + dane.getIdRejestracja() + "','" + dane.getPrzebieg() + "','" + dane.getSpalanie() + "','" + dane.getPrzeglad() + "','" + dane.getWymianaOleju() + "','" + dane.getWymianaRozrzadu() + "','" + dane.getData() + "')";
         System.out.println(historia);
         try {
             stmtHistoria.executeUpdate(historia);
@@ -128,7 +128,7 @@ public class ObslugaBazyDanych {
 
     public void usunRejestracje(String idRejestracji)
     {
-        String rejestracja = "DELETE FROM Rejestracja WHERE IdRejestracja = " + idRejestracji;
+        String rejestracja = "DELETE FROM Rejestracja WHERE IdRejestracja = " + idRejestracji + ";";
         try {
             stmtRejestracja.executeUpdate(rejestracja);
         } catch (SQLException e) {
@@ -138,7 +138,7 @@ public class ObslugaBazyDanych {
 
     public void usunHistorie(String idRejestracji)
     {
-        String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji;
+        String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji + ";";
         try {
             stmtHistoria.executeUpdate(historia);
         } catch (SQLException e) {
@@ -148,13 +148,16 @@ public class ObslugaBazyDanych {
 
     public boolean szukajAuta(DaneAuta autoSzukane, BazaDanych baza)
     {
-       String rej = autoSzukane.getRejestracja();
-       autoSzukane.setRejestracja(null);
+        String rej = autoSzukane.getRejestracja();
         for(int i = 0; i < baza.size(); i++){
-            if(baza.getNieObject(i).equals(autoSzukane)){
-                autoSzukane.setRejestracja(rej);
-                autoSzukane.setIdSamochod(baza.getIdSamochodu(i));
-                return true;
+            if(baza.getMarka(i).equals(autoSzukane.getMarka()) && baza.getMoc(i).equals(autoSzukane.getMoc())){
+                if(baza.getModel(i).equals(autoSzukane.getModel()) && baza.getRok(i).equals(autoSzukane.getRok())){
+                    if(baza.getPojemnosc(i).equals(autoSzukane.getPojemnosc()) && baza.getPaliwo(i).equals(autoSzukane.getPaliwo())){
+                        autoSzukane.setRejestracja(rej);
+                        autoSzukane.setIdSamochod(baza.getIdSamochodu(i));
+                        return true;
+                    }
+                }
             }
         }
         Integer max = 1;
@@ -166,6 +169,26 @@ public class ObslugaBazyDanych {
         autoSzukane.setIdSamochod(max.toString());
         autoSzukane.setRejestracja(rej);
         return false;
+    }
+    public boolean szukajAuta(String[] dane, BazaDanych baza, BazaHistoria historia){
+        String idRej = null;
+        boolean kontrol = false;
+        for(int i = 0; i < baza.size(); i++) {
+            if (baza.getRejestracja(i).equals(dane[0])){// || baza.getMarka(i).equals(dane[1]) && baza.getModel(i).equals(dane[2])) {
+                idRej = baza.getRejestracja(i);
+                kontrol = true;
+            }
+        }
+        if(kontrol){
+            for(int i = 0; i < historia.size(); i++){
+                if(idRej.equals(historia.getIdRejestracja(i))){
+                    usunHistorie(idRej);
+                }
+            }
+            usunRejestracje(idRej);
+            return kontrol;
+        }
+        return kontrol;
     }
 
 

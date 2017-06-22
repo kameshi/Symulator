@@ -28,7 +28,7 @@ public class Logg {
     public void loggPlik(String rodzaj, String komunikat)
     {
         try {
-            fileAppender = new FileAppender(layout, "C:/Users/Marek/Desktop/Symulator/log.txt");
+            fileAppender = new FileAppender(layout, "C:/Users/user/Desktop/Symulator/logg.log");
         }
         catch (IOException e) {
             loggKonsola("error", "Błąd zapisu loggów do pliku.");

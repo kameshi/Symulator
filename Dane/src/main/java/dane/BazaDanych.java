@@ -15,11 +15,6 @@ public class BazaDanych implements Serializable {
     public DaneAuta getObject(int i){
         return auto.get(i);
     }
-    public DaneAuta getNieObject(int i){
-        DaneAuta dane = new DaneAuta();
-        dane.dodaj(null,null, auto.get(i).getMarka(), auto.get(i).getModel(), auto.get(i).getPojemnosc(), auto.get(i).getMoc(), auto.get(i).getRok(), auto.get(i).getPaliwo(), null);
-        return dane;
-    }
     public void add(DaneAuta dane){
         auto.add(dane);
     }
@@ -31,5 +26,21 @@ public class BazaDanych implements Serializable {
     }
     public String getIdSamochodu(int i) {
         return auto.get(i).getIdSamochod();
+    }
+    public String getMarka(int i) {return auto.get(i).getMarka();}
+    public String getModel(int i) {
+        return auto.get(i).getModel();
+    }
+    public String getMoc(int i) {
+        return auto.get(i).getMoc();
+    }
+    public String getPojemnosc(int i) {
+        return auto.get(i).getPojemnosc();
+    }
+    public String getRok(int i) {
+        return auto.get(i).getRok();
+    }
+    public String getPaliwo(int i) {
+        return auto.get(i).getPaliwo();
     }
 }

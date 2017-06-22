@@ -75,11 +75,11 @@ public class Historia implements Serializable {
         this.przebieg = przebieg;
     }
 
-    public String getSpalenie() {
+    public String getSpalanie() {
         return spalenie;
     }
 
-    public void setSpalenie(String spalenie) {
+    public void setSpalanie(String spalenie) {
         this.spalenie = spalenie;
     }
 
