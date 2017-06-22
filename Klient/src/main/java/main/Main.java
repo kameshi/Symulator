@@ -1,20 +1,27 @@
 package main;
 
-import Komunikacja.Komunikacja;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import logg.Logg;
 
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
+        Logg logg = new Logg();
+        logg.loggPlikIKonsola("info","Rozpoczęcie działania klienta.");
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/glownaScene.fxml"));
-        BorderPane borderPane = loader.load();
+        BorderPane borderPane = null;
+        try {
+            borderPane = loader.load();
+        } catch (IOException e) {
+            logg.loggPlikIKonsola("error","Błąd wczytania Sceny głównej.");
+        }
         Scene scene = new Scene(borderPane);
         primaryStage.setTitle("Symulator");
         primaryStage.setScene(scene);

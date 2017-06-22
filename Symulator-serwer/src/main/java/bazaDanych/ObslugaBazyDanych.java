@@ -16,71 +16,136 @@ public class ObslugaBazyDanych {
     Statement stmtSamochod;
     Statement stmtHistoria;
 
-    public ObslugaBazyDanych() throws ClassNotFoundException, SQLException {
-        Class.forName(driver);
-        conection = DriverManager.getConnection(url, user, password);
-        stmtRejestracja = conection.createStatement();
-        stmtSamochod = conection.createStatement();
-        stmtHistoria = conection.createStatement();
+    public ObslugaBazyDanych()
+    {
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            conection = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            stmtRejestracja = conection.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            stmtSamochod = conection.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            stmtHistoria = conection.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public BazaDanych odczytSamochodu() throws SQLException {
+    public BazaDanych odczytSamochodu()
+    {
         BazaDanych baza = new BazaDanych();
-        ResultSet samochod ;
-        ResultSet rejestracja = stmtRejestracja.executeQuery("SELECT * FROM Rejestracja ORDER BY IdRejestracja");
-        DaneAuta dane = new DaneAuta();
-        while (rejestracja.next()) {
-            samochod = stmtSamochod.executeQuery("SELECT * FROM Samochod WHERE IdSamochod = " + rejestracja.getString(2));
-            samochod.next();
-            dane.dodaj(rejestracja.getString(1), samochod.getString(1), samochod.getString(2),samochod.getString(3),samochod.getString(4),samochod.getString(5),samochod.getString(6), samochod.getString(7), rejestracja.getString(3));
-            baza.add(dane);
-            //System.out.println(dane.toString());
+        ResultSet samochod = null;
+        ResultSet rejestracja = null;
+        try {
+            rejestracja = stmtRejestracja.executeQuery("SELECT * FROM Rejestracja ORDER BY IdRejestracja");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            while (rejestracja.next()) {
+                try {
+                    samochod = stmtSamochod.executeQuery("SELECT * FROM Samochod WHERE IdSamochod = " + rejestracja.getString(2));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                samochod.next();
+                baza.add(new DaneAuta(rejestracja.getString(1), samochod.getString(1), samochod.getString(2),samochod.getString(3),samochod.getString(4),samochod.getString(5),samochod.getString(6), samochod.getString(7), rejestracja.getString(3)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return baza;
     }
 
-    public BazaHistoria odczytHistori() throws SQLException
+    public BazaHistoria odczytHistori()
     {
         BazaHistoria baza = new BazaHistoria();
-        ResultSet historia = stmtHistoria.executeQuery("SELECT * FROM Historia");
-        Historia dane = new Historia();
-        while (historia.next())
-        {
-            dane.dodaj(historia.getString(1), historia.getString(2),historia.getString(3),historia.getString(4),historia.getString(5),historia.getString(6),historia.getString(6),historia.getString(8));
-            baza.add(dane);
-            //System.out.println(dane.toString());
+        ResultSet historia = null;
+        try {
+            historia = stmtHistoria.executeQuery("SELECT * FROM Historia");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            while (historia.next())
+            {
+                baza.add(new Historia(historia.getString(1), historia.getString(2),historia.getString(3),historia.getString(4),historia.getString(5),historia.getString(6),historia.getString(6),historia.getString(8)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return baza;
     }
 
-    public void zapisSamochodu(DaneAuta dane) throws SQLException {
+    public void zapisSamochodu(DaneAuta dane)
+    {
         String samochod = "INSERT INTO Samochod VALUES('" + dane.getIdSamochod() + "','" + dane.getMarka() + "','" + dane.getModel() + "','" + dane.getPojemnosc() + "','" + dane.getMoc() + "','" + dane.getRok() + "','" + dane.getPaliwo() + "')";
         System.out.println(samochod);
-        stmtSamochod.executeUpdate(samochod);
+        try {
+            stmtSamochod.executeUpdate(samochod);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void zapisRejestracji(DaneAuta dane) throws SQLException {
+    public void zapisRejestracji(DaneAuta dane)
+    {
         String rejestracja = "INSERT INTO Rejestracja VALUES('" + dane.getIdRejestracja() + "','" + dane.getIdSamochod() + "','" + dane.getRejestracja() + "')";
         System.out.println(rejestracja);
-        stmtRejestracja.executeUpdate(rejestracja);
+        try {
+            stmtRejestracja.executeUpdate(rejestracja);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void zapisHistoria(Historia dane) throws SQLException {
+    public void zapisHistoria(Historia dane)
+    {
         String historia = "INSERT INTO Historia VALUES('" + dane.getIdHistoria() + "','" + dane.getIdRejestracja() + "','" + dane.getPrzebieg() + "','" + dane.getSpalenie() + "','" + dane.getPrzeglad() + "','" + dane.getWymianaOleju() + "','" + dane.getWymianaRozrzadu() + "','" + dane.getData() + "')";
         System.out.println(historia);
-        stmtHistoria.executeUpdate(historia);
+        try {
+            stmtHistoria.executeUpdate(historia);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void usunRejestracje(String idRejestracji) throws SQLException {
+    public void usunRejestracje(String idRejestracji)
+    {
         String rejestracja = "DELETE FROM Rejestracja WHERE IdRejestracja = " + idRejestracji;
-        stmtRejestracja.executeUpdate(rejestracja);
+        try {
+            stmtRejestracja.executeUpdate(rejestracja);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void usunHistorie(String idRejestracji) throws SQLException {
+    public void usunHistorie(String idRejestracji)
+    {
         String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji;
-        stmtHistoria.executeUpdate(historia);
+        try {
+            stmtHistoria.executeUpdate(historia);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-    public boolean szukajAuta(DaneAuta autoSzukane, BazaDanych baza) {
+
+    public boolean szukajAuta(DaneAuta autoSzukane, BazaDanych baza)
+    {
        String rej = autoSzukane.getRejestracja();
        autoSzukane.setRejestracja(null);
         for(int i = 0; i < baza.size(); i++){

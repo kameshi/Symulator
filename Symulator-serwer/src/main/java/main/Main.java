@@ -2,6 +2,8 @@ package main;
 
 
 
+import bazaDanych.ObslugaBazyDanych;
+import dane.BazaDanych;
 import komunikacja.Komunikacja;
 
 import java.io.FileNotFoundException;
@@ -26,7 +28,7 @@ public class Main {
         this.Port = port;
     }
 
-    public void dzialanie() throws SQLException, ClassNotFoundException, IOException {
+    public void dzialanie() throws ClassNotFoundException, IOException, SQLException {
         String host = InetAddress.getLocalHost().getHostName();
         int Port = 6000;
        
