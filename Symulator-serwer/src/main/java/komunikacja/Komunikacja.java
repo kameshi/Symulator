@@ -3,15 +3,16 @@ package komunikacja;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.channels.SocketChannel;
-import java.sql.SQLException;
 
 import bazaDanych.ObslugaBazyDanych;
 import dane.*;
-
+import org.apache.log4j.Logger;
 
 
 public class Komunikacja implements Runnable{
+
+    private final static Logger logger = Logger.getLogger(Komunikacja.class);
+    
     BazaHistoria bazaHistoria = new BazaHistoria();
     BazaDanych baza = new BazaDanych();
     ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
@@ -21,7 +22,7 @@ public class Komunikacja implements Runnable{
     private ObjectInputStream czytelnik;
     private String host;
 
-    public Komunikacja(int port, String host, Socket gniazdoKlienta) throws SQLException, ClassNotFoundException {
+    public Komunikacja(int port, String host, Socket gniazdoKlienta) {
         Port = port;
         host = host;
         this.gniazdoKlienta = gniazdoKlienta;
@@ -47,22 +48,34 @@ public class Komunikacja implements Runnable{
                     usun();
                 }
             }catch(Exception ex){
-                ex.printStackTrace();
+                logger.error("Wyjatek serwera",ex);
             }
             pisarz.close();
             czytelnik.close();
             gniazdoKlienta.close();
         }
         catch (Exception e) {
-            System.out.println("Wyjatek serwera " + e);
+            logger.error("Wyjatek serwera",e);
         }
     }
-    private void stareAuto() throws SQLException, ClassNotFoundException, IOException {
+    private void stareAuto(){
         boolean kontrol = false;
-        String nrRejestracyjny;
-        Historia historia;
-        nrRejestracyjny = (String) czytelnik.readObject();
-        historia = (Historia) czytelnik.readObject();
+        String nrRejestracyjny = null;
+        Historia historia = null;
+        try {
+            nrRejestracyjny = (String) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
+        try {
+            historia = (Historia) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
         baza = obslugaBazy.odczytSamochodu();
         for(int i = 0; i < baza.size(); i++) {
             if (nrRejestracyjny.equals(baza.getRejestracja(i))) {
@@ -79,9 +92,15 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
-    private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
-        DaneAuta auto;
-        auto =(DaneAuta) czytelnik.readObject();
+    private void noweAuto(){
+        DaneAuta auto = null;
+        try {
+            auto =(DaneAuta) czytelnik.readObject();
+        } catch (IOException e) {
+            logger.error("Brak sterownika",e);
+        } catch (ClassNotFoundException e) {
+            logger.error("Brak sterownika",e);
+        }
         Boolean kontrol = true;
         baza = obslugaBazy.odczytSamochodu();
         Integer max = baza.size() + 4;
@@ -92,12 +111,11 @@ public class Komunikacja implements Runnable{
         }
         if(kontrol){
             auto.setIdRejestracja(max.toString());
-            obslugaBazy.zapisSamochodu(auto);
             obslugaBazy.zapisRejestracji(auto);
         }
         rozeslanie(kontrol);
     }
-    private void historia() throws SQLException {
+    private void historia(){
         boolean kontrol = true;
         if(bazaHistoria.size() < 0){
             kontrol = false;
@@ -107,13 +125,18 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
-    private void usun() throws IOException, ClassNotFoundException {
+    private void usun(){
         String[] dane = new String[3];
         for(int i = 0; i < 3; i++){
-            dane[i] = (String) czytelnik.readObject();
+            try {
+                dane[i] = (String) czytelnik.readObject();
+            } catch (IOException e) {
+                logger.error("Brak sterownika",e);
+            } catch (ClassNotFoundException e) {
+                logger.error("Brak sterownika",e);
+            }
             System.out.println(dane[i]);
         }
-
     }
     private void rozeslanie(BazaHistoria baza){
             try{

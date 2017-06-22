@@ -1,10 +1,10 @@
 package controllerFille;
 
-import Komunikacja.Komunikacja;
 import dane.Historia;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+import komunikacja.Komunikacja;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -220,7 +220,7 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
     }
 
     @FXML
-    void dodajOnA() throws IOException, ClassNotFoundException {
+    void dodajOnA(){
         maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
@@ -274,7 +274,6 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
                 }
             }
             historia.dodaj(dane[1], dane[2], dane[3], dane[4], dane[5], data);
-            System.out.println(historia.toString());
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("stare");
             kom.wyslij(dane[0]);

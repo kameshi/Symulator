@@ -1,8 +1,9 @@
-package Komunikacja;
+package komunikacja;
 
 import dane.BazaHistoria;
 import dane.DaneAuta;
 import dane.Historia;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -10,17 +11,32 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class Komunikacja{
+
+	private final static Logger logger = Logger.getLogger(Komunikacja.class);
+
 	private int port;
 	private Socket gniazdoKlienta;
 	private ObjectOutputStream pisarz;
 	private ObjectInputStream czytelnik;
 	private String host;
-	public Komunikacja(String host, int port) throws IOException {
+	public Komunikacja(String host, int port){
 		host = host;
 		port = port;
-		gniazdoKlienta = new Socket("127.0.0.1", 6000);
-		pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
-		czytelnik = new ObjectInputStream(gniazdoKlienta.getInputStream());
+		try {
+			gniazdoKlienta = new Socket("127.0.0.1", 6000);
+		} catch (IOException e) {
+			//logger.error("NIe można załadować strony aktualizuj dane.",e);
+		}
+		try {
+			pisarz = new ObjectOutputStream(gniazdoKlienta.getOutputStream());
+		} catch (IOException e) {
+			//logger.error("NIe można załadować strony aktualizuj dane.",e);
+		}
+		try {
+			czytelnik = new ObjectInputStream(gniazdoKlienta.getInputStream());
+		} catch (IOException e) {
+			//logger.error("NIe można załadować strony aktualizuj dane.",e);
+		}
 	}
 	public void wyslij(String semafor) {
 		try {

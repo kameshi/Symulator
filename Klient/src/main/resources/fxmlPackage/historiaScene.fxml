@@ -34,8 +34,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="rejestracjaLabel" layoutX="26.0" layoutY="598.0" text="Podaj numer rejestracyjny samochodu" />
-      <TextField fx:id="rejestracjaText" layoutX="26.0" layoutY="634.0" />
-      <Button layoutX="1116.0" layoutY="598.0" mnemonicParsing="false" onAction="#wyszukajOnAction" prefHeight="97.0" prefWidth="140.0" text="Wyszukaj" />
+        <Label fx:id="rejestracjaLabel" layoutX="26.0" layoutY="598.0" text="Podaj numer rejestracyjny samochodu" />
+        <TextField fx:id="rejestracjaText" layoutX="25.0" layoutY="622.0" />
+        <Button layoutX="1116.0" layoutY="598.0" mnemonicParsing="false" onAction="#wyszukajOnAction" prefHeight="97.0" prefWidth="140.0" text="Wyszukaj" />
+        <Label fx:id="wyjatekLabel" layoutX="26.0" layoutY="673.0" prefHeight="17.0" prefWidth="368.0" text="** Zaznaczone pole nie może być puste wprowadż poprawne dane." visible="false" />
+        <Label fx:id="wyjatekTrzyLabel" layoutX="25.0" layoutY="656.0" prefHeight="17.0" prefWidth="797.0" text="* Rejestrację należy podać w jednym z czterech formatów: XX YYYY, XX YYYYY, XXX YYYY, XXX YYYYY." />
    </children>
 </Pane>

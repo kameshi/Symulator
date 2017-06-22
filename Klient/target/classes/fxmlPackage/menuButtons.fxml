@@ -5,7 +5,7 @@
 
 <HBox alignment="CENTER" prefHeight="48.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerFille.ControllerMenuButtons">
    <children>
-      <Button mnemonicParsing="false" onAction="#wybierzSamochodOnA" text="Dodaj dane o Samochodzie" />
+      <Button mnemonicParsing="false" onAction="#aktualizujDaneOnA" text="Dodaj dane o Samochodzie" />
       <Button mnemonicParsing="false" onAction="#dodajSamochodOnA" text="Dodaj samochód" />
       <Button mnemonicParsing="false" onAction="#usunSamochodOnA" text="Usuń samochód" />
       <Button mnemonicParsing="false" onAction="#historiaOnA" text="Historia" />

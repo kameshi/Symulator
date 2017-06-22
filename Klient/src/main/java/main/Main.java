@@ -5,22 +5,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import logg.Logg;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
 public class Main extends Application {
+    private final static Logger logger = Logger.getLogger(Main.class);
 
     @Override
     public void start(Stage primaryStage) {
-        Logg logg = new Logg();
-        logg.loggPlikIKonsola("info","Rozpoczęcie działania klienta.");
+        logger.info("Uruchomiono program." );
+
+
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/glownaScene.fxml"));
         BorderPane borderPane = null;
         try {
             borderPane = loader.load();
         } catch (IOException e) {
-            logg.loggPlikIKonsola("error","Błąd wczytania Sceny głównej.");
+            logger.error("NIe można załadować strony głównej.",e);
         }
         Scene scene = new Scene(borderPane);
         primaryStage.setTitle("Symulator");

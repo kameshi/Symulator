@@ -1,6 +1,6 @@
 package controllerFille;
 
-import Komunikacja.Komunikacja;
+import komunikacja.Komunikacja;
 import dane.DaneAuta;
 
 import javafx.collections.FXCollections;
@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
-import Komunikacja.*;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.paint.Paint;
 
@@ -225,7 +224,7 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     }
 
     @FXML
-    private void dodajOnA() throws IOException {
+    private void dodajOnA(){
         maloTekstu = false;
 
         for(int i = 0 ; i < rozmiar ; i++)
