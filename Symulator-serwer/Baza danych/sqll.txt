@@ -23,7 +23,7 @@ TRAILING NULLCOLS
 (
 	IdRejestracja,
     IdSamochod,
-    NumerRejestracji
+    NumerRejestrcji
 )
 
 LOAD DATA

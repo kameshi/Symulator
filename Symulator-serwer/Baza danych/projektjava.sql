@@ -17,7 +17,7 @@ CREATE TABLE Samochod(
 CREATE TABLE Rejestracja(
 	IdRejestracja NUMBER(10),
 	IdSamochod NUMBER(8),
-	Numer_rejestrcji VARCHAR2(10)
+	NumerRejestrcji VARCHAR2(10),
 	CONSTRAINT samochod_rejestracja_fk FOREIGN KEY (IdSamochod) REFERENCES Samochod(IdSamochod),
 	CONSTRAINT rejestracja_pk PRIMARY KEY (IdRejestracja)
 );
@@ -30,6 +30,7 @@ CREATE TABLE Historia(
 	Przeglad VARCHAR2(3),
 	WymianaOleju VARCHAR2(3),
 	WymianaRozrzadu VARCHAR2(3),
+  	Data VARCHAR2(10),
 	CONSTRAINT rejestracja_historia_fk FOREIGN KEY (IdRejestracja) REFERENCES Rejestracja(IdRejestracja),
 	CONSTRAINT historia_pk PRIMARY KEY (IdHistoria)
 );

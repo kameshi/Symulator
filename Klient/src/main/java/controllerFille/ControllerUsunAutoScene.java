@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+import rejestracja.Rejestracja;
 
 
 /**
@@ -41,6 +42,7 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
     private TextField[] textField = new TextField[rozmiar];
     private static final String[] textwyjatek = {"**Rejestracja*","Marka*", "Model*"};
     private static final String[] text = {"**Rejestracja","Marka", "Model"};
+    Rejestracja rejestracja = new Rejestracja();
 
     @FXML
     public void initialize()
@@ -59,116 +61,8 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
 
     }
 
-
-    private boolean czyLiteraLiczba(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122) || (dane[0].charAt(i) >= 48 && dane[0].charAt(i) <= 57)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean czyLitera(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean sprawdzRejestracje()
-    {
-        if(dane[0].length() < 7)
-        {
-            return true;
-        }
-        else if(dane[0].length() > 9)
-        {
-            return true;
-        }
-        else
-        {
-            if(dane[0].charAt(3) != ' ')
-            {
-                if(dane[0].charAt(2) != ' ')
-                {
-                    return true;
-                }
-                if(dane[0].length() == 7)
-                {
-                    if(czyLiteraLiczba(3,7))
-                    {
-                        return true;
-                    }
-                }
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(3,8))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(2) == ' ')
-                {
-                    return true;
-                }
-            }
-            if(dane[0].charAt(2) != ' ')
-            {
-                if(dane[0].charAt(3) != ' ')
-                {
-                    return true;
-                }
-
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(4,8))
-                    {
-                        return true;
-                    }
-
-                }
-                if(dane[0].length() == 9)
-                {
-                    if(czyLiteraLiczba(4,9))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(3) == ' ')
-                {
-                    return true;
-                }
-            }
-
-            if(czyLitera(0,2))
-            {
-                return true;
-            }
-            if(czyLitera(2,2) && dane[0].charAt(2) == ' ' )
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     @FXML
-    void usunOnA(ActionEvent event) {
+    private void usunOnA(ActionEvent event) {
         maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
@@ -182,16 +76,14 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
             }
         }
 
-        if(sprawdzRejestracje())
+        if(rejestracja.sprawdzRejestracje(dane[0]))
         {
             label[0].setTextFill(Paint.valueOf("RED"));
             maloTekstu = true;
-            System.out.println("red");
         }
         else
         {
             label[0].setTextFill(Paint.valueOf("BLACK"));
-            System.out.println("black");
         }
 
         if (!maloTekstu) {

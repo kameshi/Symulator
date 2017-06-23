@@ -3,17 +3,10 @@ package main;
 
 
 import bazaDanych.ObslugaBazyDanych;
-import dane.BazaDanych;
 import komunikacja.Komunikacja;
 import org.apache.log4j.Logger;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.net.*;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
-import java.sql.SQLException;
 
 public class Main {
 
@@ -25,6 +18,12 @@ public class Main {
     private Socket gniazdoKlienta;
 
     public static void main(String[] args){
+        /*
+        ObslugaBazyDanych obsluga = new ObslugaBazyDanych();
+        System.out.println(obsluga.maxId("IdSamochod","Samochod"));
+        System.out.println(obsluga.maxId("IdRejestracja","Rejestracja"));
+        System.out.println(obsluga.maxId("IdHistoria","Historia"));
+        */
         logger.info("Włączenie serwera");
         Main server = new Main();
         server.dzialanie();

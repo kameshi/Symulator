@@ -3,16 +3,12 @@ package controllerFille;
 import komunikacja.Komunikacja;
 import dane.DaneAuta;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.collections.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+import rejestracja.Rejestracja;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.function.UnaryOperator;
 
@@ -70,6 +66,8 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     private static final String[] rodzajPaliwaString = {"benzyna", "gaz", "hybryda", "diesel"};
     private ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
 
+    private Rejestracja rejestracja = new Rejestracja();
+
 
     public void initialize()
     {
@@ -114,113 +112,6 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
         }
         rodzajPaliwaComboBox.setItems(rodzajPaliwaList);
         rodzajPaliwaComboBox.setValue("Wybierz");
-    }
-
-    private boolean czyLiteraLiczba(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[5].charAt(i) >= 65 && dane[5].charAt(i) <= 90) || (dane[5].charAt(i) >= 97 && dane[5].charAt(i) <= 122) || (dane[5].charAt(i) >= 48 && dane[5].charAt(i) <= 57)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean czyLitera(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[5].charAt(i) >= 65 && dane[5].charAt(i) <= 90) || (dane[5].charAt(i) >= 97 && dane[5].charAt(i) <= 122)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    private boolean sprawdzRejestracje()
-    {
-        if(dane[5].length() < 7)
-        {
-            return true;
-        }
-        else if(dane[5].length() > 9)
-        {
-            return true;
-        }
-        else
-        {
-            if(dane[5].charAt(3) != ' ')
-            {
-                if(dane[5].charAt(2) != ' ')
-                {
-                    return true;
-                }
-                if(dane[5].length() == 7)
-                {
-                    if(czyLiteraLiczba(3,7))
-                    {
-                        return true;
-                    }
-                }
-                if(dane[5].length() == 8)
-                {
-                    if(czyLiteraLiczba(3,8))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[5].charAt(2) == ' ')
-                {
-                    return true;
-                }
-            }
-            if(dane[5].charAt(2) != ' ')
-            {
-                if(dane[5].charAt(3) != ' ')
-                {
-                    return true;
-                }
-
-                if(dane[5].length() == 8)
-                {
-                    if(czyLiteraLiczba(4,8))
-                    {
-                        return true;
-                    }
-
-                }
-                if(dane[5].length() == 9)
-                {
-                    if(czyLiteraLiczba(4,9))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[5].charAt(3) == ' ')
-                {
-                    return true;
-                }
-            }
-
-            if(czyLitera(0,2))
-            {
-                return true;
-            }
-            if(czyLitera(2,2) && dane[5].charAt(2) == ' ' )
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     @FXML
@@ -269,39 +160,29 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             }
         }
 
-        if(sprawdzRejestracje())
+        if(rejestracja.sprawdzRejestracje(dane[5]))
         {
             label[5].setTextFill(Paint.valueOf("RED"));
             maloTekstu = true;
-            System.out.println("red");
         }
         else
         {
             label[5].setTextFill(Paint.valueOf("BLACK"));
-            System.out.println("black");
         }
 
         if(!maloTekstu)
         {
             wyjatekLabel.setVisible(false);
             daneAuta.dodaj(dane[0],dane[1],dane[2],dane[3],dane[4],dane[6],dane[5]);
-            System.out.println(daneAuta.toString());
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("nowe");
             kom.wyslij(daneAuta);
-          /*  if(!kom.odbierzKontrol())
+            for(int i = 0 ; i < rozmiar ; i++)
             {
-                okno.oknoBledu("NIe udało się dodać samochodu do bazy.");
+                textField[i].clear();
             }
-            else
-            {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-                for(int i = 0 ; i < rozmiar ; i++)
-                {
-                    textField[i].clear();
-                }
-                rodzajPaliwaComboBox.setValue("Wybierz");
-            }*/
+            rodzajPaliwaComboBox.setValue("Wybierz");
+
         }
     }
 

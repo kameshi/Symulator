@@ -9,14 +9,13 @@ public class ObslugaBazyDanych {
 
     private final static Logger logger = Logger.getLogger(ObslugaBazyDanych.class);
 
-    String driver = "oracle.jdbc.driver.OracleDriver";
-    String url = "jdbc:oracle:thin:projektjava@//localhost:1521/xe";
-    String user = "projektjava";
-    String password = "projektjava";
-    Connection conection;
-    Statement stmtRejestracja;
-    Statement stmtSamochod;
-    Statement stmtHistoria;
+    private String driver = "oracle.jdbc.driver.OracleDriver";
+    private String url = "jdbc:oracle:thin:projektjava@//localhost:1521/xe";
+    private String user = "projektjava";
+    private String password = "projektjava";
+    private Connection conection;
+    private Statement stmt;
+    private Statement stmt2;
 
     public ObslugaBazyDanych()
     {
@@ -31,17 +30,12 @@ public class ObslugaBazyDanych {
             logger.error("Błędne dane logowania",e);
         }
         try {
-            stmtRejestracja = conection.createStatement();
+            stmt = conection.createStatement();
         } catch (SQLException e) {
             logger.error("Nie można nawiązać połączenia",e);
         }
         try {
-            stmtSamochod = conection.createStatement();
-        } catch (SQLException e) {
-            logger.error("Nie można nawiązać połączenia",e);
-        }
-        try {
-            stmtHistoria = conection.createStatement();
+            stmt2 = conection.createStatement();
         } catch (SQLException e) {
             logger.error("Nie można nawiązać połączenia",e);
         }
@@ -53,14 +47,14 @@ public class ObslugaBazyDanych {
         ResultSet samochod = null;
         ResultSet rejestracja = null;
         try {
-            rejestracja = stmtRejestracja.executeQuery("SELECT * FROM Rejestracja ORDER BY IdRejestracja");
+            rejestracja = stmt.executeQuery("SELECT * FROM Rejestracja ORDER BY IdRejestracja");
         } catch (SQLException e) {
             logger.error("Nie można wykonać podanego zapytania do bazy",e);
         }
         try {
             while (rejestracja.next()) {
                 try {
-                    samochod = stmtSamochod.executeQuery("SELECT * FROM Samochod WHERE IdSamochod = " + rejestracja.getString(2));
+                    samochod = stmt2.executeQuery("SELECT * FROM Samochod WHERE IdSamochod = " + rejestracja.getString(2));
                 } catch (SQLException e) {
                     logger.error("Nie można wykonać podanego zapytania do bazy",e);
                 }
@@ -78,7 +72,7 @@ public class ObslugaBazyDanych {
         BazaHistoria baza = new BazaHistoria();
         ResultSet historia = null;
         try {
-            historia = stmtHistoria.executeQuery("SELECT * FROM Historia");
+            historia = stmt.executeQuery("SELECT * FROM Historia");
         } catch (SQLException e) {
             logger.error("Nie można wykonać podanego zapytania do bazy",e);
         }
@@ -93,56 +87,71 @@ public class ObslugaBazyDanych {
         return baza;
     }
 
-    public void zapisSamochodu(DaneAuta dane)
+    public boolean zapis(String zapytanie)
     {
-        String samochod = "INSERT INTO Samochod VALUES('" + dane.getIdSamochod() + "','" + dane.getMarka() + "','" + dane.getModel() + "','" + dane.getPojemnosc() + "','" + dane.getMoc() + "','" + dane.getRok() + "','" + dane.getPaliwo() + "')";
-        System.out.println(samochod);
         try {
-            stmtSamochod.executeUpdate(samochod);
+            stmt.executeUpdate(zapytanie);
         } catch (SQLException e) {
             logger.error("Nie można wykonać podanego zapytania na bazie",e);
+            return false;
         }
+        return true;
     }
 
-    public void zapisRejestracji(DaneAuta dane)
+    public boolean usun(String tabela, String idRejestracji)
     {
-        String rejestracja = "INSERT INTO Rejestracja VALUES('" + dane.getIdRejestracja() + "','" + dane.getIdSamochod() + "','" + dane.getRejestracja() + "')";
+        String rejestracja = "DELETE FROM " + tabela + " WHERE IdRejestracja = " + idRejestracji;
         System.out.println(rejestracja);
         try {
-            stmtRejestracja.executeUpdate(rejestracja);
+            stmt.executeUpdate(rejestracja);
         } catch (SQLException e) {
             logger.error("Nie można wykonać podanego zapytania na bazie",e);
+            return false;
+        }
+        return true;
+    }
+
+    public void zakonczPolaczenie(){
+        try {
+            conection.close();
+            logger.error("Połączenie z bazą zakończone.");
+        } catch (SQLException e) {
+            logger.error("Nie można zakończyć połączeniaz bazą.",e);
+        }
+        try {
+            stmt.close();
+            logger.error("Połączenie z bazą zakończone.");
+        } catch (SQLException e) {
+            logger.error("Nie można zakończyć połączeniaz bazą.",e);
+        }
+        try {
+            stmt2.close();
+            logger.error("Połączenie z bazą zakończone.");
+        } catch (SQLException e) {
+            logger.error("Nie można zakończyć połączeniaz bazą.",e);
         }
     }
 
-    public void zapisHistoria(Historia dane)
+    public int maxId(String kolumna, String tabela)
     {
-        String historia = "INSERT INTO Historia VALUES('" + dane.getIdHistoria() + "','" + dane.getIdRejestracja() + "','" + dane.getPrzebieg() + "','" + dane.getSpalanie() + "','" + dane.getPrzeglad() + "','" + dane.getWymianaOleju() + "','" + dane.getWymianaRozrzadu() + "','" + dane.getData() + "')";
-        System.out.println(historia);
+        ResultSet zapytanie = null;
         try {
-            stmtHistoria.executeUpdate(historia);
+            zapytanie = stmt.executeQuery("SELECT MAX(" + kolumna + ") FROM " + tabela);
         } catch (SQLException e) {
-            logger.error("Nie można wykonać podanego zapytania na bazie",e);
+            logger.error("Nie można wykonać podanego zapytania do bazy",e);
+            return 0;
         }
-    }
-
-    public void usunRejestracje(String idRejestracji)
-    {
-        String rejestracja = "DELETE FROM Rejestracja WHERE IdRejestracja = " + idRejestracji + ";";
         try {
-            stmtRejestracja.executeUpdate(rejestracja);
+            zapytanie.next();
         } catch (SQLException e) {
-            logger.error("Nie można wykonać podanego zapytania na bazie",e);
+            e.printStackTrace();
+            return 0;
         }
-    }
-
-    public void usunHistorie(String idRejestracji)
-    {
-        String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji + ";";
         try {
-            stmtHistoria.executeUpdate(historia);
+            return  zapytanie.getInt(1);
         } catch (SQLException e) {
-            logger.error("Nie można wykonać podanego zapytania na bazie",e);
+            e.printStackTrace();
+            return 0;
         }
     }
 
@@ -182,14 +191,12 @@ public class ObslugaBazyDanych {
         if(kontrol){
             for(int i = 0; i < historia.size(); i++){
                 if(idRej.equals(historia.getIdRejestracja(i))){
-                    usunHistorie(idRej);
+                    usun("Historia",idRej);
                 }
             }
-            usunRejestracje(idRej);
+            usun("Rejestracja",idRej);
             return kontrol;
         }
         return kontrol;
     }
-
-
 }

@@ -90,7 +90,7 @@ public class Komunikacja implements Runnable{
             bazaHistoria = obslugaBazy.odczytHistori();
             Integer max = bazaHistoria.size()+1;
             historia.setIdHistoria(max.toString());
-            obslugaBazy.zapisHistoria(historia);
+            obslugaBazy.zapis("INSERT INTO Historia VALUES('" + historia.getIdHistoria() + "','" + historia.getIdRejestracja() + "','" + historia.getPrzebieg() + "','" + historia.getSpalanie() + "','" + historia.getPrzeglad() + "','" + historia.getWymianaOleju() + "','" + historia.getWymianaRozrzadu() + "','" + historia.getData() + "')");
         }
         rozeslanie(kontrol);
     }
@@ -120,13 +120,13 @@ public class Komunikacja implements Runnable{
             }
             if (obslugaBazy.szukajAuta(auto, baza)) {
                 auto.setIdRejestracja(max.toString());
-                obslugaBazy.zapisRejestracji(auto);
+                obslugaBazy.zapis("INSERT INTO Rejestracja VALUES('" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "')");
                 kontrol = false;
             }
             if (kontrol) {
                 auto.setIdRejestracja(max.toString());
-                obslugaBazy.zapisSamochodu(auto);
-                obslugaBazy.zapisRejestracji(auto);
+                obslugaBazy.zapis("INSERT INTO Samochod VALUES('" + auto.getIdSamochod() + "','" + auto.getMarka() + "','" + auto.getModel() + "','" + auto.getPojemnosc() + "','" + auto.getMoc() + "','" + auto.getRok() + "','" + auto.getPaliwo() + "')");
+                obslugaBazy.zapis("INSERT INTO Rejestracja VALUES('" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "')");
             }
         }
         rozeslanie(kontrol);
@@ -168,10 +168,10 @@ public class Komunikacja implements Runnable{
         if(kontrol){
             for(int i = 0; i < bazaHistoria.size(); i++){
                 if(idRej.equals(bazaHistoria.getIdRejestracja(i))){
-                    obslugaBazy.usunHistorie(idRej);
+                    obslugaBazy.usun("Historia",idRej);
                 }
             }
-            obslugaBazy.usunRejestracje(idRej);
+            obslugaBazy.usun("Rejestracja",idRej);
         }
         rozeslanie(kontrol);
     }

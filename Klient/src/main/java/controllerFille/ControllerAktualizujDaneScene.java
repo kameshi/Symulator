@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 import komunikacja.Komunikacja;
+import rejestracja.Rejestracja;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
 import java.util.Calendar;
@@ -16,9 +16,7 @@ import java.util.function.UnaryOperator;
 /**
  * Created by Marek on 11.05.2017.
  */
-public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu Historia oraz numer rejstracji typu String
-
-    //OknaDialogowe okno = new OknaDialogowe();
+public class ControllerAktualizujDaneScene {
 
     private Historia historia = new Historia();
     private String[] dane = new String[2*rozmiar];
@@ -55,6 +53,8 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
     private CheckBox[] checkBox = new CheckBox[rozmiar];
     private static final String[] textwyjatek = {"**Rejestracja*","Przebieg*", "Średnie spalanie*"};
     private static final String[] text = {"**Rejestracja","Przebieg", "Średnie spalanie"};
+
+    private Rejestracja rejestracja = new Rejestracja();
 
     @FXML
     public void initialize()
@@ -112,115 +112,8 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
         textField[2].setTextFormatter(textFormatter2);
     }
 
-    private boolean czyLiteraLiczba(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122) || (dane[0].charAt(i) >= 48 && dane[0].charAt(i) <= 57)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean czyLitera(int i, int j)
-    {
-        for(; i < j; i++)
-        {
-            if(!((dane[0].charAt(i) >= 65 && dane[0].charAt(i) <= 90) || (dane[0].charAt(i) >= 97 && dane[0].charAt(i) <= 122)))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean sprawdzRejestracje()
-    {
-        if(dane[0].length() < 7)
-        {
-            return true;
-        }
-        else if(dane[0].length() > 9)
-        {
-            return true;
-        }
-        else
-        {
-            if(dane[0].charAt(3) != ' ')
-            {
-                if(dane[0].charAt(2) != ' ')
-                {
-                    return true;
-                }
-                if(dane[0].length() == 7)
-                {
-                    if(czyLiteraLiczba(3,7))
-                    {
-                        return true;
-                    }
-                }
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(3,8))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(2) == ' ')
-                {
-                    return true;
-                }
-            }
-            if(dane[0].charAt(2) != ' ')
-            {
-                if(dane[0].charAt(3) != ' ')
-                {
-                    return true;
-                }
-
-                if(dane[0].length() == 8)
-                {
-                    if(czyLiteraLiczba(4,8))
-                    {
-                        return true;
-                    }
-
-                }
-                if(dane[0].length() == 9)
-                {
-                    if(czyLiteraLiczba(4,9))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                if(dane[0].charAt(3) == ' ')
-                {
-                    return true;
-                }
-            }
-
-            if(czyLitera(0,2))
-            {
-                return true;
-            }
-            if(czyLitera(2,2) && dane[0].charAt(2) == ' ' )
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     @FXML
-    void dodajOnA(){
+    private void dodajOnA(){
         maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
@@ -240,16 +133,14 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
             }
         }
 
-        if(sprawdzRejestracje())
+        if(rejestracja.sprawdzRejestracje(dane[0]))
         {
             label[0].setTextFill(Paint.valueOf("RED"));
             maloTekstu = true;
-            //System.out.println("red");
         }
         else
         {
             label[0].setTextFill(Paint.valueOf("BLACK"));
-           // System.out.println("black");
         }
 
         if (!maloTekstu) {
@@ -279,15 +170,11 @@ public class ControllerAktualizujDaneScene {// do serwera przesyła obiekt typu 
             kom.wyslij(dane[0]);
             kom.wyslij(historia);
             kom.odbierzKontrol();
-           // if (false) {
-                //okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-           // } else {
-                //okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-                for (int i = 0; i < rozmiar; i++) {
-                    textField[i].clear();
-                    checkBox[i].setSelected(false);
-                }
-           // }
+            for (int i = 0; i < rozmiar; i++)
+            {
+                textField[i].clear();
+                checkBox[i].setSelected(false);
+            }
         }
     }
 
