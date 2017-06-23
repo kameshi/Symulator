@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class BazaDanych implements Serializable {
-    private ArrayList<DaneAuta> auto = new ArrayList<DaneAuta>();
+    private ArrayList<DaneAuta> auto = new ArrayList<>();
     public BazaDanych(){}
     public BazaDanych(String marka, String model, String pojemnosc, String moc, String rok, String paliwo, String rejestracja){
         auto.add(new DaneAuta( marka, model, pojemnosc, moc, rok, paliwo, rejestracja));

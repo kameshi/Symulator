@@ -7,9 +7,11 @@ import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
 
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.function.UnaryOperator;
 
 /**
@@ -19,10 +21,8 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
 
     //OknaDialogowe okno = new OknaDialogowe();
 
-    private DaneAuta daneAuta = new DaneAuta();
-    private String[] dane = new String[rozmiar+1];
-
-    private boolean maloTekstu = false;
+    private DaneAuta daneAuta;
+    private String[] dane;
 
     @FXML
     private Label markaLabel;
@@ -51,7 +51,7 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     @FXML
     private TextField rejestracjaText;
     @FXML
-    private ComboBox rodzajPaliwaComboBox;
+    private ComboBox<String> rodzajPaliwaComboBox;
 
     @FXML
     private Label wyjatekLabel;
@@ -59,21 +59,27 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
     private Label wyjatekDwaLabel;
     
     private static final int rozmiar = 6;
-    private Label[] label = new Label[rozmiar];
-    private TextField[] textField = new TextField[rozmiar];
+    private Label[] label;
+    private TextField[] textField;
     private static final String[] textwyjatek = {"Marka*", "Model*", "Pojemność(cm^3)*", "Moc(KM)*", "***Rok produkcji*", "****Rejestracja*"};
     private static final String[] text = {"Marka", "Model", "Pojemność(cm^3)", "Moc(KM)", "***Rok produkcji","****Rejestracja"};
     private static final String[] rodzajPaliwaString = {"benzyna", "gaz", "hybryda", "diesel"};
     private ObservableList<String> rodzajPaliwaList = FXCollections.observableArrayList();
 
-    private Rejestracja rejestracja = new Rejestracja();
+    private Rejestracja rejestracja;
 
 
     public void initialize()
     {
+        daneAuta = new DaneAuta();
+        dane = new String[rozmiar+1];
+        label = new Label[rozmiar];
+        textField = new TextField[rozmiar];
+        rejestracja = new Rejestracja();
+
         for(int i = 0; i < rozmiar+1; i++)
         {
-            dane[i] = new String();
+            dane[i] = "";
         }
         UnaryOperator<TextFormatter.Change> filter = change -> {
             String text = change.getText();
@@ -106,17 +112,14 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
         textField[3].setTextFormatter(textFormatter2);
         textField[4].setTextFormatter(textFormatter3);
 
-        for (String s: rodzajPaliwaString)
-        {
-            rodzajPaliwaList.add(s);
-        }
+        Collections.addAll(rodzajPaliwaList, rodzajPaliwaString);
         rodzajPaliwaComboBox.setItems(rodzajPaliwaList);
         rodzajPaliwaComboBox.setValue("Wybierz");
     }
 
     @FXML
     private void dodajOnA(){
-        maloTekstu = false;
+        boolean maloTekstu = false;
 
         for(int i = 0 ; i < rozmiar ; i++)
         {
@@ -133,7 +136,7 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             }
         }
 
-        if (rodzajPaliwaComboBox.getValue().toString().equals("Wybierz"))
+        if (rodzajPaliwaComboBox.getValue().equals("Wybierz"))
         {
             rodzajPaliwaLabel.setText("Rodzaj paliwa**");
             wyjatekDwaLabel.setVisible(true);
@@ -142,7 +145,7 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
         else
         {
             rodzajPaliwaLabel.setText("Rodzaj paliwa");
-            dane[rozmiar] = rodzajPaliwaComboBox.getValue().toString();
+            dane[rozmiar] = rodzajPaliwaComboBox.getValue();
             wyjatekDwaLabel.setVisible(false);
         }
 
@@ -177,12 +180,24 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("nowe");
             kom.wyslij(daneAuta);
-            for(int i = 0 ; i < rozmiar ; i++)
+            //Nie było tu odbierzKontrol więc nie wiem czy to dział
+            /*
+            Boolean wynik = kom.odbierzKontrol();
+            if(wynik == true)
             {
-                textField[i].clear();
-            }
-            rodzajPaliwaComboBox.setValue("Wybierz");
 
+                for(int i = 0 ; i < rozmiar ; i++)
+                {
+                    textField[i].clear();
+                }
+                rodzajPaliwaComboBox.setValue("Wybierz");
+                OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
+            }
+            else if(wynik == false)
+            {
+                OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
+            }
+            */
         }
     }
 

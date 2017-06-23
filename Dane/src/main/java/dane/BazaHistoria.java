@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by Marek on 12.06.2017.
  */
 public class BazaHistoria implements Serializable {
-    private ArrayList<Historia> historia = new ArrayList<Historia>();
+    private ArrayList<Historia> historia = new ArrayList<>();
     public int size(){
         return historia.size();
     }

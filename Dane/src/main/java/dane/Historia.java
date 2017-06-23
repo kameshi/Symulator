@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Marek on 12.06.2017.
  */
 public class Historia implements Serializable {
-    String idHistoria, idRejestracja, przebieg, spalenie, przeglad, wymianaOleju, wymianaRozrzadu, data;
+    private String idHistoria, idRejestracja, przebieg, spalenie, przeglad, wymianaOleju, wymianaRozrzadu, data;
 
     public Historia(){}
 

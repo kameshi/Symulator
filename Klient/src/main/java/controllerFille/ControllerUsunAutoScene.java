@@ -2,7 +2,6 @@ package controllerFille;
 
 import komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
@@ -14,11 +13,7 @@ import rejestracja.Rejestracja;
  */
 public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z rejestracja marka i modelem moge to zrobić na obiekcie DaneAuta jak trzeba
 
-    OknaDialogowe okno = new OknaDialogowe();
-
-    private String[] dane = new String[rozmiar];
-
-    private boolean maloTekstu = false;
+    private String[] dane;
 
     @FXML
     private Label rejestracjaLabel;
@@ -38,18 +33,25 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
     private Label wyjatekLabel;
 
     private static final int rozmiar = 3;
-    private Label[] label = new Label[rozmiar];
-    private TextField[] textField = new TextField[rozmiar];
+    private Label[] label;
+    private TextField[] textField;
     private static final String[] textwyjatek = {"**Rejestracja*","Marka*", "Model*"};
     private static final String[] text = {"**Rejestracja","Marka", "Model"};
-    Rejestracja rejestracja = new Rejestracja();
+    private Rejestracja rejestracja;
+
+    public ControllerUsunAutoScene() {
+        dane = new String[rozmiar];
+        label = new Label[rozmiar];
+        textField = new TextField[rozmiar];
+        rejestracja = new Rejestracja();
+    }
 
     @FXML
     public void initialize()
     {
         for(int i = 0; i < rozmiar; i++)
         {
-            dane[i] = new String();
+            dane[i] = "";
         }
         label[0] = rejestracjaLabel;
         label[1] = markaLabel;
@@ -62,8 +64,8 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
     }
 
     @FXML
-    private void usunOnA(ActionEvent event) {
-        maloTekstu = false;
+    private void usunOnA() {
+        boolean maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
             if (textField[i].getLength() == 0) {
@@ -94,14 +96,17 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
             for(int i = 0;i < 3; i++){
                 kom.wyslij(dane[i]);
             }
-            kom.odbierzKontrol();
-            if (false) {
-                okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-            } else {
-                okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
+            Boolean wynik = kom.odbierzKontrol();
+            if(wynik == true)
+            {
                 for (int i = 0; i < rozmiar; i++) {
                     textField[i].clear();
                 }
+                OknaDialogowe.oknoWykonania("Usunięto podany samochód");
+            }
+            else if(wynik == false)
+            {
+                OknaDialogowe.oknoBledu("Nie udało się usunać podanego ssmochodu");
             }
         }
     }

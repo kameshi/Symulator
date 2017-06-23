@@ -1,23 +1,24 @@
 package komunikacja;
 
-import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-
 import bazaDanych.ObslugaBazyDanych;
 import dane.*;
 import org.apache.log4j.Logger;
+import pomocnicze.Sprawdz;
 
-import javax.sound.midi.SysexMessage;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 
 public class Komunikacja implements Runnable{
 
     private final static Logger logger = Logger.getLogger(Komunikacja.class);
-    static int inte = 4;
-    BazaHistoria bazaHistoria = new BazaHistoria();
-    BazaDanych baza = new BazaDanych();
-    ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
+    private static int inte = 4;
+    private Sprawdz sprawdz;
+    private BazaHistoria bazaHistoria;
+    private BazaDanych baza;
+    private ObslugaBazyDanych obslugaBazy;
     private int Port;
     private Socket gniazdoKlienta;
     private ObjectOutputStream pisarz;
@@ -25,6 +26,11 @@ public class Komunikacja implements Runnable{
     private String host;
 
     public Komunikacja(int port, String host, Socket gniazdoKlienta) {
+        sprawdz = new Sprawdz();
+        bazaHistoria = new BazaHistoria();
+        baza = new BazaDanych();
+        obslugaBazy = new ObslugaBazyDanych();
+
         this.Port = port;
         this.host = host;
         this.gniazdoKlienta = gniazdoKlienta;
@@ -90,7 +96,7 @@ public class Komunikacja implements Runnable{
             bazaHistoria = obslugaBazy.odczytHistori();
             Integer max = bazaHistoria.size()+1;
             historia.setIdHistoria(max.toString());
-            obslugaBazy.zapis("INSERT INTO Historia VALUES('" + historia.getIdHistoria() + "','" + historia.getIdRejestracja() + "','" + historia.getPrzebieg() + "','" + historia.getSpalanie() + "','" + historia.getPrzeglad() + "','" + historia.getWymianaOleju() + "','" + historia.getWymianaRozrzadu() + "','" + historia.getData() + "')");
+            obslugaBazy.zapis("Historia", "'" + historia.getIdHistoria() + "','" + historia.getIdRejestracja() + "','" + historia.getPrzebieg() + "','" + historia.getSpalanie() + "','" + historia.getPrzeglad() + "','" + historia.getWymianaOleju() + "','" + historia.getWymianaRozrzadu() + "','" + historia.getData() + "'");
         }
         rozeslanie(kontrol);
     }
@@ -118,15 +124,15 @@ public class Komunikacja implements Runnable{
                     max = Integer.valueOf(baza.getIdRejestracja(i)) + 1;
                 }
             }
-            if (obslugaBazy.szukajAuta(auto, baza)) {
+            if (sprawdz.szukajAuta(auto, baza)) {
                 auto.setIdRejestracja(max.toString());
-                obslugaBazy.zapis("INSERT INTO Rejestracja VALUES('" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "')");
+                obslugaBazy.zapis("Rejestracja", "'" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "'");
                 kontrol = false;
             }
             if (kontrol) {
                 auto.setIdRejestracja(max.toString());
-                obslugaBazy.zapis("INSERT INTO Samochod VALUES('" + auto.getIdSamochod() + "','" + auto.getMarka() + "','" + auto.getModel() + "','" + auto.getPojemnosc() + "','" + auto.getMoc() + "','" + auto.getRok() + "','" + auto.getPaliwo() + "')");
-                obslugaBazy.zapis("INSERT INTO Rejestracja VALUES('" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "')");
+                obslugaBazy.zapis("Samochod", "'" + auto.getIdSamochod() + "','" + auto.getMarka() + "','" + auto.getModel() + "','" + auto.getPojemnosc() + "','" + auto.getMoc() + "','" + auto.getRok() + "','" + auto.getPaliwo() + "'");
+                obslugaBazy.zapis("Rejestracja", "'" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "'");
             }
         }
         rozeslanie(kontrol);
@@ -168,10 +174,10 @@ public class Komunikacja implements Runnable{
         if(kontrol){
             for(int i = 0; i < bazaHistoria.size(); i++){
                 if(idRej.equals(bazaHistoria.getIdRejestracja(i))){
-                    obslugaBazy.usun("Historia",idRej);
+                    obslugaBazy.usun("Historia","IdRejestracja = " + idRej);
                 }
             }
-            obslugaBazy.usun("Rejestracja",idRej);
+            obslugaBazy.usun("Rejestracja","IdRejestracja = " + idRej);
         }
         rozeslanie(kontrol);
     }

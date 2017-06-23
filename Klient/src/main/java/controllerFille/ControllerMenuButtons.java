@@ -20,7 +20,7 @@ public class ControllerMenuButtons
     private ControllerGlownaScene controllerGlownaScene;
 
     @FXML
-    public void aktualizujDaneOnA( )
+    private void aktualizujDaneOnA( )
     {
         if(scene != 1) {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/aktualizujDaneScene.fxml"));
@@ -36,7 +36,7 @@ public class ControllerMenuButtons
     }
 
     @FXML
-    public void dodajSamochodOnA( )
+    private void dodajSamochodOnA( )
     {
         if(scene != 2) {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/dodajAutoScene.fxml"));
@@ -52,7 +52,7 @@ public class ControllerMenuButtons
     }
 
     @FXML
-    public void usunSamochodOnA( )
+    private void usunSamochodOnA( )
     {
         if(scene != 3)
         {
@@ -69,7 +69,7 @@ public class ControllerMenuButtons
     }
 
     @FXML
-    public void historiaOnA( )
+    private void historiaOnA( )
     {
         if(scene != 4)
         {
@@ -86,7 +86,7 @@ public class ControllerMenuButtons
     }
 
     @FXML
-    public void pomocOnA( )
+    private void pomocOnA( )
     {
         if(scene != 5)
         {
@@ -102,7 +102,7 @@ public class ControllerMenuButtons
         }
     }
 
-    public void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene)
+    protected void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene)
     {
         this.controllerGlownaScene = controllerGlownaScene;
     }

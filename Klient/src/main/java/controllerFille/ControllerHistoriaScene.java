@@ -7,13 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Paint;
+import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
 
 
 
 public class ControllerHistoriaScene {
-
-    private boolean maloTekstu = false;
 
     @FXML
     private TableView<Wiersz> historiaTable;
@@ -50,14 +49,15 @@ public class ControllerHistoriaScene {
     @FXML
     public Label wyjatekLabel;
 
-    private Rejestracja rejestracja = new Rejestracja();
-    private String rejestracjaString = new String();
+    private Rejestracja rejestracja;
+    private String rejestracjaString = "";
 
-    private ObservableList<Wiersz> dane = FXCollections.<Wiersz> observableArrayList();
+    private ObservableList<Wiersz> dane = FXCollections.observableArrayList();
 
     @FXML
     public void initialize()
     {
+        rejestracja = new Rejestracja();
         //Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
         //wypelnij(kom.odbierz);
         BazaWiersz baza = new BazaWiersz();
@@ -83,7 +83,7 @@ public class ControllerHistoriaScene {
 
     @FXML
     private void wyszukajOnAction(){
-        maloTekstu = false;
+        boolean maloTekstu = false;
         if (rejestracjaText.getLength() == 0) {
             rejestracjaLabel.setText("*Podaj numer rejestracyjny samochodu**");
             wyjatekLabel.setVisible(true);
@@ -108,12 +108,25 @@ public class ControllerHistoriaScene {
         if (!maloTekstu) {
             System.out.println(rejestracjaString);
             //tu wysyłasz rejestracje
-            //wypelnij(kom.odbierz)
-            // if (false) {
-            //okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-            // } else {
-            //okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-            rejestracjaText.clear();
+            /*wypelnij(kom.odbierz)
+             if (false) {
+            okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
+             } else {
+            okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
+            */
+
+            //nie było więc nie wiem czy działa
+            /*
+            Boolean wynik = kom.odbierzKontrol();
+            if(wynik == true)
+            {
+                rejestracjaText.clear();
+                OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
+            }
+            else if(wynik == false)
+            {
+                OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
+            }*/
             // }
         }
     }

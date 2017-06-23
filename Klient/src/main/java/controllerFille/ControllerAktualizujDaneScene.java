@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 import komunikacja.Komunikacja;
+import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
 
 import java.text.DecimalFormat;
@@ -18,10 +19,8 @@ import java.util.function.UnaryOperator;
  */
 public class ControllerAktualizujDaneScene {
 
-    private Historia historia = new Historia();
-    private String[] dane = new String[2*rozmiar];
-
-    private boolean maloTekstu = false;
+    private Historia historia;
+    private String[] dane;
 
     @FXML
     private Label rejestracjaLabel;
@@ -48,20 +47,27 @@ public class ControllerAktualizujDaneScene {
     private Label wyjatekLabel;
 
     private static final int rozmiar = 3;
-    private Label[] label = new Label[rozmiar];
-    private TextField[] textField = new TextField[rozmiar];
-    private CheckBox[] checkBox = new CheckBox[rozmiar];
+    private Label[] label;
+    private TextField[] textField;
+    private CheckBox[] checkBox;
     private static final String[] textwyjatek = {"**Rejestracja*","Przebieg*", "Średnie spalanie*"};
     private static final String[] text = {"**Rejestracja","Przebieg", "Średnie spalanie"};
 
-    private Rejestracja rejestracja = new Rejestracja();
+    private Rejestracja rejestracja;
 
     @FXML
     public void initialize()
     {
+        historia = new Historia();
+        dane = new String[2*rozmiar];
+        label = new Label[rozmiar];
+        textField = new TextField[rozmiar];
+        checkBox = new CheckBox[rozmiar];
+        rejestracja = new Rejestracja();
+
         for(int i = 0; i < rozmiar*2; i++)
         {
-            dane[i] = new String();
+            dane[i] = "";
         }
         UnaryOperator<TextFormatter.Change> filter = change -> {
             String text = change.getText();
@@ -114,7 +120,7 @@ public class ControllerAktualizujDaneScene {
 
     @FXML
     private void dodajOnA(){
-        maloTekstu = false;
+        boolean maloTekstu = false;
 
         for (int i = 0; i < rozmiar; i++) {
             if (textField[i].getLength() == 0) {
@@ -145,7 +151,7 @@ public class ControllerAktualizujDaneScene {
 
         if (!maloTekstu) {
             wyjatekLabel.setVisible(false);
-            String data = new String();
+            String data;
             Calendar calendar = Calendar.getInstance();
             int dzien = calendar.get(Calendar.DATE);
             int miesiac = calendar.get(Calendar.MONTH) + 1;
@@ -169,11 +175,19 @@ public class ControllerAktualizujDaneScene {
             kom.wyslij("stare");
             kom.wyslij(dane[0]);
             kom.wyslij(historia);
-            kom.odbierzKontrol();
-            for (int i = 0; i < rozmiar; i++)
+            Boolean wynik = kom.odbierzKontrol();
+            if(wynik == true)
             {
-                textField[i].clear();
-                checkBox[i].setSelected(false);
+                for (int i = 0; i < rozmiar; i++)
+                {
+                    textField[i].clear();
+                    checkBox[i].setSelected(false);
+                }
+                OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
+            }
+            else if(wynik == false)
+            {
+                OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
             }
         }
     }

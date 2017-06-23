@@ -15,10 +15,10 @@ public class OknaDialogowe
         blad.showAndWait();
     }
 
-    public  static void oknoWykonania(String tytul, String komunikat)
+    public static void oknoWykonania( String komunikat)
     {
         Alert wykonano = new Alert(Alert.AlertType.INFORMATION);
-        wykonano.setTitle(tytul);
+        wykonano.setTitle("Sukces");
         wykonano.setHeaderText(komunikat);
         wykonano.showAndWait();
     }

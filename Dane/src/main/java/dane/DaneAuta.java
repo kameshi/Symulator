@@ -3,7 +3,7 @@ package dane;
 import java.io.Serializable;
 
 public class DaneAuta implements Serializable {
-    String idRejestracja, idSamochod, marka, model, pojemnosc, moc, rok, paliwo, rejestracja;
+    private String idRejestracja, idSamochod, marka, model, pojemnosc, moc, rok, paliwo, rejestracja;
 
     public DaneAuta(){}
 

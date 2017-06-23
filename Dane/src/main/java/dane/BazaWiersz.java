@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by Marek on 22.06.2017.
  */
 public class BazaWiersz implements Serializable{
-    private ArrayList<Wiersz> wiersz = new ArrayList<Wiersz>();
+    private ArrayList<Wiersz> wiersz = new ArrayList<>();
     public int size(){
         return wiersz.size();
     }
