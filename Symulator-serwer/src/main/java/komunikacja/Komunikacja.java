@@ -54,6 +54,8 @@ public class Komunikacja implements Runnable{
                     historia();
                 }else if(semafor.equals("usun")) {
                     usun();
+                }else if(semafor.equals("sort")){
+                    histroiaSort();
                 }
             }catch(Exception ex){
                 logger.error("Wyjatek serwera",ex);
@@ -119,11 +121,7 @@ public class Komunikacja implements Runnable{
             }
         }
         if(kontrol) {
-            for (int i = 0; i < baza.size(); i++) {
-                if (max <= Integer.valueOf(baza.getIdRejestracja(i))) {
-                    max = Integer.valueOf(baza.getIdRejestracja(i)) + 1;
-                }
-            }
+            max = obslugaBazy.maxId("IdRejestracja", "Rejestracja") + 1;
             if (sprawdz.szukajAuta(auto, baza)) {
                 auto.setIdRejestracja(max.toString());
                 obslugaBazy.zapis("Rejestracja", "'" + auto.getIdRejestracja() + "','" + auto.getIdSamochod() + "','" + auto.getRejestracja() + "'");
@@ -149,6 +147,26 @@ public class Komunikacja implements Runnable{
             rozeslanie(bazaWiersz);
         }
         rozeslanie(kontrol);
+    }
+    private void histroiaSort(){
+        boolean kontrol = true;
+        if(bazaHistoria.size() < 0){
+            kontrol = false;
+        }else {
+            String rejestracja = null;
+            try {
+                rejestracja = (String) czytelnik.readObject();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            bazaHistoria = obslugaBazy.odczytHistori();
+            baza = obslugaBazy.odczytSamochodu();
+            BazaWiersz bazaWiersz = new BazaWiersz();
+            wierszowanie(bazaWiersz, baza, bazaHistoria, rejestracja);
+            rozeslanie(bazaWiersz);
+        }
     }
     private void usun(){
         String[] dane = new String[3];
@@ -202,6 +220,23 @@ public class Komunikacja implements Runnable{
                             bazaHistoria.getSpalanie(j), bazaHistoria.getPrzeglad(j),
                             bazaHistoria.getWymianaOleju(j), bazaHistoria.getWymianaRozrzadu(j), bazaHistoria.getData(j));
                     bazaWiersz.add(dane);
+                }
+            }
+        }
+    }
+    private void wierszowanie(BazaWiersz bazaWiersz, BazaDanych baza, BazaHistoria bazaHistoria, String napis){
+        for(int i = 0; i < baza.size(); i++){
+            for(int j = 0; j < bazaHistoria.size(); j++){
+                if(baza.getIdRejestracja(i).equals(bazaHistoria.getIdRejestracja(j))){
+                    if(napis.equals(baza.getRejestracja(i))) {
+                        Wiersz dane = new Wiersz(baza.getRejestracja(i), baza.getMarka(i),
+                                baza.getModel(i), baza.getPojemnosc(i),
+                                baza.getMoc(i), baza.getRok(i),
+                                baza.getPaliwo(i), bazaHistoria.getPrzebieg(j),
+                                bazaHistoria.getSpalanie(j), bazaHistoria.getPrzeglad(j),
+                                bazaHistoria.getWymianaOleju(j), bazaHistoria.getWymianaRozrzadu(j), bazaHistoria.getData(j));
+                        bazaWiersz.add(dane);
+                    }
                 }
             }
         }

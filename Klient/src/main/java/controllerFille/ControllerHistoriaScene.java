@@ -1,5 +1,6 @@
 package controllerFille;
 
+import dane.BazaHistoria;
 import dane.BazaWiersz;
 import dane.Wiersz;
 import javafx.collections.*;
@@ -7,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Paint;
+import komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
 
@@ -58,11 +60,10 @@ public class ControllerHistoriaScene {
     public void initialize()
     {
         rejestracja = new Rejestracja();
-        //Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
-        //wypelnij(kom.odbierz);
-        BazaWiersz baza = new BazaWiersz();
-        baza.add(new Wiersz("sdfgd","gdf","fghjgfh","gdfgdfg","gdfgbvc","cvbcv","bvnvbne","jghjgh","jhhg","gdfgdf","dfgdfg","gdf","gfdg"));
-        wypelnij(baza);
+        Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+        kom.wyslij("historia");
+        BazaWiersz bazaWiersz = kom.odbierz();
+        wypelnij(bazaWiersz);
 
         rejestracjaColumn.setCellValueFactory(new PropertyValueFactory<>("rejestracja"));
         markaColumn.setCellValueFactory(new PropertyValueFactory<>("marka"));
@@ -107,14 +108,16 @@ public class ControllerHistoriaScene {
 
         if (!maloTekstu) {
             System.out.println(rejestracjaString);
-            //tu wysyłasz rejestracje
-            /*wypelnij(kom.odbierz)
-             if (false) {
+            Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
+            kom.wyslij("sort");
+            kom.wyslij(rejestracjaString);
+            wypelnij(kom.odbierz());
+            /*
+            if (false) {
             okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
              } else {
             okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
             */
-
             //nie było więc nie wiem czy działa
             /*
             Boolean wynik = kom.odbierzKontrol();

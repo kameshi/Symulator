@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d9e9799-83d7-4fe2-8e4b-998d895f73df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/libraries/Maven__com_oracle_ojdbc14_10_2_0_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Baza danych/historia.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Baza danych/projektjava.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Baza danych/rejestracja.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Baza danych/samochod.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Baza danych/sqll.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/Server.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/bazaDanych/ObslugaBazyDanych.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/main/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/pomocnicze/Sprawdz.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/test/java/TestObslugaBazyDanych.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/test/java/TestSprawdz.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Symulator-serwer/.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Symulator-serwer/.gitignore" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java" afterPath="$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,14 +27,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ControllerUsunAutoScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerUsunAutoScene.java">
+      <file leaf-file-name="Komunikacja.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-859">
+              <caret line="123" column="71" lean-forward="false" selection-start-line="123" selection-start-column="71" selection-end-line="123" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,119 +50,19 @@
       <file leaf-file-name="BazaDanych.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/BazaDanych.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding>
-                <element signature="method#BazaDanych#1;class#BazaDanych#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BazaHistoria.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/BazaHistoria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="method#getIdHistoria#0;class#BazaHistoria#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BazaWiersz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/BazaWiersz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+            <state relative-caret-position="68">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaneAuta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/DaneAuta.java">
+      <file leaf-file-name="ControllerHistoriaScene.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerHistoriaScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-              <folding>
-                <element signature="method#DaneAuta#1;class#DaneAuta#0" expanded="false" />
-                <element signature="method#DaneAuta#2;class#DaneAuta#0" expanded="false" />
-                <element signature="method#dodaj#0;class#DaneAuta#0" expanded="false" />
-                <element signature="method#dodaj#1;class#DaneAuta#0" expanded="false" />
-                <element signature="method#toString#0;class#DaneAuta#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Historia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Historia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#Historia#0" expanded="false" />
-                <element signature="method#Historia#1;class#Historia#0" expanded="false" />
-                <element signature="method#Historia#2;class#Historia#0" expanded="false" />
-                <element signature="method#dodaj#0;class#Historia#0" expanded="false" />
-                <element signature="method#dodaj#1;class#Historia#0" expanded="false" />
-                <element signature="method#toString#0;class#Historia#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wiersz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Wiersz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding>
-                <element signature="method#Wiersz#0;class#Wiersz#0" expanded="false" />
-                <element signature="method#toString#0;class#Wiersz#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObslugaBazyDanych.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/bazaDanych/ObslugaBazyDanych.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding>
-                <element signature="method#ObslugaBazyDanych#0;class#ObslugaBazyDanych#0" expanded="false" />
-                <element signature="method#odczytSamochodu#0;class#ObslugaBazyDanych#0" expanded="false" />
-                <element signature="method#odczytHistori#0;class#ObslugaBazyDanych#0" expanded="false" />
-                <element signature="method#zakonczPolaczenie#0;class#ObslugaBazyDanych#0" expanded="false" />
-                <element signature="method#maxId#0;class#ObslugaBazyDanych#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Komunikacja.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1234">
-              <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sprawdz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/pomocnicze/Sprawdz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="51" column="66" lean-forward="false" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-689">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,7 +78,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Symulator-serwer" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -234,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/main/java/oknaDialogowe/OknaDialogowe.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllerFille/ControllerAktualizujDaneScene.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllerFille/ControllerDodajAutoScene.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllerFille/ControllerHistoriaScene.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllerFille/ControllerUsunAutoScene.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestRejestracja.java" />
         <option value="$PROJECT_DIR$/../Symulator-serwer/src/test/java/TestObslugaBazyDanych.java" />
@@ -245,6 +130,7 @@
         <option value="$PROJECT_DIR$/../Dane/src/main/java/dane/DaneAuta.java" />
         <option value="$PROJECT_DIR$/../Dane/src/main/java/dane/Historia.java" />
         <option value="$PROJECT_DIR$/../Symulator-serwer/src/main/java/pomocnicze/Sprawdz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllerFille/ControllerHistoriaScene.java" />
         <option value="$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java" />
       </list>
     </option>
@@ -255,8 +141,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1372" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -274,7 +160,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -359,8 +245,30 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pomocnicze" />
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symulator-serwer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,30 +293,8 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Klient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symulator-serwer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="komunikacja" />
+              <option name="myItemId" value="bazaDanych" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,14 +343,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Klient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dane" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,11 +354,107 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Dane" />
+              <option name="myItemId" value="Klient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Komunikacja" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllerFille" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Klient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dane" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -497,6 +473,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -528,7 +508,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -969,7 +949,8 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1372" height="780" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -981,12 +962,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44637054" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31310943" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27313432" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17625369" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1023,13 +1004,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Dane/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/obliczanie/Obliczania.java" />
     <entry file="file://$PROJECT_DIR$/../Symulator-serwer/Server.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1062,13 +1036,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Komunikacja/Odbieranie.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Komunikacja/Wysylanie.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/INTE.java" />
     <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/INTE.java" />
     <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Dane/INTE.java" />
@@ -1089,13 +1056,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/menuButtons.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../kopia/Symulator-serwer/src/main/java/bazaDanych/ObslugaBazyDanych.java" />
@@ -1121,52 +1088,37 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/historiaScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="89" lean-forward="true" selection-start-line="18" selection-start-column="89" selection-end-line="18" selection-end-column="89" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/aktualizujDaneScene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/AktualizujDaneScene.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/test/h.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/dodajAutoScene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/test/h.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxmlPackage/dodajAutoScene.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="214" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="214" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerAktualizujDaneScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="190" column="13" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="190" selection-end-column="13" />
-          <folding />
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerDodajAutoScene.java">
@@ -1174,7 +1126,7 @@
         <state relative-caret-position="410">
           <caret line="184" column="12" lean-forward="false" selection-start-line="184" selection-start-column="12" selection-end-line="198" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1183,17 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerHistoriaScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="128" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1209,7 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,17 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,48 +1172,29 @@
         <state relative-caret-position="714">
           <caret line="42" column="5" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rejestracja/Rejestracja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="method#czyLiteraLiczba#0;class#Rejestracja#0" expanded="false" />
-            <element signature="method#czyLitera#0;class#Rejestracja#0" expanded="false" />
-            <element signature="method#sprawdzRejestracje#0;class#Rejestracja#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rejestracja/Rejestracja.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/TestRejestracja.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="false" />
+            <element signature="e#324#325#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/test/java/TestRejestracja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/test/java/TestRejestracja.java" />
     <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/logg/Logg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,27 +1203,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/komunikacja/Komunikacja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="66" column="55" lean-forward="false" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/BazaDanych.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="method#BazaDanych#1;class#BazaDanych#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1324,8 +1213,149 @@
         <state relative-caret-position="170">
           <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
           <folding>
-            <element signature="method#getIdHistoria#0;class#BazaHistoria#0" expanded="false" />
+            <marker date="1498317518987" expanded="false" signature="251:261" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="284:290" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="327:337" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="360:366" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="401:411" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="430:436" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="472:583" ph="{...}" />
+            <marker date="1498317518987" expanded="false" signature="626:636" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="678:684" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="722:732" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="769:775" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="813:823" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="860:866" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="904:914" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="951:957" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="999:1009" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="1050:1056" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="1101:1111" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="1155:1161" ph=" }" />
+            <marker date="1498317518987" expanded="false" signature="1195:1205" ph=" { " />
+            <marker date="1498317518987" expanded="false" signature="1238:1244" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/DaneAuta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <marker date="1498317518990" expanded="false" signature="387:686" ph="{...}" />
+            <marker date="1498317518990" expanded="false" signature="813:1030" ph="{...}" />
+            <marker date="1498317518990" expanded="false" signature="1200:1499" ph="{...}" />
+            <marker date="1498317518990" expanded="false" signature="1628:1845" ph="{...}" />
+            <marker date="1498317518990" expanded="false" signature="1890:2390" ph="{...}" />
+            <marker date="1498317518990" expanded="false" signature="2428:2439" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2460:2466" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2500:2511" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2529:2535" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2564:2574" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2587:2593" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2622:2632" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2645:2651" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2684:2694" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2711:2717" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2744:2754" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2765:2771" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2798:2808" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2819:2825" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2855:2866" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2880:2886" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="2921:2932" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="2951:2957" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3013:3024" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3059:3065" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3114:3125" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3154:3160" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3199:3210" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3229:3235" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3274:3285" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3304:3310" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3357:3368" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3395:3401" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3436:3447" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3462:3468" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3503:3514" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3529:3535" ph=" }" />
+            <marker date="1498317518990" expanded="false" signature="3576:3587" ph=" { " />
+            <marker date="1498317518990" expanded="false" signature="3608:3614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/bazaDanych/ObslugaBazyDanych.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-469">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Wiersz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="method#Wiersz#0;class#Wiersz#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="method#toString#0;class#Wiersz#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Historia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Historia#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerUsunAutoScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="65" column="9" lean-forward="false" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/pomocnicze/Sprawdz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="66" lean-forward="false" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerAktualizujDaneScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="173" column="12" lean-forward="false" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,87 +1367,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/DaneAuta.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Komunikacja/Komunikacja.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="66" column="55" lean-forward="false" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
           <folding>
-            <element signature="method#DaneAuta#1;class#DaneAuta#0" expanded="false" />
-            <element signature="method#DaneAuta#2;class#DaneAuta#0" expanded="false" />
-            <element signature="method#dodaj#0;class#DaneAuta#0" expanded="false" />
-            <element signature="method#dodaj#1;class#DaneAuta#0" expanded="false" />
-            <element signature="method#toString#0;class#DaneAuta#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Historia.java">
+    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Historia#0" expanded="false" />
-            <element signature="method#Historia#1;class#Historia#0" expanded="false" />
-            <element signature="method#Historia#2;class#Historia#0" expanded="false" />
-            <element signature="method#dodaj#0;class#Historia#0" expanded="false" />
-            <element signature="method#dodaj#1;class#Historia#0" expanded="false" />
-            <element signature="method#toString#0;class#Historia#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/Wiersz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="method#Wiersz#0;class#Wiersz#0" expanded="false" />
-            <element signature="method#toString#0;class#Wiersz#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerUsunAutoScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/bazaDanych/ObslugaBazyDanych.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="method#ObslugaBazyDanych#0;class#ObslugaBazyDanych#0" expanded="false" />
-            <element signature="method#odczytSamochodu#0;class#ObslugaBazyDanych#0" expanded="false" />
-            <element signature="method#odczytHistori#0;class#ObslugaBazyDanych#0" expanded="false" />
-            <element signature="method#zakonczPolaczenie#0;class#ObslugaBazyDanych#0" expanded="false" />
-            <element signature="method#maxId#0;class#ObslugaBazyDanych#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/pomocnicze/Sprawdz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="51" column="66" lean-forward="false" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Symulator-serwer/src/main/java/komunikacja/Komunikacja.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1234">
-          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-859">
+          <caret line="123" column="71" lean-forward="false" selection-start-line="123" selection-start-column="71" selection-end-line="123" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dane/src/main/java/dane/BazaDanych.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllerFille/ControllerHistoriaScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-689">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
