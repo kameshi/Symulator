@@ -5,6 +5,10 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 
+/**
+ * <h2>Klasa odpowiedzialna za połączenie z baą danych.</h2>
+ * <p>Posiada metody pozwalające operowac na bazie danych.</p>
+ */
 public class ObslugaBazyDanych {
 
     private final static Logger logger = Logger.getLogger(ObslugaBazyDanych.class);
@@ -17,6 +21,9 @@ public class ObslugaBazyDanych {
     private Statement stmt;
     private Statement stmt2;
 
+    /**
+     * Metoda odpowiedzialna za nawiązanie połączenia.
+     */
     public ObslugaBazyDanych()
     {
         try {
@@ -41,6 +48,10 @@ public class ObslugaBazyDanych {
         }
     }
 
+    /**
+     * Metoda odczytująca dane z tablei Rejestracja i Samochod do obiektu typu BazaDanych.
+     * @return Zwraca odzytaną BazaDanych.
+     */
     public BazaDanych odczytSamochodu()
     {
         BazaDanych baza = new BazaDanych();
@@ -67,6 +78,10 @@ public class ObslugaBazyDanych {
         return baza;
     }
 
+    /**
+     * Metoda odczytująca dane z tablei Historia do obiektu typu BazaHistoria.
+     * @return Zwraca odzytaną BazeHistori.
+     */
     public BazaHistoria odczytHistori()
     {
         BazaHistoria baza = new BazaHistoria();
@@ -87,6 +102,12 @@ public class ObslugaBazyDanych {
         return baza;
     }
 
+    /**
+     * Metoda dodaje dane do tabeli.
+     * @param dane dane do zapisu
+     * @param tabela tabela
+     * @return boolean zwraca true jeśli uda się dodać.
+     */
     public boolean zapis( String tabela, String dane)
     {
         String zapytanie = "INSERT INTO " + tabela + " VALUES(" + dane + ")";
@@ -100,6 +121,12 @@ public class ObslugaBazyDanych {
         return true;
     }
 
+    /**
+     * Metoda usuwa dane z tabeli.
+     * @param warunek warunek usuwania
+     * @param tabela tabela
+     * @return boolean zwraca true jeśli uda się usunąć.
+     */
     public boolean usun(String tabela, String warunek)
     {
         String rejestracja = "DELETE FROM " + tabela + " WHERE " + warunek;
@@ -113,6 +140,9 @@ public class ObslugaBazyDanych {
         return true;
     }
 
+    /**
+     * Metoda kończąca połączenie z bazą danych.
+     */
     public void zakonczPolaczenie(){
         try {
             conection.close();
@@ -134,6 +164,12 @@ public class ObslugaBazyDanych {
         }
     }
 
+    /**
+     * Metoda zwaracająca największe id z tabeli i kolumny podanych jako argument.
+     * @param kolumna kolumna w tabeli
+     * @param tabela tabela
+     * @return int zwraca maksymalne id z tabeli.
+     */
     public int maxId(String kolumna, String tabela)
     {
         ResultSet zapytanie = null;

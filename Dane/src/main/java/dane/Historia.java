@@ -5,6 +5,11 @@ import java.io.Serializable;
 /**
  * Created by Marek on 12.06.2017.
  */
+
+/**
+ * <h2>Klasa przechowuje historie o samochodzie.</h2>
+ * <p>Posiada metody pozwalające operować historią samochodu.</p>
+ */
 public class Historia implements Serializable {
     private String idHistoria, idRejestracja, przebieg, spalenie, przeglad, wymianaOleju, wymianaRozrzadu, data;
 

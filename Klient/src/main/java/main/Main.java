@@ -9,6 +9,10 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
+/**
+ * <h2>Klasa kontrolera przycisków menu wyboru ekranów.</h2>
+ * <p>Posiada metody pozwalające obsługiwać przyciski menu.</p>
+ */
 public class Main extends Application {
     private final static Logger logger = Logger.getLogger(Main.class);
 
@@ -34,37 +38,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-     /*
-        Scanner scannerI = new Scanner(System.in);
-        Scanner scannerS = new Scanner(System.in);
-        Komunikacja k = new Komunikacja();
-        boolean n = true;
-        do{
-            System.out.println("Podaj co robic \n1.nowe auto\n2.stare auto\n3.Historia\n0.koniec");
-            int kon;
-
-            kon = scannerI.nextInt();
-            if(kon == 1){
-                String marka, model, km, paliwo, silnik;
-                System.out.println("Marka: ");
-                marka = scannerS.nextLine();
-                System.out.println("Modle: ");
-                model = scannerS.nextLine();
-                System.out.println("KM: ");
-                km = scannerS.nextLine();
-                System.out.println("Paliwo: ");
-                paliwo = scannerS.nextLine();
-                System.out.println("Silnik: ");
-                silnik = scannerS.nextLine();
-                k.wyslij(marka, model, km, paliwo, silnik);
-                System.out.println("Srednie spalanie na " + km + " Km " + " wynosi: " + k.odebrane());
-            }else if(kon == 2){
-
-            }else if(kon == 0){
-                n = false;
-            }
-        }while(n);
-*/
     }
 
 }

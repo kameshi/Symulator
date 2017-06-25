@@ -17,6 +17,10 @@ import java.util.function.UnaryOperator;
 /**
  * Created by Marek on 11.05.2017.
  */
+/**
+ * <h2>Klasa kontrolera ekranu aktualizacji danych o samochodzie.</h2>
+ * <p>Posiada metody pozwalające obsługiwać pola zawarte na ekranie "Dodaj dane o samochodzie".</p>
+ */
 public class ControllerAktualizujDaneScene {
 
     private Historia historia;
@@ -55,6 +59,9 @@ public class ControllerAktualizujDaneScene {
 
     private Rejestracja rejestracja;
 
+    /**
+     * Metoda ustawiająca odpowiedznie filtry w polach typu TextField oraz inicjująca zmienne.
+     */
     @FXML
     public void initialize()
     {
@@ -118,6 +125,9 @@ public class ControllerAktualizujDaneScene {
         textField[2].setTextFormatter(textFormatter2);
     }
 
+    /**
+     * Metoda sprawdzająca poprawność wprowadzonych danych, jeżeli są poprawne wysyła je do serwera i wyświetla stosowny komunikat.
+     */
     @FXML
     private void dodajOnA(){
         boolean maloTekstu = false;
@@ -176,7 +186,7 @@ public class ControllerAktualizujDaneScene {
             kom.wyslij(dane[0]);
             kom.wyslij(historia);
             Boolean wynik = kom.odbierzKontrol();
-            if(wynik == true)
+            if(wynik)
             {
                 for (int i = 0; i < rozmiar; i++)
                 {
@@ -185,7 +195,7 @@ public class ControllerAktualizujDaneScene {
                 }
                 OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
             }
-            else if(wynik == false)
+            else
             {
                 OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
             }

@@ -2,6 +2,10 @@ package dane;
 
 import java.io.Serializable;
 
+/**
+ * <h2>Klasa przechowuje dane o samochodzie.</h2>
+ * <p>Posiada metody pozwalające operować danymi samochodu.</p>
+ */
 public class DaneAuta implements Serializable {
     private String idRejestracja, idSamochod, marka, model, pojemnosc, moc, rok, paliwo, rejestracja;
 

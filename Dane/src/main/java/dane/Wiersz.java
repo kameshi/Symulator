@@ -5,6 +5,10 @@ import java.io.Serializable;
 /**
  * Created by Marek on 15.06.2017.
  */
+/**
+ * <h2>Klasa przechowuje dane o potrzebne do wyświetlania histori.</h2>
+ * <p>Posiada metody pozwalające operować danymi do wyświetlania histori.</p>
+ */
 public class Wiersz implements Serializable {
     private String rejestracja, marka, model, pojemnosc, moc, rok, paliwo, przebieg, spalanie, przeglad, wymianaOleju, wymianaRozrzadu, data;
 

@@ -2211,4 +2211,86 @@ ObslugaBazyDanych:110 ERROR - Nie można wykonać podanego zapytania na bazie 20
 Main:17 INFO  - Uruchomiono program. 2017-06-24 01:48:49 
  Main:27 INFO  - Włączenie serwera 2017-06-24 01:48:58 
  Main:17 INFO  - Uruchomiono program. 2017-06-24 01:50:13 
+ Main:27 INFO  - Włączenie serwera 2017-06-24 22:28:34 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 22:28:46 
+ ObslugaBazyDanych:97 ERROR - Nie można wykonać podanego zapytania na bazie 2017-06-24 22:32:45 
+ java.sql.SQLException: ORA-00001: unique constraint (PROJEKTJAVA.SAMOCHOD_PK) violated
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:288)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:745)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:961)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1190)
+	at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:1657)
+	at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:1626)
+	at bazaDanych.ObslugaBazyDanych.zapis(ObslugaBazyDanych.java:95)
+	at komunikacja.Komunikacja.noweAuto(Komunikacja.java:132)
+	at komunikacja.Komunikacja.run(Komunikacja.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+Main:17 INFO  - Uruchomiono program. 2017-06-24 22:36:19 
+ ObslugaBazyDanych:97 ERROR - Nie można wykonać podanego zapytania na bazie 2017-06-24 22:39:16 
+ java.sql.SQLException: ORA-00001: unique constraint (PROJEKTJAVA.SAMOCHOD_PK) violated
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:288)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:745)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:961)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1190)
+	at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:1657)
+	at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:1626)
+	at bazaDanych.ObslugaBazyDanych.zapis(ObslugaBazyDanych.java:95)
+	at komunikacja.Komunikacja.noweAuto(Komunikacja.java:132)
+	at komunikacja.Komunikacja.run(Komunikacja.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+Main:17 INFO  - Uruchomiono program. 2017-06-24 22:45:46 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 22:47:00 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 22:48:14 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 22:49:14 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 22:51:47 
+ ObslugaBazyDanych:97 ERROR - Nie można wykonać podanego zapytania na bazie 2017-06-24 22:52:25 
+ java.sql.SQLException: ORA-00001: unique constraint (PROJEKTJAVA.SAMOCHOD_PK) violated
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:288)
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:745)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:961)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1190)
+	at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:1657)
+	at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:1626)
+	at bazaDanych.ObslugaBazyDanych.zapis(ObslugaBazyDanych.java:95)
+	at komunikacja.Komunikacja.noweAuto(Komunikacja.java:132)
+	at komunikacja.Komunikacja.run(Komunikacja.java:50)
+	at java.lang.Thread.run(Thread.java:745)
+Main:17 INFO  - Uruchomiono program. 2017-06-24 22:54:34 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 23:07:25 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 23:08:34 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 23:09:04 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 23:12:36 
+ Main:17 INFO  - Uruchomiono program. 2017-06-24 23:14:31 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 00:11:36 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 00:11:43 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 00:12:46 
+ Main:48 ERROR - Brak sterownika 2017-06-25 00:12:46 
+ java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:128)
+	at main.Main.dzialanie(Main.java:46)
+	at main.Main.main(Main.java:29)
+Main:17 INFO  - Uruchomiono program. 2017-06-25 00:13:13 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 00:41:45 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 00:51:58 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 09:58:26 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 10:09:21 
+ Main:17 INFO  - Uruchomiono program. 2017-06-25 10:20:23 
  

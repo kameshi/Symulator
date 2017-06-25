@@ -1,6 +1,5 @@
 package controllerFille;
 
-import dane.BazaHistoria;
 import dane.BazaWiersz;
 import dane.Wiersz;
 import javafx.collections.*;
@@ -12,7 +11,10 @@ import komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
 
-
+/**
+ * <h2>Klasa kontrolera ekranu wyświetlania histori samochodów.</h2>
+ * <p>Posiada metody pozwalające obsługiwać pola zawarte na ekranie "Historia".</p>
+ */
 
 public class ControllerHistoriaScene {
 
@@ -56,6 +58,9 @@ public class ControllerHistoriaScene {
 
     private ObservableList<Wiersz> dane = FXCollections.observableArrayList();
 
+    /**
+     * Metoda inicjująca zmienne oraz ustawiająca odpowiednie nazwy danych w kolumnach.
+     */
     @FXML
     public void initialize()
     {
@@ -64,7 +69,7 @@ public class ControllerHistoriaScene {
         kom.wyslij("historia");
         BazaWiersz bazaWiersz = kom.odbierz();
         wypelnij(bazaWiersz);
-
+        
         rejestracjaColumn.setCellValueFactory(new PropertyValueFactory<>("rejestracja"));
         markaColumn.setCellValueFactory(new PropertyValueFactory<>("marka"));
         modelColumn.setCellValueFactory(new PropertyValueFactory<>("model"));
@@ -78,10 +83,11 @@ public class ControllerHistoriaScene {
         wymianaOlejuColumn.setCellValueFactory(new PropertyValueFactory<>("wymianaOleju"));
         wymianaRozrzaduColumn.setCellValueFactory(new PropertyValueFactory<>("wymianaRozrzadu"));
         dataColumn.setCellValueFactory(new PropertyValueFactory<>("data"));
-
-
     }
 
+    /**
+     * Metoda sprawdzająca poprawność wprowadzonych danych, jeżeli są poprawne wysyła je do serwera i wywołuję funkcję wypelnij(), aby wyświetlić otrzymane dane w tabeli.
+     */
     @FXML
     private void wyszukajOnAction(){
         boolean maloTekstu = false;
@@ -107,35 +113,29 @@ public class ControllerHistoriaScene {
         }
 
         if (!maloTekstu) {
-            System.out.println(rejestracjaString);
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("sort");
             kom.wyslij(rejestracjaString);
             wypelnij(kom.odbierz());
-            /*
-            if (false) {
-            okno.oknoBledu("Nie udało się dodać samochodu do bazy.");
-             } else {
-            okno.oknoWykonania("Dodano", "Samochod dodano do bazy");
-            */
-            //nie było więc nie wiem czy działa
-            /*
             Boolean wynik = kom.odbierzKontrol();
-            if(wynik == true)
+            if(wynik)
             {
                 rejestracjaText.clear();
-                OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
             }
-            else if(wynik == false)
+            else
             {
-                OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
-            }*/
-            // }
+                OknaDialogowe.oknoBledu("Nie ma takiego samochodu");
+            }
         }
     }
 
+    /**
+     * Metoda metoda wypełniająca liste dane typu FXCollections.observableArrayList() elementami z obiektu baza i wyświetlajaca je w tabeli historiaTable.
+     * @param baza zawiera dane do wyswietlenia w tabeli.
+     */
     private void wypelnij(BazaWiersz baza)
     {
+        dane.clear();
         for(int i = 0; i < baza.size(); i++)
         {
             dane.add(baza.getObject(i));

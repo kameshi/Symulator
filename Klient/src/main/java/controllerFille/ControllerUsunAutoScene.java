@@ -11,6 +11,10 @@ import rejestracja.Rejestracja;
 /**
  * Created by Marek on 12.05.2017.
  */
+/**
+ * <h2>Klasa kontrolera ekranu usuwania samochodu.</h2>
+ * <p>Posiada metody pozwalające obsługiwać pola zawarte na ekranie "Usuń samochód".</p>
+ */
 public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z rejestracja marka i modelem moge to zrobić na obiekcie DaneAuta jak trzeba
 
     private String[] dane;
@@ -39,16 +43,16 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
     private static final String[] text = {"**Rejestracja","Marka", "Model"};
     private Rejestracja rejestracja;
 
-    public ControllerUsunAutoScene() {
+    /**
+     * Metoda inicjująca zmienne.
+     */
+    @FXML
+    public void initialize()
+    {
         dane = new String[rozmiar];
         label = new Label[rozmiar];
         textField = new TextField[rozmiar];
         rejestracja = new Rejestracja();
-    }
-
-    @FXML
-    public void initialize()
-    {
         for(int i = 0; i < rozmiar; i++)
         {
             dane[i] = "";
@@ -63,6 +67,9 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
 
     }
 
+    /**
+     * Metoda sprawdzająca poprawność wprowadzonych danych, jeżeli są poprawne wysyła je do serwera i wyświetla stosowny komunikat.
+     */
     @FXML
     private void usunOnA() {
         boolean maloTekstu = false;
@@ -90,23 +97,22 @@ public class ControllerUsunAutoScene {//do serwera wysyła tablice typu string z
 
         if (!maloTekstu) {
             wyjatekLabel.setVisible(false);
-            //wysyła tutaj
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("usun");
             for(int i = 0;i < 3; i++){
                 kom.wyslij(dane[i]);
             }
             Boolean wynik = kom.odbierzKontrol();
-            if(wynik == true)
+            if(wynik)
             {
                 for (int i = 0; i < rozmiar; i++) {
                     textField[i].clear();
                 }
                 OknaDialogowe.oknoWykonania("Usunięto podany samochód");
             }
-            else if(wynik == false)
+            else
             {
-                OknaDialogowe.oknoBledu("Nie udało się usunać podanego ssmochodu");
+                OknaDialogowe.oknoBledu("Nie udało się usunać podanego samochodu, sprawdź podane dane");
             }
         }
     }

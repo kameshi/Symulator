@@ -17,9 +17,11 @@ import java.util.function.UnaryOperator;
 /**
  * Created by Marek on 11.05.2017.
  */
-public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu DaneAuta
-
-    //OknaDialogowe okno = new OknaDialogowe();
+/**
+ * <h2>Klasa kontrolera ekranu dodawania dnowego samochodu.</h2>
+ * <p>Posiada metody pozwalające obsługiwać pola zawarte na ekranie "Dodaj samochód".</p>
+ */
+public class ControllerDodajAutoScene {
 
     private DaneAuta daneAuta;
     private String[] dane;
@@ -68,7 +70,9 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
 
     private Rejestracja rejestracja;
 
-
+    /**
+     * Metoda ustawiająca odpowiedznie filtry w polach typu TextField oraz inicjująca zmienne.
+     */
     public void initialize()
     {
         daneAuta = new DaneAuta();
@@ -117,6 +121,9 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
         rodzajPaliwaComboBox.setValue("Wybierz");
     }
 
+    /**
+     * Metoda sprawdzająca poprawność wprowadzonych danych, jeżeli są poprawne wysyła je do serwera i wyświetla stosowny komunikat.
+     */
     @FXML
     private void dodajOnA(){
         boolean maloTekstu = false;
@@ -180,10 +187,8 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("nowe");
             kom.wyslij(daneAuta);
-            //Nie było tu odbierzKontrol więc nie wiem czy to dział
-            /*
             Boolean wynik = kom.odbierzKontrol();
-            if(wynik == true)
+            if(wynik)
             {
 
                 for(int i = 0 ; i < rozmiar ; i++)
@@ -193,11 +198,10 @@ public class ControllerDodajAutoScene { // do serwera przesyła obiekt typu Dane
                 rodzajPaliwaComboBox.setValue("Wybierz");
                 OknaDialogowe.oknoWykonania("Dodano dane o samochodzie");
             }
-            else if(wynik == false)
+            else
             {
                 OknaDialogowe.oknoBledu("Nie udało się dodać danych o samochodzi sprawdź podane dane");
             }
-            */
         }
     }
 

@@ -3,6 +3,10 @@ package dane;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * <h2>Klasa przechowuje listę obiektów typu DaneAuta.</h2>
+ * <p>Posiada metody pozwalające operować na liscie typu ArrayList zawierającej obiekty typu DaneAuta .</p>
+ */
 public class BazaDanych implements Serializable {
     private ArrayList<DaneAuta> auto = new ArrayList<>();
     public BazaDanych(){}

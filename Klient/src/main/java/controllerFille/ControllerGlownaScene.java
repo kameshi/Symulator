@@ -9,12 +9,19 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
+/**
+ * <h2>Klasa kontrolera ekranu głównego.</h2>
+ * <p>Posiada metody pozwalające ustawiać ekrany na scenie głównej.</p>
+ */
 public class ControllerGlownaScene {
 
     @FXML
     private BorderPane borderPane;
     private final static Logger logger = Logger.getLogger(ControllerGlownaScene.class);
 
+    /**
+     * Metoda ustawiająca w górnej części ekranu głównego menu wyboru ekranów oraz na środku ekran dodania danych o samochodzie.
+     */
     public void initialize()
     {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxmlPackage/aktualizujDaneScene.fxml"));
@@ -43,6 +50,10 @@ public class ControllerGlownaScene {
         controllerMenuButtons.setControllerGlownaScene(this);
     }
 
+    /**
+     * Metoda czyszcząca środek ekranu głównego i ustwaiająca na nym nowy obiekt typu Pane.
+     * @param pane obiekt zawierający ekran do ustawienia.
+     */
     protected void setCenter(Pane pane) {
         borderPane.setCenter(null);
         borderPane.setCenter(pane);

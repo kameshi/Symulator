@@ -10,6 +10,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * <h2>Klasa kontrolera przycisków menu wyboru ekranów.</h2>
+ * <p>Posiada metody pozwalające obsługiwać przyciski menu.</p>
+ */
 public class Komunikacja{
 
 	private final static Logger logger = Logger.getLogger(Komunikacja.class);
@@ -19,6 +23,7 @@ public class Komunikacja{
 	private ObjectOutputStream pisarz;
 	private ObjectInputStream czytelnik;
 	private String host;
+
 	public Komunikacja(String host, int port){
 		this.host = host;
 		this.port = port;

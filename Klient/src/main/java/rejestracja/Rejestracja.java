@@ -3,8 +3,20 @@ package rejestracja;
 /**
  * Created by Marek on 23.06.2017.
  */
+
+/**
+ * <h2>Klasa odpowiedzialna za sprawdzanie rejestracji.</h2>
+ * <p>Posiada metody sprawdzające poprawność wprowadzonej przez użytkownika .</p>
+ */
 public class Rejestracja {
 
+    /**
+     * Metoda sprawdzjaąca czy w zmiennej rejestracjaString na miejscach od i do j znajduje się litera lub liczba.
+     * @param rejestracjaString rejestracja
+     * @param i miejsce pierwszego sprawdzanego elementu
+     * @param j miejsce ostatniego sprawdzanego elementu
+     * @return boolean zwraca true jeśli w sprawdzanym przedziale jest inny znak niż litera lub liczba.
+     */
     private boolean czyLiteraLiczba(String rejestracjaString, int i, int j)
     {
         for(; i < j; i++)
@@ -17,6 +29,13 @@ public class Rejestracja {
         return false;
     }
 
+    /**
+     * Metoda sprawdzjaąca czy w zmiennej rejestracjaString na miejscach od i do j znajduje się litera.
+     * @param rejestracjaString rejestracja
+     * @param i miejsce pierwszego sprawdzanego elementu
+     * @param j miejsce ostatniego sprawdzanego elementu
+     * @return boolean zwraca true jeśli w sprawdzanym przedziale jest inny znak niż litera.
+     */
     private boolean czyLitera(String rejestracjaString, int i, int j)
     {
         for(; i < j; i++)
@@ -29,6 +48,11 @@ public class Rejestracja {
         return false;
     }
 
+    /**
+     * Metoda sprawdzająca cy rejestracja przekazana do funkcji przez argument jest w odpowiednim formacie.
+     * @param rejestracjaString rejestracja
+     * @return boolean zwraca true jeśli rejestracja nie jest poprawna.
+     */
     public boolean sprawdzRejestracje(String rejestracjaString)
     {
         if(rejestracjaString.length() < 7)

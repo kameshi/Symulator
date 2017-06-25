@@ -11,6 +11,11 @@ import java.io.IOException;
 /**
  * Created by Marek on 11.05.2017.
  */
+
+/**
+ * <h2>Klasa kontrolera przycisków menu wyboru ekranów.</h2>
+ * <p>Posiada metody pozwalające obsługiwać przyciski menu.</p>
+ */
 public class ControllerMenuButtons
 {
 
@@ -19,6 +24,9 @@ public class ControllerMenuButtons
     private int scene = 0;
     private ControllerGlownaScene controllerGlownaScene;
 
+    /**
+     * Metoda wczytująca ekran aktualizacj danych o samochodzie oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     @FXML
     private void aktualizujDaneOnA( )
     {
@@ -35,6 +43,9 @@ public class ControllerMenuButtons
         }
     }
 
+    /**
+     * Metoda wczytująca ekran dodaj samochód oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     @FXML
     private void dodajSamochodOnA( )
     {
@@ -51,6 +62,9 @@ public class ControllerMenuButtons
         }
     }
 
+    /**
+     * Metoda wczytująca ekran usun samochód oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     @FXML
     private void usunSamochodOnA( )
     {
@@ -68,6 +82,9 @@ public class ControllerMenuButtons
         }
     }
 
+    /**
+     * Metoda wczytująca ekran historia oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     @FXML
     private void historiaOnA( )
     {
@@ -85,6 +102,9 @@ public class ControllerMenuButtons
         }
     }
 
+    /**
+     * Metoda wczytująca ekran pomoc oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     @FXML
     private void pomocOnA( )
     {
@@ -102,11 +122,17 @@ public class ControllerMenuButtons
         }
     }
 
+    /**
+     * Metoda wczytująca ekran aktualizacj danych o samochodzie oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     */
     protected void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene)
     {
         this.controllerGlownaScene = controllerGlownaScene;
     }
 
+    /**
+     * Metoda obsługująca przycisk wyjście który po naciśnięciu zamyka aplikację.
+     */
     public void exit( )
     {
         Platform.exit();

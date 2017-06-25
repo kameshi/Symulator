@@ -6,6 +6,10 @@ import java.util.ArrayList;
 /**
  * Created by Marek on 12.06.2017.
  */
+/**
+ * <h2>Klasa przechowuje listę obiektów typu Historia.</h2>
+ * <p>Posiada metody pozwalające operować na liscie typu ArrayList zawierającej obiekty typu Historia .</p>
+ */
 public class BazaHistoria implements Serializable {
     private ArrayList<Historia> historia = new ArrayList<>();
     public int size(){
