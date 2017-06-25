@@ -124,6 +124,7 @@ public class ControllerMenuButtons
 
     /**
      * Metoda wczytująca ekran aktualizacj danych o samochodzie oraz wywołująca metodę setCenter aby ustawić go na ekranie głównym.
+     * @param controllerGlownaScene zmienna przechowująca wskażnik na kontroler ekranu głównego
      */
     protected void setControllerGlownaScene(ControllerGlownaScene controllerGlownaScene)
     {

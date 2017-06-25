@@ -116,9 +116,9 @@ public class ControllerHistoriaScene {
             Komunikacja kom = new Komunikacja("127.0.0.1", 6000);
             kom.wyslij("sort");
             kom.wyslij(rejestracjaString);
-            wypelnij(kom.odbierz());
-            Boolean wynik = kom.odbierzKontrol();
-            if(wynik)
+            BazaWiersz baza = kom.odbierz();
+            wypelnij(baza);
+            if(baza.size() > 0)
             {
                 rejestracjaText.clear();
             }

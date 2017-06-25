@@ -7,7 +7,6 @@ import javafx.scene.paint.Paint;
 import komunikacja.Komunikacja;
 import oknaDialogowe.OknaDialogowe;
 import rejestracja.Rejestracja;
-
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
 import java.util.Calendar;

@@ -8,7 +8,19 @@ import dane.DaneAuta;
 /**
  * Created by Marek on 23.06.2017.
  */
+
+/**
+ * <h2>Klasa sprawdzajaca dane z bazy.</h2>
+ * <p>Posiada metody pozwalające szukanie aut na listach baz.</p>
+ */
 public class Sprawdz {
+
+    /**
+     * Metoda sprawdzjaąca czy w zmiennej rejestracjaString na miejscach od i do j znajduje się litera lub liczba.
+     * @param autoSzukane auto do wyszukania
+     * @param baza baza w której szukam auta
+     * @return boolean liczbe kontrolną.
+     */
     public boolean szukajAuta(DaneAuta autoSzukane, BazaDanych baza)
     {
         String rej = autoSzukane.getRejestracja();
@@ -33,6 +45,14 @@ public class Sprawdz {
         autoSzukane.setRejestracja(rej);
         return false;
     }
+
+    /**
+     * Metoda sprawdzjaąca czy w zmiennej rejestracjaString na miejscach od i do j znajduje się litera lub liczba.
+     * @param dane tablica danych auta
+     * @param baza baza w której szukam auta
+     * @param historia baza historii auta.
+     * @return boolean liczbe kontrolną.
+     */
     public boolean szukajAuta(String[] dane, BazaDanych baza, BazaHistoria historia){
         ObslugaBazyDanych obslugaBazyDanych = new ObslugaBazyDanych();
         String idRej = null;

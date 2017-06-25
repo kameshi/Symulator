@@ -10,6 +10,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * <h2>Klasa odpowiedzialna za komunikacje z klientem.</h2>
+ * <p>Posiada metody komunikujace sie z klientem. Działa na bazie watków pojedynczego połaczenia</p>
+ */
 
 public class Komunikacja implements Runnable{
 
@@ -25,6 +29,12 @@ public class Komunikacja implements Runnable{
     private ObjectInputStream czytelnik;
     private String host;
 
+    /**
+     * Metoda odpowiadająca za zarejestrowanie połaczenia.
+     * @param port port na jakiem server jest aktywny
+     * @param host lokalny host na jakim działa server
+     * @param gniazdoKlienta gniazdo na jakim server odbiera
+     */
     public Komunikacja(int port, String host, Socket gniazdoKlienta) {
         sprawdz = new Sprawdz();
         bazaHistoria = new BazaHistoria();
@@ -35,7 +45,9 @@ public class Komunikacja implements Runnable{
         this.host = host;
         this.gniazdoKlienta = gniazdoKlienta;
     }
-
+    /**
+     * Metoda odpowiadająca za dzialanie pojedynczego połaczenia z klientem.
+     */
     public void run() {
         System.out.println("Serwer startuje na hoscie " + host);
         try {
@@ -68,6 +80,9 @@ public class Komunikacja implements Runnable{
             logger.error("Wyjatek serwera",e);
         }
     }
+    /**
+     * Metoda odpowiadająca za obsługę działania w przypadku aktualizacji danych w bazie.
+     */
     private void stareAuto(){
         boolean kontrol = false;
         String nrRejestracyjny = null;
@@ -102,6 +117,9 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
+    /**
+     * Metoda odpowiadająca za obsługę działania w przypadku dodania danych do bazy.
+     */
     private void noweAuto(){
         DaneAuta auto = null;
         try {
@@ -135,6 +153,9 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
+    /**
+     * Metoda odpowiadająca za obsługę działania w przypadku odbioru historii z bazy danych.
+     */
     private void historia(){
         boolean kontrol = true;
         if(bazaHistoria.size() < 0){
@@ -148,6 +169,9 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
+    /**
+     * Metoda odpowiadająca za obsługę działania w przypadku odbioru historii posortowanej bazy danych.
+     */
     private void histroiaSort(){
         boolean kontrol = true;
         if(bazaHistoria.size() < 0){
@@ -168,6 +192,9 @@ public class Komunikacja implements Runnable{
             rozeslanie(bazaWiersz);
         }
     }
+    /**
+     * Metoda odpowiadająca za obsługę działania w przypadku usuwania rekordu z bazy danych.
+     */
     private void usun(){
         String[] dane = new String[3];
         String idRej = null;
@@ -199,16 +226,30 @@ public class Komunikacja implements Runnable{
         }
         rozeslanie(kontrol);
     }
+    /**
+     * Metoda odpowiadająca za wysłanie bazy wierszy.
+     * * @param baza baza rozwyłana na klienta
+     */
     private void rozeslanie(BazaWiersz baza){
-            try{
-                pisarz.writeObject(baza);
-            }catch(Exception ex){ex.printStackTrace();}
+        try{
+            pisarz.writeObject(baza);
+        }catch(Exception ex){ex.printStackTrace();}
     }
+    /**
+     * Metoda odpowiadająca za wysłanie kontrolenj liczby.
+     * * @param zmienna wysyłanie kontrolnej liczby na klient.
+     */
     private void rozeslanie(boolean zmienna){
         try{
             pisarz.writeObject(zmienna);
         }catch(Exception ex){ex.printStackTrace();}
     }
+    /**
+     * Metoda odpowiadająca za wysłanie bazy wierszy.
+     * * @param  bazaWiersz baza przygotowywana do wysłania
+     * * @param baza baza z której czerpie dane
+     * * @param baza bazaHistoria z której czerpie dane
+     */
     private void wierszowanie(BazaWiersz bazaWiersz, BazaDanych baza, BazaHistoria bazaHistoria){
         for(int i = 0; i < baza.size(); i++){
             for(int j = 0; j < bazaHistoria.size(); j++){
@@ -224,6 +265,13 @@ public class Komunikacja implements Runnable{
             }
         }
     }
+    /**
+     * Metoda odpowiadająca za wysłanie bazy wierszy.
+     * * @param  bazaWiersz baza przygotowywana do wysłania
+     * * @param baza baza z której czerpie dane
+     * * @param baza bazaHistoria z której czerpie dane
+     * * * @param napis rejestracja z której konrstrujemy baze wierszy.
+     */
     private void wierszowanie(BazaWiersz bazaWiersz, BazaDanych baza, BazaHistoria bazaHistoria, String napis){
         for(int i = 0; i < baza.size(); i++){
             for(int j = 0; j < bazaHistoria.size(); j++){

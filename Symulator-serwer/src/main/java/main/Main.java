@@ -1,13 +1,15 @@
 package main;
 
 
-
-import bazaDanych.ObslugaBazyDanych;
 import komunikacja.Komunikacja;
 import org.apache.log4j.Logger;
 import java.io.IOException;
 import java.net.*;
 
+/**
+ * <h2>Klasa główna z metodą main.</h2>
+ * <p></p>
+ */
 public class Main {
 
     private final static Logger logger = Logger.getLogger(Main.class);
@@ -17,13 +19,9 @@ public class Main {
     private ServerSocket gniazdoSerwer;
     private Socket gniazdoKlienta;
 
+
+
     public static void main(String[] args){
-        /*
-        ObslugaBazyDanych obsluga = new ObslugaBazyDanych();
-        System.out.println(obsluga.maxId("IdSamochod","Samochod"));
-        System.out.println(obsluga.maxId("IdRejestracja","Rejestracja"));
-        System.out.println(obsluga.maxId("IdHistoria","Historia"));
-        */
         logger.info("Włączenie serwera");
         Main server = new Main();
         server.dzialanie();
@@ -34,6 +32,9 @@ public class Main {
         this.Port = port;
     }
 
+    /**
+     * Metoda uruchamia server
+     */
     public void dzialanie(){
         String host = null;
         try {

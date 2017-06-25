@@ -11,8 +11,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * <h2>Klasa kontrolera przycisków menu wyboru ekranów.</h2>
- * <p>Posiada metody pozwalające obsługiwać przyciski menu.</p>
+ * <h2>Klasa komunikujaca sie z serverem .</h2>
+ * <p>Posiada metody pozwalające obsługiwać server w komunikacji z klientem.</p>
  */
 public class Komunikacja{
 
@@ -24,6 +24,11 @@ public class Komunikacja{
 	private ObjectInputStream czytelnik;
 	private String host;
 
+	/**
+	 * Metoda wysyła dane na server.
+	 * @param host host lokalny
+	 * @param port port na którym server oczekuje i wysyła dane
+	 */
 	public Komunikacja(String host, int port){
 		this.host = host;
 		this.port = port;
@@ -43,6 +48,10 @@ public class Komunikacja{
 			logger.error("NIe można załadować strony aktualizuj dane.",e);
 		}
 	}
+	/**
+	 * Metoda wysyła dane na server.
+	 * @param semafor zmienna typu String wysyłana na server
+	 */
 	public void wyslij(String semafor) {
 		try {
 			pisarz.flush();
@@ -50,6 +59,10 @@ public class Komunikacja{
 		} catch(Exception e) {
 			System.out.println("Wyjatek klienta " + e);    }
 	}
+	/**
+	 * Metoda wysyła dane na server.
+	 * @param auto zmienna typu DaneAuto wysyłana na server
+	 */
 	public void wyslij(DaneAuta auto) {
 		try {
 			pisarz.flush();
@@ -57,6 +70,10 @@ public class Komunikacja{
 		} catch(Exception e) {
 			System.out.println("Wyjatek klienta " + e);    }
 	}
+	/**
+	 * Metoda wysyła dane na server.
+	 * @param historia zmienna typu Historia wysyłana na server
+	 */
 	public void wyslij(Historia historia) {
 		try {
 			pisarz.flush();
@@ -64,6 +81,10 @@ public class Komunikacja{
 		} catch(Exception e) {
 			System.out.println("Wyjatek klienta " + e);    }
 	}
+	/**
+	 * Metoda odbiera dane z server-a.
+	 * @return BazaWiersz zwraca odebraną baze wierszy do historii
+	 */
 	public BazaWiersz odbierz() {
 		BazaWiersz baza = null;
 		try {
@@ -71,13 +92,12 @@ public class Komunikacja{
 		} catch(Exception e) {
 			System.out.println("Wyjatek klienta " + e);
 		}
-
-		for(int i = 0; i < baza.size(); i++)
-		{
-			baza.toString(i);
-		}
 		return baza;
 	}
+	/**
+	 * Metoda odbiera dane z server-a.
+	 * @return boolean zwraca kontrolną zmienna logiczna
+	 */
 	public boolean odbierzKontrol() {
 		boolean kontrol = false;
 		try {

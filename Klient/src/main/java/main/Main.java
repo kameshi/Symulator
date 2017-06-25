@@ -10,12 +10,14 @@ import org.apache.log4j.Logger;
 import java.io.IOException;
 
 /**
- * <h2>Klasa kontrolera przycisków menu wyboru ekranów.</h2>
- * <p>Posiada metody pozwalające obsługiwać przyciski menu.</p>
+ * <h2>Klasa główna z metodą main.</h2>
  */
 public class Main extends Application {
     private final static Logger logger = Logger.getLogger(Main.class);
 
+    /**
+     * Metoda wczytuje okno programu
+     */
     @Override
     public void start(Stage primaryStage) {
         logger.info("Uruchomiono program." );
