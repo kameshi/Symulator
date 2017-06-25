@@ -28,6 +28,10 @@ public class Wiersz implements Serializable {
         this.data = data;
     }
 
+    public String getRejestracja() {
+        return rejestracja;
+    }
+
     public String getRejestracaja() {
         return rejestracja;
     }

@@ -1,0 +1,18 @@
+Main:27 INFO  - Włączenie serwera 2017-06-25 11:42:40 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 11:43:33 
+ Main:48 ERROR - Brak sterownika 2017-06-25 11:43:33 
+ java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:128)
+	at main.Main.dzialanie(Main.java:46)
+	at main.Main.main(Main.java:29)
+Main:27 INFO  - Włączenie serwera 2017-06-25 11:43:56 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 12:36:09 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 12:36:48 
+ Main:27 INFO  - Włączenie serwera 2017-06-25 12:38:12 
+ 

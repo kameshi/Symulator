@@ -71,6 +71,11 @@ public class Komunikacja{
 		} catch(Exception e) {
 			System.out.println("Wyjatek klienta " + e);
 		}
+
+		for(int i = 0; i < baza.size(); i++)
+		{
+			baza.toString(i);
+		}
 		return baza;
 	}
 	public boolean odbierzKontrol() {
