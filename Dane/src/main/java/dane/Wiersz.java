@@ -31,10 +31,6 @@ public class Wiersz implements Serializable {
     public String getRejestracja() {
         return rejestracja;
     }
-
-    public String getRejestracaja() {
-        return rejestracja;
-    }
     public String getMarka() {
         return marka;
     }
